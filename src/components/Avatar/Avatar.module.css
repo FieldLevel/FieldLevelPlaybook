@@ -1,0 +1,16 @@
+.Avatar {
+    @apply relative block overflow-hidden w-10 h-10 rounded-full select-none;
+}
+
+.Image {
+    @apply absolute object-cover w-full h-full;
+}
+
+.small {
+    @apply w-8 h-8;
+}
+
+.large {
+    width: 60px;
+    height: 60px;
+}
