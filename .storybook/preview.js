@@ -1,3 +1,13 @@
+import theme from './theme';
+
 export const parameters = {
-    actions: { argTypesRegex: '^on[A-Z].*' }
+    options: {
+        storySort: {
+            method: 'alphabetical',
+            order: ['Introduction', 'ComponentStatus']
+        }
+    },
+    docs: {
+        theme: theme
+    }
 };

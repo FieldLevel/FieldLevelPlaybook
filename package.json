@@ -10,7 +10,8 @@
     "build": "yarn clean && rollup -c --environment NODE_ENV:production",
     "generate-icons": "node ./scripts/generate-icons.js",
     "dev": "start-storybook -p 6006 -s static",
-    "build-docs": "build-storybook --docs -o public/docs -s static"
+    "dev-docs": "start-storybook --docs -p 6007 -s static",
+    "build-docs": "build-storybook --docs --quiet -o public -s static"
   },
   "dependencies": {
     "@reach/dialog": "^0.12.1",
