@@ -1,0 +1,15 @@
+.Card {
+    @apply bg-foreground shadow overflow-hidden sm:rounded;
+}
+
+.Card + .Card {
+    @apply mt-4;
+}
+
+.Header {
+    @apply p-4 pb-0;
+}
+
+.Section {
+    @apply p-4;
+}

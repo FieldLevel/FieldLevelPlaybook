@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Card } from '../../src';
+
+import * as stories from './Card.stories.tsx';
+
+<Meta title="Structure/Card" component={Card} />
+
+# Card
+
+<Canvas>
+    <Story story={stories.Default} name="Default" />
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## No Title
+
+<Canvas>
+    <Story story={stories.NoTitle} />
+</Canvas>
+
+## Multiple Sections
+
+<Canvas>
+    <Story story={stories.MultipleSections} />
+</Canvas>
