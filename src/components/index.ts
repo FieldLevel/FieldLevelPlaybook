@@ -1,6 +1,12 @@
 export { Avatar } from './Avatar';
 export type { AvatarProps } from './Avatar';
 
+export { Button } from './Button';
+export type { ButtonProps } from './Button';
+
+export { ButtonGroup } from './ButtonGroup';
+export type { ButtonGroupProps } from './ButtonGroup';
+
 export { Caption } from './Caption';
 export type { CaptionProps } from './Caption';
 

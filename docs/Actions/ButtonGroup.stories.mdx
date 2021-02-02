@@ -1,0 +1,20 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { ButtonGroup } from '@fieldlevel/playbook';
+import * as stories from './ButtonGroup.stories.tsx';
+
+<Meta title="Actions/ButtonGroup" component={ButtonGroup} />
+
+# ButtonGroup
+
+<Canvas>
+    <Story story={stories.Default} name="Default" />
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## Spacing
+
+<Canvas>
+    <Story story={stories.Spacing} />
+</Canvas>

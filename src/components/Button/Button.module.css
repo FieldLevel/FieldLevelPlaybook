@@ -1,0 +1,36 @@
+.Button {
+    @apply inline-flex rounded shadow-sm m-0 px-4 py-2 cursor-pointer text-center font-medium select-none no-underline;
+    @apply focus:outline-none focus:ring;
+}
+
+.basic {
+    @apply bg-action-secondary text-base border-base border;
+    @apply hover:bg-action-secondary-hovered;
+}
+
+.primary {
+    @apply bg-action-primary text-dark;
+    @apply hover:bg-action-primary-hovered;
+}
+
+.destructive {
+    @apply bg-action-critical text-dark;
+    @apply hover:bg-action-critical-hovered;
+}
+
+.plain {
+    @apply bg-action-secondary shadow-none;
+    @apply hover:bg-action-secondary-hovered;
+}
+
+.slim {
+    @apply px-4 py-1;
+}
+
+.large {
+    @apply px-6 py-3;
+}
+
+.Icon {
+    @apply -ml-1 mr-1;
+}
