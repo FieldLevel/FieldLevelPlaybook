@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { Title } from '@fieldlevel/playbook';
+import * as stories from './Title.stories.tsx';
+
+<Meta title="Titles and Text/Title" component={Title} />
+
+# Title
+
+<Canvas>
+    <Story story={stories.Default} name="Default" />
+</Canvas>
+
+<ArgsTable story="Default" />

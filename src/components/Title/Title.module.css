@@ -1,0 +1,48 @@
+.Title {
+    @apply m-0 font-semibold;
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+}
+
+@screen lg {
+    .Title {
+        font-size: 1.5rem; /* 24px */
+        line-height: 2rem; /* 32px */
+    }
+}
+
+.small {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+}
+
+@screen lg {
+    .small {
+        font-size: 1.25rem; /* 20px */
+        line-height: 1.75rem; /* 28px */
+    }
+}
+
+.large {
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+}
+
+@screen lg {
+    .large {
+        font-size: 1.875rem; /* 30px */
+        line-height: 2.25rem; /* 36px */
+    }
+}
+
+.extraLarge {
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
+}
+
+@screen lg {
+    .extraLarge {
+        font-size: 3rem; /* 48px */
+        line-height: 1; /* 48px */
+    }
+}
