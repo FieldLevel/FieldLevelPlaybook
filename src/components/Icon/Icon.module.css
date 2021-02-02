@@ -1,0 +1,31 @@
+.Icon {
+    @apply block max-h-full max-w-full m-auto h-5 w-5 fill-icon-base;
+}
+
+.Svg {
+    @apply relative block w-full max-h-full max-w-full;
+}
+
+.current {
+    @apply fill-current;
+}
+
+.muted {
+    @apply fill-icon-muted;
+}
+
+.critical {
+    @apply fill-icon-critical;
+}
+
+.warning {
+    @apply fill-icon-warning;
+}
+
+.highlight {
+    @apply fill-icon-highlight;
+}
+
+.success {
+    @apply fill-icon-success;
+}

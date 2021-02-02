@@ -7,6 +7,9 @@ export type { CardProps } from './Card';
 export { Heading } from './Heading';
 export type { HeadingProps } from './Heading';
 
+export { Icon } from './Icon';
+export type { IconProps } from './Icon';
+
 export { Subheading } from './Subheading';
 export type { SubheadingProps } from './Subheading';
 
