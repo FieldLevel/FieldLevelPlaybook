@@ -1,0 +1,75 @@
+.Stack {
+    @apply flex flex-wrap items-stretch mt-0 ml-0;
+}
+
+.Stack > .Item {
+    @apply mt-4 ml-4;
+}
+
+.vertical {
+    @apply flex-col ml-0;
+}
+
+.vertical > .Item {
+    @apply ml-0;
+}
+
+.noWrap {
+    @apply flex-nowrap;
+}
+
+.spaceNone > .Item {
+    @apply mt-0 ml-0 max-w-full;
+}
+
+.spaceTight > .Item {
+    @apply mt-2 ml-2 max-w-full;
+}
+
+.spaceLoose > .Item {
+    @apply mt-6 ml-6 max-w-full;
+}
+
+.alignStart {
+    @apply items-start;
+}
+
+.alignCenter {
+    @apply items-center;
+}
+
+.alignEnd {
+    @apply items-end;
+}
+
+.alignBaseline {
+    @apply items-baseline;
+}
+
+.distributeStart {
+    @apply justify-start;
+}
+
+.distributeEnd {
+    @apply justify-end;
+}
+
+.distributeCenter {
+    @apply justify-center;
+}
+
+.distributeBetween {
+    @apply justify-between;
+}
+
+.distributeFill > .Item {
+    @apply flex-auto;
+}
+
+.Item {
+    @apply flex-none min-w-0;
+}
+
+.itemFill {
+    @apply flex-auto;
+}
