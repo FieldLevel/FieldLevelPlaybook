@@ -16,6 +16,9 @@ export type { CardProps } from './Card';
 export { Checkbox } from './Checkbox';
 export type { CheckboxProps } from './Checkbox';
 
+export { ChoiceGroup } from './ChoiceGroup';
+export type { ChoiceGroupProps } from './ChoiceGroup';
+
 export { FormLayout } from './FormLayout';
 export type { FormLayoutProps } from './FormLayout';
 

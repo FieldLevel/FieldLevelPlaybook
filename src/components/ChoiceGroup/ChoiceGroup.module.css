@@ -1,0 +1,9 @@
+@layer components {
+    .Title {
+        @apply block text-body-sm font-medium text-base mb-2;
+    }
+
+    .Item {
+        @apply mb-2;
+    }
+}
