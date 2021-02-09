@@ -28,6 +28,9 @@ export type { LogoProps } from './Logo';
 export { Modal } from './Modal';
 export type { ModalProps } from './Modal';
 
+export { RadioButton } from './RadioButton';
+export type { RadioButtonProps } from './RadioButton';
+
 export { Subheading } from './Subheading';
 export type { SubheadingProps } from './Subheading';
 
