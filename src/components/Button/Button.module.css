@@ -1,26 +1,44 @@
 .Button {
     @apply inline-flex rounded shadow-sm m-0 px-4 py-2 cursor-pointer text-center font-medium select-none no-underline;
     @apply focus:outline-none focus:ring;
+    @apply bg-secondary-base text-base border-base border;
+    @apply hover:bg-secondary-hovered;
 }
 
-.basic {
-    @apply bg-action-secondary text-base border-base border;
-    @apply hover:bg-action-secondary-hovered;
+.disabled {
+    @apply cursor-default;
+    @apply bg-secondary-disabled text-muted;
+    @apply hover:bg-secondary-disabled;
 }
 
 .primary {
-    @apply bg-action-primary text-dark;
-    @apply hover:bg-action-primary-hovered;
+    @apply bg-primary-base text-dark border-none;
+    @apply hover:bg-primary-hovered;
+}
+
+.primary.disabled {
+    @apply bg-primary-disabled text-muted;
+    @apply hover:bg-primary-disabled;
 }
 
 .destructive {
-    @apply bg-action-critical text-dark;
-    @apply hover:bg-action-critical-hovered;
+    @apply bg-critical-base text-dark border-none;
+    @apply hover:bg-critical-hovered;
+}
+
+.destructive.disabled {
+    @apply bg-critical-disabled text-muted;
+    @apply hover:bg-critical-disabled;
 }
 
 .plain {
-    @apply bg-action-secondary shadow-none;
-    @apply hover:bg-action-secondary-hovered;
+    @apply bg-secondary-base shadow-none border-none;
+    @apply hover:bg-secondary-hovered;
+}
+
+.plain.disabled {
+    @apply bg-secondary-disabled text-muted;
+    @apply hover:bg-secondary-disabled;
 }
 
 .slim {
@@ -32,5 +50,5 @@
 }
 
 .Icon {
-    @apply -ml-1 mr-1;
+    @apply -ml-1 mr-2;
 }

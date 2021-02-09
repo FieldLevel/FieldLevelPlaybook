@@ -7,11 +7,12 @@ import styles from './Button.module.css';
 
 type size = 'slim' | 'large';
 
-type variant = 'basic' | 'primary' | 'plain' | 'destructive';
+type variant = 'primary' | 'plain' | 'destructive';
 
 export interface ButtonProps {
     size?: size;
     variant?: variant;
+    disabled?: boolean;
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
     children?: string | React.ReactElement;
     onClick?(): void;
@@ -23,14 +24,18 @@ const sizeStyles: { [key in size]: string } = {
 };
 
 const variantStyles: { [key in variant]: string } = {
-    basic: styles.basic,
     primary: styles.primary,
     destructive: styles.destructive,
     plain: styles.plain
 };
 
-export const Button = ({ size, variant = 'basic', icon, onClick, children }: ButtonProps) => {
-    const className = cx(styles.Button, size && sizeStyles[size], variant && variantStyles[variant]);
+export const Button = ({ size, variant, disabled, icon, onClick, children }: ButtonProps) => {
+    const className = cx(
+        styles.Button,
+        size && sizeStyles[size],
+        variant && variantStyles[variant],
+        disabled && styles.disabled
+    );
     const iconContent = icon && (
         <span className={styles.Icon}>
             <Icon source={icon} color="current" />
@@ -38,7 +43,7 @@ export const Button = ({ size, variant = 'basic', icon, onClick, children }: But
     );
 
     return (
-        <button className={className} onClick={onClick}>
+        <button className={className} disabled={disabled} onClick={onClick}>
             {iconContent}
             {children}
         </button>
