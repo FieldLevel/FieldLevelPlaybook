@@ -1,5 +1,5 @@
 .Card {
-    @apply bg-foreground shadow overflow-hidden sm:rounded;
+    @apply bg-foreground-base shadow overflow-hidden sm:rounded;
 }
 
 .Card + .Card {
