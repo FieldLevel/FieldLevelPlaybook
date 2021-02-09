@@ -1,0 +1,50 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { TextInput } from '@fieldlevel/playbook';
+import * as stories from './TextInput.stories.tsx';
+
+<Meta title="Forms/TextInput" component={TextInput} />
+
+# TextInput
+
+<Canvas>
+    <Story story={stories.Default} name="Default" />
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## Controlled
+
+<Canvas>
+    <Story story={stories.Controlled} />
+</Canvas>
+
+## Placeholder
+
+<Canvas>
+    <Story story={stories.Placeholder} />
+</Canvas>
+
+## Disabled
+
+<Canvas>
+    <Story story={stories.Disabled} />
+</Canvas>
+
+## With Icon
+
+<Canvas>
+    <Story story={stories.WithIcon} />
+</Canvas>
+
+## With Error
+
+<Canvas>
+    <Story story={stories.WithError} />
+</Canvas>
+
+## Input Type
+
+<Canvas>
+    <Story story={stories.Type} />
+</Canvas>

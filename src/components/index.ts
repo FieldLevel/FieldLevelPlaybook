@@ -40,5 +40,8 @@ export type { SubheadingProps } from './Subheading';
 export { Stack } from './Stack';
 export type { StackProps } from './Stack';
 
+export { TextInput } from './TextInput';
+export type { TextInputProps } from './TextInput';
+
 export { Title } from './Title';
 export type { TitleProps } from './Title';

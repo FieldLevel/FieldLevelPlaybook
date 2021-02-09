@@ -1,0 +1,30 @@
+@layer components {
+    .TextInput {
+        @apply relative;
+    }
+
+    .TextInput input {
+        @apply rounded-md shadow-sm border border-base text-body-sm py-2 px-3 w-full;
+        @apply outline-none focus:ring placeholder-text-muted;
+    }
+
+    .disabled input {
+        @apply bg-secondary-disabled text-disabled cursor-default;
+    }
+
+    .error input {
+        @apply border-critical;
+    }
+
+    .withIcon input {
+        @apply pl-9;
+    }
+
+    .Label {
+        @apply block text-body-sm font-medium text-base mb-1;
+    }
+
+    .Icon {
+        @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none;
+    }
+}
