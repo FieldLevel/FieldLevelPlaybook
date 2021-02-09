@@ -3,7 +3,7 @@ import { Bullpen } from './Bullpen';
 export default {
     title: 'Bullpen',
     parameters: {
-        docs: { disable: true },
+        // docs: { disable: true },
         layout: 'fullscreen',
         viewMode: 'story',
         previewTabs: {

@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     stories: ['../bullpen/index.ts', '../docs/**/*.stories.mdx'],
@@ -7,15 +8,14 @@ module.exports = {
         const cssModulesRule = {
             test: /\.module\.css$/,
             use: [
-                {
-                    loader: 'style-loader'
-                },
+                { loader: MiniCssExtractPlugin.loader },
                 {
                     loader: 'css-loader',
                     options: {
-                        sourceMap: false,
+                        sourceMap: true,
                         importLoaders: 1,
                         modules: {
+                            // TODO: use shared class name creation?
                             localIdentName: '[name]-[local]_[hash:base64:5]'
                         }
                     }
@@ -23,22 +23,30 @@ module.exports = {
                 {
                     loader: 'postcss-loader',
                     options: {
-                        sourceMap: false
+                        sourceMap: true
                     }
                 }
-                // {
-                //     loader: 'sass-loader',
-                //     options: {
-                //         sourceMap: false
-                //     }
-                // }
             ]
         };
-        const extraRules = [cssModulesRule];
 
-        // disable existing css rules for modules
-        const cssRule = config.module.rules.find((rule) => !Array.isArray(rule.test) && rule.test.test('.css'));
-        cssRule.exclude = /\.module\.css$/;
+        const globalCssRule = {
+            test: /\.css$/,
+            exclude: /\.module\.css$/,
+            use: [
+                { loader: MiniCssExtractPlugin.loader },
+                { loader: 'css-loader', options: { sourceMap: true } },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                }
+            ]
+        };
+        const extraRules = [cssModulesRule, globalCssRule];
+
+        // remove the existing css loader rule
+        config.module.rules = config.module.rules.filter((rule) => !rule.test.test('.css'));
 
         // disable file loader rule for SVGs
         const fileLoaderRule = config.module.rules.find((rule) => !Array.isArray(rule.test) && rule.test.test('.svg'));
@@ -52,6 +60,8 @@ module.exports = {
             ...config.resolve.alias,
             '@fieldlevel/playbook': path.resolve(__dirname, '..', 'src')
         };
+
+        config.plugins = [...config.plugins, new MiniCssExtractPlugin()];
         // console.dir(config, { depth: null });
         return config;
     }

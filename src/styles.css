@@ -4,8 +4,34 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Manually add tailwinds preflight reset so we can opt out of some resets that cause integration issues for now */
+/* Consider removing this and just re-enabling the tailwind preflight once integration is further along */
+@import './reset.css';
+
 @layer base {
+    html {
+        font-size: 16px;
+        font-family: 'proxima-nova', arial, sans-serif;
+    }
+
     body {
         @apply text-body text-base;
+    }
+
+    a {
+        @apply text-interactive-active no-underline;
+    }
+
+    a:hover {
+        @apply text-interactive-hover underline;
+    }
+
+    /* Bootstrap still wins certain specificity battles against Tailwind since it's resets can be more aggressive */
+    /* We can override any of the issues here since Playbook is included after Bootstrap */
+    input[type='file'],
+    input[type='radio'],
+    input[type='checkbox'] {
+        @apply m-0 focus:outline-none;
+        line-height: 1rem;
     }
 }
