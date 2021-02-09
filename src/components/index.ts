@@ -22,6 +22,9 @@ export type { IconProps } from './Icon';
 export { Logo } from './Logo';
 export type { LogoProps } from './Logo';
 
+export { Modal } from './Modal';
+export type { ModalProps } from './Modal';
+
 export { Subheading } from './Subheading';
 export type { SubheadingProps } from './Subheading';
 

@@ -1,0 +1,26 @@
+@layer components {
+    .Content {
+        @apply relative flex flex-col bg-foreground-base text-left overflow-hidden shadow-xl p-0 w-full h-screen m-0;
+        @apply sm:rounded-lg sm:m-auto sm:mt-40 sm:max-w-lg sm:max-h-96 sm:h-auto;
+    }
+
+    .Header {
+        @apply p-4 pb-0;
+    }
+
+    .Body {
+        @apply flex-grow p-4 overflow-y-auto;
+    }
+
+    .Footer {
+        @apply bg-foreground-muted flex flex-row-reverse px-6 py-3;
+    }
+
+    .Close {
+        @apply absolute top-1 right-1 p-1;
+    }
+
+    .Close button {
+        @apply rounded outline-none;
+    }
+}

@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { Modal } from '@fieldlevel/playbook';
+import * as stories from './Modal.stories.tsx';
+
+<Meta title="Overlays/Modal" component={Modal} />
+
+# Modal
+
+<Canvas>
+    <Story story={stories.Default} name="Default" />
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## No Title
+
+<Canvas>
+    <Story story={stories.NoTitle} />
+</Canvas>
+
+## With Actions
+
+<Canvas>
+    <Story story={stories.WithActions} />
+</Canvas>
+
+## Scrollable Body
+
+<Canvas>
+    <Story story={stories.Scrollable} />
+</Canvas>
