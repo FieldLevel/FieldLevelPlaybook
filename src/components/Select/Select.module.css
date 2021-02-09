@@ -1,0 +1,26 @@
+@layer components {
+    .Select {
+        @apply relative;
+    }
+
+    .Select select {
+        @apply rounded-md shadow-sm border border-base text-body-sm py-2 px-3 w-full appearance-none;
+        @apply outline-none focus:ring placeholder-text-muted;
+    }
+
+    .disabled select {
+        @apply bg-secondary-disabled text-disabled cursor-default;
+    }
+
+    .error select {
+        @apply border-critical;
+    }
+
+    .Label {
+        @apply block text-body-sm font-medium text-base mb-1;
+    }
+
+    .Icon {
+        @apply absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none;
+    }
+}

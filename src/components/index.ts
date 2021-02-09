@@ -31,6 +31,9 @@ export type { ModalProps } from './Modal';
 export { RadioButton } from './RadioButton';
 export type { RadioButtonProps } from './RadioButton';
 
+export { Select } from './Select';
+export type { SelectProps } from './Select';
+
 export { Subheading } from './Subheading';
 export type { SubheadingProps } from './Subheading';
 

@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { Select } from '@fieldlevel/playbook';
+import * as stories from './Select.stories.tsx';
+
+<Meta title="Forms/Select" component={Select} />
+
+# Select
+
+<Canvas>
+    <Story story={stories.Default} name="Default" />
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## Controlled
+
+<Canvas>
+    <Story story={stories.Controlled} />
+</Canvas>
+
+## Placeholder
+
+<Canvas>
+    <Story story={stories.Placeholder} />
+</Canvas>
+
+## Disabled
+
+<Canvas>
+    <Story story={stories.Disabled} />
+</Canvas>
+
+## With Error
+
+<Canvas>
+    <Story story={stories.WithError} />
+</Canvas>
