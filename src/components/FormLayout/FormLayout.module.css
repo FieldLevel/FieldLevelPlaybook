@@ -1,0 +1,11 @@
+.FormLayout {
+    @apply -mt-4 -ml-6;
+}
+
+.Items {
+    @apply flex flex-wrap;
+}
+
+.Item {
+    @apply mt-4 ml-6 flex-auto;
+}

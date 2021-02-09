@@ -1,0 +1,20 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { FormLayout } from '@fieldlevel/playbook';
+import * as stories from './FormLayout.stories.tsx';
+
+<Meta title="Forms/FormLayout" component={FormLayout} />
+
+# FormLayout
+
+<Canvas>
+    <Story story={stories.Default} name="Default" />
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## Groups
+
+<Canvas>
+    <Story story={stories.Groups} />
+</Canvas>

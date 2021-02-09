@@ -16,6 +16,9 @@ export type { CardProps } from './Card';
 export { Checkbox } from './Checkbox';
 export type { CheckboxProps } from './Checkbox';
 
+export { FormLayout } from './FormLayout';
+export type { FormLayoutProps } from './FormLayout';
+
 export { Heading } from './Heading';
 export type { HeadingProps } from './Heading';
 
