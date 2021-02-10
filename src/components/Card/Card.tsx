@@ -1,41 +1,53 @@
 import React, { Children } from 'react';
 
 import { Heading } from '../Heading';
+import { Subheading } from '../Subheading';
 
 import styles from './Card.module.css';
 
-interface HeaderProps {
-    title: React.ReactNode;
-}
-
-const Header = ({ title }: HeaderProps) => {
+const Title = ({ title }: { title: string }) => {
     return (
-        <div className={styles.Header}>
+        <div className={styles.Title}>
             <Heading>{title}</Heading>
         </div>
     );
 };
 
+const SectionTitle = ({ title }: { title: string }) => {
+    return (
+        <div className={styles.SectionTitle}>
+            <Subheading>{title}</Subheading>
+        </div>
+    );
+};
+
 interface SectionProps {
+    title?: string;
     children?: React.ReactNode;
 }
 
-const Section = ({ children }: SectionProps) => {
-    return <div className={styles.Section}>{children}</div>;
+const Section = ({ title, children }: SectionProps) => {
+    const titleContent = title && <SectionTitle title={title} />;
+
+    return (
+        <div className={styles.Section}>
+            {titleContent}
+            {children}
+        </div>
+    );
 };
 
 export interface CardProps {
-    title?: React.ReactNode;
+    title?: string;
     children?: React.ReactNode;
 }
 
 interface CardChildren {
-    Header?: typeof Header;
-    Section?: typeof Children;
+    Section?: typeof Section;
 }
 
 export const Card = ({ title, children }: CardProps & CardChildren) => {
-    const headerMarkup = title ? <Header title={title} /> : null;
+    const titleContent = title && <Title title={title} />;
 
     const content = Children.map(children, (child) => {
         if (!React.isValidElement<React.ReactNode>(child)) {
@@ -49,11 +61,10 @@ export const Card = ({ title, children }: CardProps & CardChildren) => {
 
     return (
         <div className={styles.Card}>
-            {headerMarkup}
+            {titleContent}
             {content}
         </div>
     );
 };
 
-Card.Header = Header;
 Card.Section = Section;

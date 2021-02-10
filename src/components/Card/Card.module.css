@@ -6,10 +6,14 @@
     @apply mt-4;
 }
 
-.Header {
+.Title {
     @apply p-4 pb-0;
 }
 
 .Section {
     @apply p-4;
+}
+
+.SectionTitle {
+    @apply p-0 pb-2;
 }

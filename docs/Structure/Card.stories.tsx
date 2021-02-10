@@ -17,3 +17,10 @@ export const MultipleSections = () => (
         <Card.Section>Section 2</Card.Section>
     </Card>
 );
+
+export const SectionTitles = () => (
+    <Card title="Multiple Sections">
+        <Card.Section title="Section 1">Section 1 Content</Card.Section>
+        <Card.Section title="Section 2">Section 2 Content</Card.Section>
+    </Card>
+);
