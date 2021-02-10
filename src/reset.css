@@ -53,11 +53,10 @@ Remove the margin in all browsers.
 Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
 */
 
-    /* Tailwind opt-out */
-    /* body {
-        font-family: system-ui, -apple-system, 'Segoe UI', Roboto,
-            Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-    } */
+    body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+            'Segoe UI Emoji';
+    }
 
     /*
 Grouping content
