@@ -10,8 +10,7 @@
 
 @layer base {
     html {
-        font-size: 16px;
-        font-family: 'proxima-nova', arial, sans-serif;
+        font-size: 16px; /* Make sure we're always working with 16px as base for rem units */
     }
 
     body {

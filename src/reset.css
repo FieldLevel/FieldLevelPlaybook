@@ -352,12 +352,11 @@ Add the correct display in Chrome and Safari.
  *    to override it to ensure consistency even when using the default theme.
  */
 
-    /* Tailwind opt-out */
-    /* html {
+    html {
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
             Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
         line-height: 1.5;
-    } */
+    }
 
     /**
  * Inherit font-family and line-height from `html` so users can set them as
