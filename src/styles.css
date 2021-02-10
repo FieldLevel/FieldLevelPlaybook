@@ -26,11 +26,25 @@
     }
 
     /* Bootstrap still wins certain specificity battles against Tailwind since it's resets can be more aggressive */
-    /* We can override any of the issues here since Playbook is included after Bootstrap */
+    /* We can override any of the issues here since Playbook is included in the app after Bootstrap */
+
     input[type='file'],
     input[type='radio'],
     input[type='checkbox'] {
         @apply m-0 focus:outline-none;
-        line-height: 1rem;
+        line-height: 1.25rem;
+    }
+
+    input[type='radio'][disabled],
+    input[type='checkbox'][disabled],
+    input[type='radio'].disabled,
+    input[type='checkbox'].disabled,
+    fieldset[disabled] input[type='radio'],
+    fieldset[disabled] input[type='checkbox'] {
+        @apply cursor-default;
+    }
+
+    label {
+        @apply mb-0;
     }
 }
