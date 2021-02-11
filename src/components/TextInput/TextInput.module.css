@@ -20,8 +20,16 @@
         @apply pl-9;
     }
 
+    .Wrapper {
+        @apply relative;
+    }
+
     .Label {
         @apply block text-body-sm font-medium text-base mb-1;
+    }
+
+    .Action {
+        @apply absolute top-0 right-1 text-body-sm;
     }
 
     .Icon {

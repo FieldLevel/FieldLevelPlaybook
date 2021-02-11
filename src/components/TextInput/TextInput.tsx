@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import { Icon } from '../Icon';
+import { Link } from '../Link';
 import { InlineError } from '../shared/InlineError';
 import { useUniqueId } from '../../utilities/use-unique-id';
 
@@ -22,13 +23,21 @@ type Type =
     | 'week'
     | 'currency';
 
+type Action = {
+    label?: string;
+    url?: string;
+    onClick?(): void;
+};
+
 export interface TextInputProps {
     name: string;
     type?: Type;
     label?: string;
+    action?: Action;
     value?: string;
     placeholder?: string;
     disabled?: boolean;
+    readonly?: boolean;
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
     error?: string;
     onChange?(value: string, name: string): void;
@@ -38,9 +47,11 @@ export const TextInput = ({
     name,
     type,
     label,
+    action,
     value,
     placeholder,
     disabled,
+    readonly,
     icon,
     error,
     onChange
@@ -48,6 +59,9 @@ export const TextInput = ({
     const id = useUniqueId(name);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (readonly) {
+            return;
+        }
         onChange && onChange(event.currentTarget.value, event.currentTarget.name);
     };
 
@@ -55,6 +69,14 @@ export const TextInput = ({
         <label htmlFor={id} className={styles.Label}>
             {label}
         </label>
+    );
+
+    const actionContent = action && (
+        <div className={styles.Action}>
+            <Link url={action.url} onClick={action.onClick}>
+                {action.label}
+            </Link>
+        </div>
     );
 
     const iconContent = icon && (
@@ -77,9 +99,10 @@ export const TextInput = ({
     );
 
     return (
-        <div>
+        <div className={inputClass}>
             {labelContent}
-            <div className={inputClass}>
+            {actionContent}
+            <div className={styles.Wrapper}>
                 {iconContent}
                 <input
                     id={id}
@@ -87,6 +110,7 @@ export const TextInput = ({
                     name={name}
                     value={value}
                     placeholder={placeholder}
+                    readOnly={readonly}
                     disabled={disabled}
                     onChange={handleChange}
                 ></input>

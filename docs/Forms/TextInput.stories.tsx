@@ -23,7 +23,17 @@ export const Placeholder = () => (
 
 export const Disabled = () => <TextInput label="Headline" name="headline" value="Head coach at FieldLevel" disabled />;
 
+export const Readonly = () => <TextInput label="Headline" name="headline" value="Head coach at FieldLevel" readonly />;
+
 export const WithIcon = () => <TextInput label="Search" name="search" icon={SearchMinor} />;
+
+export const WithLinkAction = () => (
+    <TextInput label="Email address" name="email" action={{ label: 'Change', url: '#' }} />
+);
+
+export const WithButtonAction = () => (
+    <TextInput label="Email address" name="email" action={{ label: 'Change', onClick: () => {} }} />
+);
 
 export const WithError = () => (
     <TextInput
