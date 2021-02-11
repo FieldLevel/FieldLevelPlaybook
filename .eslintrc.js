@@ -6,22 +6,23 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended',
         'prettier',
-        'prettier/@typescript-eslint',
+        'prettier/@typescript-eslint'
     ],
     plugins: ['@typescript-eslint', 'react', 'react-hooks'],
     parserOptions: {
         ecmaVersion: 2018,
         sourceType: 'module',
         ecmaFeatures: {
-            jsx: true,
-        },
+            jsx: true
+        }
     },
     rules: {
-        'react/prop-types': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        'react/prop-types': 'off'
     },
     settings: {
         react: {
-            version: 'detect',
-        },
-    },
+            version: 'detect'
+        }
+    }
 };

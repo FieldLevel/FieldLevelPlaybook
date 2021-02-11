@@ -14,8 +14,8 @@ export const Link = ({ url, external, onClick, children }: LinkProps) => {
         onClick && onClick();
     }
 
-    let target = external ? '_blank' : '';
-    let rel = external ? 'noopener noreferrer' : '';
+    const target = external ? '_blank' : '';
+    const rel = external ? 'noopener noreferrer' : '';
 
     return url ? (
         <a href={url} target={target} rel={rel}>
