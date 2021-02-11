@@ -1,6 +1,6 @@
 @layer components {
     .Title {
-        @apply block text-body-sm font-medium text-base mb-2;
+        @apply block font-bold text-base mb-2;
     }
 
     .Item {

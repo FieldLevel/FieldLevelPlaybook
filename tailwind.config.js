@@ -7,14 +7,13 @@ module.exports = {
     darkMode: false,
     theme: {
         fontSize: {
-            'body-sm': ['0.875rem', '1.25rem'],
-            body: ['1rem', '1.25rem'],
-            'body-lg': ['1.125rem', '1.25rem']
+            'body-sm': ['0.75rem', '1.25rem'],
+            body: ['0.875rem', '1.25rem'],
+            'body-lg': ['1rem', '1.25rem']
         },
         fontWeight: {
             normal: 400,
-            medium: 500,
-            semibold: 600
+            bold: 500
         },
         letterSpacing: {
             tight: '-.025em',
@@ -22,7 +21,7 @@ module.exports = {
         },
         colors: {
             text: {
-                base: colors.coolGray[900],
+                base: colors.coolGray[800],
                 muted: colors.coolGray[500],
                 disabled: colors.coolGray[300],
                 critical: colors.red[900],

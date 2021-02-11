@@ -12,7 +12,7 @@ export const InlineField = ({ id, label, children }: InlineFieldProps) => {
         <div className="relative flex items-start">
             <div className="flex items-center h-5 w-5">{children}</div>
             <div className="ml-2">
-                <label className="text-body-sm font-normal" htmlFor={id}>
+                <label className="font-normal" htmlFor={id}>
                     {label}
                 </label>
             </div>

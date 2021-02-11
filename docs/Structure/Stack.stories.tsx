@@ -4,10 +4,10 @@ import React from 'react';
 import { Stack, Card } from '../../src';
 
 const Dummy = ({ children }: { children?: any }) => (
-    <div className="bg-primary-base px-6 py-4 w-full h-full rounded text-dark text-body-sm">{children}</div>
+    <div className="bg-primary-base px-6 py-4 w-full h-full rounded text-dark">{children}</div>
 );
 const DummyLarge = ({ children }: { children?: any }) => (
-    <div className="bg-primary-base px-6 py-6 w-full h-full rounded text-dark text-body-sm">{children}</div>
+    <div className="bg-primary-base px-6 py-6 w-full h-full rounded text-dark">{children}</div>
 );
 
 export const Default = (args: any) => (

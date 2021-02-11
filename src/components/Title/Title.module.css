@@ -1,5 +1,5 @@
 .Title {
-    @apply m-0 font-semibold;
+    @apply m-0 font-bold;
     font-size: 1.25rem; /* 20px */
     line-height: 1.75rem; /* 28px */
 }

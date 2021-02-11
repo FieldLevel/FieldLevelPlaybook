@@ -1,5 +1,5 @@
 .Button {
-    @apply inline-flex rounded shadow-sm m-0 px-4 py-2 cursor-pointer text-center font-medium select-none no-underline;
+    @apply inline-flex rounded shadow-sm m-0 px-4 py-2 cursor-pointer text-center font-bold select-none no-underline;
     @apply focus:outline-none focus:ring;
     @apply bg-secondary-base text-base border-base border;
     @apply hover:bg-secondary-hovered;

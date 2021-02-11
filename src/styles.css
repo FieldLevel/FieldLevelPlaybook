@@ -17,12 +17,18 @@
         @apply text-body text-base;
     }
 
-    a {
+    a,
+    a:visited {
         @apply text-interactive-active no-underline;
     }
 
     a:hover {
         @apply text-interactive-hover underline;
+    }
+
+    b,
+    strong {
+        @apply font-bold;
     }
 
     /* Bootstrap still wins certain specificity battles against Tailwind since it's resets can be more aggressive */
@@ -45,6 +51,6 @@
     }
 
     label {
-        @apply mb-0;
+        @apply mb-0 font-bold;
     }
 }

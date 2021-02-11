@@ -95,6 +95,7 @@ export const TextInput = ({
         styles.TextInput,
         icon && styles.withIcon,
         disabled && styles.disabled,
+        readonly && styles.readonly,
         error && styles.error
     );
 

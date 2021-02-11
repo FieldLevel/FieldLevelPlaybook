@@ -4,7 +4,7 @@
     }
 
     .Select select {
-        @apply rounded-md shadow-sm border border-base text-body-sm py-2 px-3 w-full appearance-none;
+        @apply rounded-md shadow-sm border border-base py-2 px-3 w-full appearance-none;
         @apply outline-none focus:ring placeholder-text-muted;
     }
 
@@ -17,7 +17,7 @@
     }
 
     .Label {
-        @apply block text-body-sm font-medium text-base mb-1;
+        @apply block font-bold text-base mb-1;
     }
 
     .Icon {
