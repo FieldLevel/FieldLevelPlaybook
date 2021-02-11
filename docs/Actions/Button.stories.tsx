@@ -11,6 +11,8 @@ export const Primary = () => <Button variant="primary">Upgrade</Button>;
 
 export const Plain = () => <Button variant="plain">Learn More</Button>;
 
+export const Text = () => <Button variant="text">Learn More</Button>;
+
 export const Destructive = () => <Button variant="destructive">Delete</Button>;
 
 export const WithIcon = () => <Button icon={AddMinor}>Add Athlete</Button>;

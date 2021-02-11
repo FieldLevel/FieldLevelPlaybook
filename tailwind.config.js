@@ -107,6 +107,7 @@ module.exports = {
             ...theme('colors.border')
         }),
         backgroundColor: (theme) => ({
+            transparent: 'transparent',
             background: {
                 ...theme('colors.background')
             },

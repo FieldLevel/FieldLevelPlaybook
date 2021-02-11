@@ -7,14 +7,14 @@ import styles from './Button.module.css';
 
 type size = 'slim' | 'large';
 
-type variant = 'primary' | 'plain' | 'destructive';
+type variant = 'primary' | 'plain' | 'text' | 'destructive';
 
 export interface ButtonProps {
     size?: size;
     variant?: variant;
     disabled?: boolean;
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
-    children?: string | React.ReactElement;
+    children?: React.ReactNode;
     onClick?(): void;
 }
 
@@ -25,8 +25,9 @@ const sizeStyles: { [key in size]: string } = {
 
 const variantStyles: { [key in variant]: string } = {
     primary: styles.primary,
-    destructive: styles.destructive,
-    plain: styles.plain
+    plain: styles.plain,
+    text: styles.text,
+    destructive: styles.destructive
 };
 
 export const Button = ({ size, variant, disabled, icon, onClick, children }: ButtonProps) => {
