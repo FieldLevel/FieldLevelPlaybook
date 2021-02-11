@@ -28,6 +28,9 @@ export type { HeadingProps } from './Heading';
 export { Icon } from './Icon';
 export type { IconProps } from './Icon';
 
+export { Link } from './Link';
+export type { LinkProps } from './Link';
+
 export { Logo } from './Logo';
 export type { LogoProps } from './Logo';
 
