@@ -1,4 +1,9 @@
 module.exports = {
-    purge: ['./src/**/*.tsx', './docs/**/*.tsx'],
+    purge: {
+        content: ['./src/**/*.tsx', './docs/**/*.tsx'],
+        options: {
+            safelist: [/^Playbook-/]
+        }
+    },
     presets: [require('./tailwind.preset.js')]
 };
