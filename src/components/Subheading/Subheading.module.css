@@ -1,5 +1,5 @@
 .Subheading {
-    @apply font-bold uppercase;
+    @apply m-0 font-bold uppercase;
     font-size: 0.875rem; /* 14px */
     line-height: 1.25rem; /* 20px */
 }

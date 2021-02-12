@@ -298,15 +298,17 @@ Add the correct display in Chrome and Safari.
  * Removes the default spacing and border for appropriate elements.
  */
 
+    /* Tailwind opt-out */
+    /* We still rely too much on bootstrap margins on headers still */
     blockquote,
     dl,
     dd,
-    h1,
+    /*h1,
     h2,
     h3,
     h4,
     h5,
-    h6,
+    h6,*/
     hr,
     figure,
     p,
