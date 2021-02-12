@@ -16,3 +16,9 @@ run(`yarn run rollup -c --environment NODE_ENV:production`);
 
 // Copy tailwind preset
 run(`yarn run cpy tailwind.preset.js dist`);
+
+// Copy prettier config
+run(`yarn run cpy prettier.config.js dist`);
+
+// Copy browserslist config
+run(`yarn run cpy .browserslistrc dist`);
