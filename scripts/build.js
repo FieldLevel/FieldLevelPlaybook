@@ -13,3 +13,6 @@ run(`yarn run tsc --emitDeclarationOnly --outDir dist/types`);
 
 // Generate final JS and CSS
 run(`yarn run rollup -c --environment NODE_ENV:production`);
+
+// Copy tailwind preset
+run(`yarn run cpy tailwind.preset.js dist`);
