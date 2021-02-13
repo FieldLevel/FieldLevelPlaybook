@@ -11,12 +11,37 @@ export const Default = (args: any) => (
     </FormLayout>
 );
 
-export const Groups = () => (
+export const Row = () => (
     <FormLayout>
-        <TextInput label="Street" name="street" />
-        <FormLayout.Group>
+        <FormLayout.Row>
             <TextInput label="City" name="city" />
             <TextInput label="State" name="state" />
-        </FormLayout.Group>
+        </FormLayout.Row>
+        <FormLayout.Row>
+            <TextInput label="City" name="city" />
+            <TextInput label="State" name="state" />
+            <TextInput label="Zip" name="zip" />
+        </FormLayout.Row>
+    </FormLayout>
+);
+
+export const RowWithEmpty = () => (
+    <FormLayout>
+        <FormLayout.Row>
+            <FormLayout.Item size="oneHalf">
+                <TextInput label="Street" name="street" />
+            </FormLayout.Item>
+        </FormLayout.Row>
+        <FormLayout.Row>
+            <FormLayout.Item size="oneThird">
+                <TextInput label="City" name="city" />
+            </FormLayout.Item>
+            <FormLayout.Item size="oneThird">
+                <TextInput label="State" name="state" />
+            </FormLayout.Item>
+            <FormLayout.Item size="oneThird">
+                <TextInput label="Zip" name="zip" />
+            </FormLayout.Item>
+        </FormLayout.Row>
     </FormLayout>
 );

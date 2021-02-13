@@ -1,11 +1,23 @@
 .FormLayout {
-    @apply -mt-4 -ml-6;
-}
-
-.Items {
-    @apply flex flex-wrap;
+    @apply grid grid-cols-1 gap-y-6 gap-x-6 sm:grid-cols-6;
 }
 
 .Item {
-    @apply mt-4 ml-6 flex-auto;
+    @apply sm:col-span-full;
+}
+
+.oneThird {
+    @apply sm:col-span-2;
+}
+
+.oneHalf {
+    @apply sm:col-span-3;
+}
+
+.twoThirds {
+    @apply sm:col-span-4;
+}
+
+.empty {
+    @apply hidden sm:block;
 }
