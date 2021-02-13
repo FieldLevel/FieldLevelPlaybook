@@ -9,8 +9,6 @@ export const Default = (args: any) => (
     </Link>
 );
 
-export const Action = () => <Link onClick={() => {}}>Recruiting Guidance</Link>;
-
 export const External = () => (
     <Link external url="https://recruiting.fieldlevel.com">
         Recruiting Guidance

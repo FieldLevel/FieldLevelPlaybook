@@ -41,17 +41,6 @@
     @apply hover:bg-secondary-disabled;
 }
 
-.text {
-    @apply bg-transparent text-interactive-active font-normal border-none shadow-none p-0;
-    @apply hover:text-interactive-hover hover:bg-transparent hover:underline;
-    @apply focus:ring-0 focus:outline-none focus:underline;
-}
-
-.text.disabled {
-    @apply text-disabled underline;
-    @apply hover:text-disabled;
-}
-
 .slim {
     @apply px-4 py-1;
 }

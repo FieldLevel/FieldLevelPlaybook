@@ -7,7 +7,7 @@ import styles from './Button.module.css';
 
 type size = 'slim' | 'large';
 
-type variant = 'primary' | 'plain' | 'text' | 'destructive';
+type variant = 'primary' | 'plain' | 'destructive';
 
 export interface ButtonProps {
     size?: size;
@@ -26,7 +26,6 @@ const sizeStyles: { [key in size]: string } = {
 const variantStyles: { [key in variant]: string } = {
     primary: styles.primary,
     plain: styles.plain,
-    text: styles.text,
     destructive: styles.destructive
 };
 
