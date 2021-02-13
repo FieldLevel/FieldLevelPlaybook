@@ -17,7 +17,7 @@ interface Action {
 type variant = 'success' | 'critical';
 export interface FeedbackProps {
     show: boolean;
-    title?: string;
+    title: string;
     message?: string;
     variant?: variant;
     action?: Action;
@@ -41,7 +41,7 @@ export const Feedback = ({ show, title, message, variant, action, onDismiss }: F
     useTimeout(dismiss, 5000, show);
 
     // Warning for title length
-    if (title && title.length > 40) {
+    if (title.length > 40) {
         console.error('Feedback title should be shorter than 40 characters. Add longer content in message.');
     }
 
