@@ -19,6 +19,9 @@ export type { CheckboxProps } from './Checkbox';
 export { ChoiceGroup } from './ChoiceGroup';
 export type { ChoiceGroupProps } from './ChoiceGroup';
 
+export { Feedback } from './Feedback';
+export type { FeedbackProps } from './Feedback';
+
 export { FormLayout } from './FormLayout';
 export type { FormLayoutProps } from './FormLayout';
 

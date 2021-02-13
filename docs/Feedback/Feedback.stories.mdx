@@ -1,0 +1,44 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { Feedback } from '@fieldlevel/playbook';
+import * as stories from './Feedback.stories.tsx';
+
+<Meta title="Feedback/Feedback" component={Feedback} />
+
+# Feedback
+
+<Canvas>
+    <Story story={stories.Default} name="Default" />
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## With Action
+
+<Canvas>
+    <Story story={stories.WithAction} />
+</Canvas>
+
+## Success
+
+<Canvas>
+    <Story story={stories.Success} />
+</Canvas>
+
+## Success With Action
+
+<Canvas>
+    <Story story={stories.SuccessAction} />
+</Canvas>
+
+## Critical
+
+<Canvas>
+    <Story story={stories.Critical} />
+</Canvas>
+
+## Critical With Action
+
+<Canvas>
+    <Story story={stories.CriticalAction} />
+</Canvas>
