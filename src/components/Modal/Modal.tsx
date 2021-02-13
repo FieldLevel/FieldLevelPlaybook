@@ -7,11 +7,13 @@ import { ButtonGroup } from '../ButtonGroup';
 import { Icon } from '../Icon';
 import { CloseMajor } from '../../icons/Major';
 
+import { useUniqueId } from '../../utilities/use-unique-id';
+
 import styles from './Modal.module.css';
 
-const Header = ({ title }: { title: string }) => {
+const Header = ({ id, title }: { id: string; title: string }) => {
     return (
-        <div className={styles.Header}>
+        <div id={id} className={styles.Header}>
             <Heading>{title}</Heading>
         </div>
     );
@@ -32,6 +34,9 @@ export interface ModalProps {
 }
 
 export const Modal = ({ open, title, onDismiss, primaryAction, secondaryAction, children }: ModalProps) => {
+    const headerId = useUniqueId('ModalHeader');
+    const bodyId = useUniqueId('ModalBody');
+
     const closeContent = (
         <div className={styles.Close}>
             <button onClick={onDismiss}>
@@ -40,7 +45,7 @@ export const Modal = ({ open, title, onDismiss, primaryAction, secondaryAction, 
         </div>
     );
 
-    const headerContent = title ? <Header title={title} /> : null;
+    const headerContent = title && <Header id={headerId} title={title} />;
     const footerContent = (primaryAction || secondaryAction) && (
         <div className={styles.Footer}>
             <ButtonGroup>
@@ -53,11 +58,16 @@ export const Modal = ({ open, title, onDismiss, primaryAction, secondaryAction, 
             </ButtonGroup>
         </div>
     );
-    const bodyContent = <div className={styles.Body}>{children}</div>;
+    const bodyContent = (
+        <div id={bodyId} className={styles.Body}>
+            {children}
+        </div>
+    );
+    const labelBy = title ? headerId : bodyId;
 
     return (
         <DialogOverlay isOpen={open} onDismiss={onDismiss}>
-            <DialogContent className={styles.Content}>
+            <DialogContent className={styles.Content} aria-labelledby={labelBy}>
                 {closeContent}
                 {headerContent}
                 {bodyContent}
