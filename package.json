@@ -10,7 +10,7 @@
   "scripts": {
     "prepare": "yarn run build",
     "build": "node ./scripts/build.js",
-    "lint": "eslint --ext .ts,.tsx src",
+    "lint": "eslint --ext .ts,.tsx src docs",
     "dev": "start-storybook -p 6006 -s static --no-manager-cache --ci",
     "dev-docs": "start-storybook --docs -p 6007 -s static",
     "build-docs": "build-storybook --docs --quiet -o public -s static",

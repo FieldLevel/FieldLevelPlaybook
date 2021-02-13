@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import cx from 'classnames';
-
-import styles from './Feedback.module.css';
 
 import { Icon } from '../Icon';
 import { Button } from '../Button';
 import { CloseMajor } from '../../icons/Major';
 import { ErrorMinor, CheckCircleMinor } from '../../icons/Minor';
+import { useTimeout } from '../../utilities/use-timeout';
+
+import styles from './Feedback.module.css';
 
 interface Action {
     label: string;
@@ -15,7 +16,7 @@ interface Action {
 
 type variant = 'success' | 'critical' | 'condensed';
 export interface FeedbackProps {
-    show?: boolean;
+    show: boolean;
     title?: string;
     message?: string;
     variant?: variant;
@@ -37,6 +38,13 @@ export const Feedback = ({ show, title, message, variant = 'condensed', action, 
     if (isCondensed && message) {
         console.error("Feedback in condensed mode doesn't display message. Use title instead.");
     }
+
+    const dismiss = useCallback(() => {
+        onDismiss && onDismiss();
+    }, [onDismiss]);
+
+    // Dismiss after 5 seconds once shown
+    useTimeout(dismiss, 5000, show);
 
     const feedback = (
         <div className={styles.Feedback}>
