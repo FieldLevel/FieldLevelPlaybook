@@ -60,3 +60,7 @@ export const Type = () => (
         <TextInput label="Number" name="number" type="number" />
     </FormLayout>
 );
+
+export const MaxLength = () => <TextInput label="Headline" name="headline" maxLength={20} />;
+
+export const Multiline = () => <TextInput label="Headline" name="headline" multiline />;

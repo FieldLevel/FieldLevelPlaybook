@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import cx from 'classnames';
 
 import { Icon } from '../Icon';
@@ -36,6 +36,8 @@ export interface TextInputProps {
     action?: Action;
     value?: string;
     placeholder?: string;
+    multiline?: boolean;
+    maxLength?: number;
     disabled?: boolean;
     readonly?: boolean;
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -50,6 +52,8 @@ export const TextInput = ({
     action,
     value,
     placeholder,
+    multiline,
+    maxLength,
     disabled,
     readonly,
     icon,
@@ -101,22 +105,26 @@ export const TextInput = ({
         error && styles.error
     );
 
+    const inputEl = createElement(multiline ? 'textarea' : 'input', {
+        id,
+        type: type || 'text',
+        name,
+        value,
+        placeholder,
+        maxLength,
+        rows: 3,
+        readOnly: readonly,
+        disabled,
+        onChange: handleChange
+    });
+
     return (
         <div className={inputClass}>
             {labelContent}
             {actionContent}
             <div className={styles.Wrapper}>
                 {iconContent}
-                <input
-                    id={id}
-                    type={type || 'text'}
-                    name={name}
-                    value={value}
-                    placeholder={placeholder}
-                    readOnly={readonly}
-                    disabled={disabled}
-                    onChange={handleChange}
-                ></input>
+                {inputEl}
             </div>
             {errorContent}
         </div>

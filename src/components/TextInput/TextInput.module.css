@@ -2,20 +2,25 @@
     @apply relative;
 }
 
-.TextInput input {
-    @apply rounded-md shadow-sm border border-base py-2 px-3 w-full;
+.TextInput input,
+.TextInput textarea {
+    @apply rounded-md shadow-sm border border-base py-2 px-3 w-full max-h-40;
     @apply outline-none focus:ring placeholder-text-muted;
+    min-height: 40px;
 }
 
-.disabled input {
+.disabled input,
+.disabled textarea {
     @apply bg-secondary-disabled text-disabled cursor-default;
 }
 
-.readonly input {
+.readonly input,
+.readonly textarea {
     @apply bg-secondary-disabled cursor-default;
 }
 
-.error input {
+.error input,
+.error textarea {
     @apply border-critical;
 }
 
