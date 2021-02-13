@@ -32,7 +32,16 @@ export const WithLinkAction = () => (
 );
 
 export const WithButtonAction = () => (
-    <TextInput label="Email address" name="email" action={{ label: 'Change', onClick: () => {} }} />
+    <TextInput
+        label="Email address"
+        name="email"
+        action={{
+            label: 'Change',
+            onClick: () => {
+                alert('Action!');
+            }
+        }}
+    />
 );
 
 export const WithError = () => (

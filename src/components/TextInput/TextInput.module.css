@@ -36,6 +36,12 @@
         @apply absolute top-0 right-1;
     }
 
+    .Action button {
+        @apply bg-transparent text-interactive-active font-normal border-none shadow-none p-0;
+        @apply hover:text-interactive-hover hover:bg-transparent hover:underline;
+        @apply focus:ring-0 focus:outline-none focus:underline;
+    }
+
     .Icon {
         @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none;
     }

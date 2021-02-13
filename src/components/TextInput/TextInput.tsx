@@ -73,9 +73,11 @@ export const TextInput = ({
 
     const actionContent = action && (
         <div className={styles.Action}>
-            <Link url={action.url} onClick={action.onClick}>
-                {action.label}
-            </Link>
+            {action.onClick ? (
+                <button onClick={action.onClick}>{action.label}</button>
+            ) : (
+                <Link url={action.url}>{action.label}</Link>
+            )}
         </div>
     );
 
