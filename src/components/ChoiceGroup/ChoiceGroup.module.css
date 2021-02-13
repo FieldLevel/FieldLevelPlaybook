@@ -1,9 +1,7 @@
-@layer components {
-    .Title {
-        @apply block font-bold text-base mb-2;
-    }
+.Title {
+    @apply block font-bold text-base mb-2;
+}
 
-    .Item {
-        @apply mb-2;
-    }
+.Item {
+    @apply mb-2;
 }

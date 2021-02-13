@@ -1,48 +1,46 @@
-@layer components {
-    .TextInput {
-        @apply relative;
-    }
+.TextInput {
+    @apply relative;
+}
 
-    .TextInput input {
-        @apply rounded-md shadow-sm border border-base py-2 px-3 w-full;
-        @apply outline-none focus:ring placeholder-text-muted;
-    }
+.TextInput input {
+    @apply rounded-md shadow-sm border border-base py-2 px-3 w-full;
+    @apply outline-none focus:ring placeholder-text-muted;
+}
 
-    .disabled input {
-        @apply bg-secondary-disabled text-disabled cursor-default;
-    }
+.disabled input {
+    @apply bg-secondary-disabled text-disabled cursor-default;
+}
 
-    .readonly input {
-        @apply bg-secondary-disabled cursor-default;
-    }
+.readonly input {
+    @apply bg-secondary-disabled cursor-default;
+}
 
-    .error input {
-        @apply border-critical;
-    }
+.error input {
+    @apply border-critical;
+}
 
-    .withIcon input {
-        @apply pl-9;
-    }
+.withIcon input {
+    @apply pl-9;
+}
 
-    .Wrapper {
-        @apply relative;
-    }
+.Wrapper {
+    @apply relative;
+}
 
-    .Label {
-        @apply block font-bold text-base mb-1;
-    }
+.Label {
+    @apply block font-bold text-base mb-1;
+}
 
-    .Action {
-        @apply absolute top-0 right-1;
-    }
+.Action {
+    @apply absolute top-0 right-1;
+}
 
-    .Action button {
-        @apply bg-transparent text-interactive-active font-normal border-none shadow-none p-0;
-        @apply hover:text-interactive-hover hover:bg-transparent hover:underline;
-        @apply focus:ring-0 focus:outline-none focus:underline;
-    }
+.Action button {
+    @apply bg-transparent text-interactive-active font-normal border-none shadow-none p-0;
+    @apply hover:text-interactive-hover hover:bg-transparent hover:underline;
+    @apply focus:ring-0 focus:outline-none focus:underline;
+}
 
-    .Icon {
-        @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none;
-    }
+.Icon {
+    @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none;
 }

@@ -1,9 +1,7 @@
-@layer components {
-    .InlineError {
-        @apply flex justify-start;
-    }
+.InlineError {
+    @apply flex justify-start;
+}
 
-    .Message {
-        @apply ml-1 text-critical;
-    }
+.Message {
+    @apply ml-1 text-critical;
 }

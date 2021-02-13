@@ -1,55 +1,53 @@
-@layer components {
-    .Feedback {
-        @apply fixed inset-0 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end;
-    }
+.Feedback {
+    @apply fixed inset-0 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end;
+}
 
-    .Card {
-        @apply max-w-sm w-full bg-foreground-base shadow-lg rounded-lg pointer-events-auto overflow-hidden p-4 flex items-start;
-        @apply border border-base;
-    }
+.Card {
+    @apply max-w-sm w-full bg-foreground-base shadow-lg rounded-lg pointer-events-auto overflow-hidden p-4 flex items-start;
+    @apply border border-base;
+}
 
-    .condensed {
-        @apply items-center p-2 pr-4;
-    }
+.condensed {
+    @apply items-center p-2 pr-4;
+}
 
-    .Icon {
-        @apply flex-shrink-0;
-    }
+.Icon {
+    @apply flex-shrink-0;
+}
 
-    .Content {
-        @apply ml-3 w-0 flex-1;
-    }
+.Content {
+    @apply ml-3 w-0 flex-1;
+}
 
-    .Content button {
-        @apply mt-2;
-    }
+.Content button {
+    @apply mt-2;
+}
 
-    .condensed > .Content {
-        @apply flex justify-between items-center;
-    }
+.condensed > .Content {
+    @apply flex justify-between items-center;
+}
 
-    .condensed > .Content button {
-        @apply mt-0;
-    }
+.condensed > .Content button {
+    @apply mt-0;
+}
 
-    .Title {
-        @apply flex-1 font-bold;
-    }
+.Title {
+    @apply flex-1 font-bold;
+}
 
-    .condensed .Title {
-        @apply py-2;
-    }
+.condensed .Title {
+    @apply py-2;
+}
 
-    .Message {
-        @apply mt-1;
-    }
+.Message {
+    @apply mt-1;
+}
 
-    .Close {
-        @apply ml-4 flex-shrink-0 flex;
-    }
+.Close {
+    @apply ml-4 flex-shrink-0 flex;
+}
 
-    .Close button {
-        @apply rounded inline-flex;
-        @apply focus:outline-none focus:ring focus:ring-offset-2;
-    }
+.Close button {
+    @apply rounded inline-flex;
+    @apply focus:outline-none focus:ring focus:ring-offset-2;
 }
