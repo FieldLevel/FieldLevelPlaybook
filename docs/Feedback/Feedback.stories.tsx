@@ -41,6 +41,50 @@ export const WithAction = () => {
     );
 };
 
+export const WithMessage = () => {
+    const [show, setShow] = useState(false);
+    const toggleShow = useCallback(() => {
+        setShow(!show);
+    }, [show]);
+
+    return (
+        <>
+            <Button onClick={toggleShow}>Show</Button>
+            <Feedback
+                show={show}
+                title="Something!"
+                message="With some more detailed message."
+                onDismiss={toggleShow}
+            />
+        </>
+    );
+};
+
+export const WithMessageAction = () => {
+    const [show, setShow] = useState(false);
+    const toggleShow = useCallback(() => {
+        setShow(!show);
+    }, [show]);
+
+    return (
+        <>
+            <Button onClick={toggleShow}>Show</Button>
+            <Feedback
+                show={show}
+                title="Something!"
+                message="With some more detailed message."
+                onDismiss={toggleShow}
+                action={{
+                    label: 'Undo',
+                    onClick: () => {
+                        alert('Undid!');
+                    }
+                }}
+            />
+        </>
+    );
+};
+
 export const Success = () => {
     const [show, setShow] = useState(false);
     const toggleShow = useCallback(() => {
@@ -61,32 +105,6 @@ export const Success = () => {
     );
 };
 
-export const SuccessAction = () => {
-    const [show, setShow] = useState(false);
-    const toggleShow = useCallback(() => {
-        setShow(!show);
-    }, [show]);
-
-    return (
-        <>
-            <Button onClick={toggleShow}>Show</Button>
-            <Feedback
-                show={show}
-                variant="success"
-                title="Something good!"
-                message="With some more detailed message."
-                action={{
-                    label: 'Undo',
-                    onClick: () => {
-                        alert('Undid!');
-                    }
-                }}
-                onDismiss={toggleShow}
-            />
-        </>
-    );
-};
-
 export const Critical = () => {
     const [show, setShow] = useState(false);
     const toggleShow = useCallback(() => {
@@ -101,32 +119,6 @@ export const Critical = () => {
                 variant="critical"
                 title="Something bad!"
                 message="With some more detailed message."
-                onDismiss={toggleShow}
-            />
-        </>
-    );
-};
-
-export const CriticalAction = () => {
-    const [show, setShow] = useState(false);
-    const toggleShow = useCallback(() => {
-        setShow(!show);
-    }, [show]);
-
-    return (
-        <>
-            <Button onClick={toggleShow}>Show</Button>
-            <Feedback
-                show={show}
-                variant="critical"
-                title="Something bad!"
-                message="With some more detailed message."
-                action={{
-                    label: 'Undo',
-                    onClick: () => {
-                        alert('Undid!');
-                    }
-                }}
                 onDismiss={toggleShow}
             />
         </>

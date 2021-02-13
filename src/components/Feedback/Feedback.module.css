@@ -9,15 +9,15 @@
 }
 
 .condensed {
-    @apply items-center p-2 pr-4;
+    @apply items-center py-2;
 }
 
 .Icon {
-    @apply flex-shrink-0;
+    @apply flex-shrink-0 mr-3;
 }
 
 .Content {
-    @apply ml-3 w-0 flex-1;
+    @apply w-0 flex-1;
 }
 
 .Content button {

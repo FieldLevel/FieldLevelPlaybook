@@ -14,7 +14,7 @@ interface Action {
     onClick?(): void;
 }
 
-type variant = 'success' | 'critical' | 'condensed';
+type variant = 'success' | 'critical';
 export interface FeedbackProps {
     show: boolean;
     title?: string;
@@ -24,20 +24,14 @@ export interface FeedbackProps {
     onDismiss?(): void;
 }
 
-const variantIcon: { [key in variant]: JSX.Element | null } = {
+const variantIcon: { [key in variant]: JSX.Element } = {
     success: <Icon source={CheckCircleMinor} color="success" />,
-    critical: <Icon source={ErrorMinor} color="critical" />,
-    condensed: null
+    critical: <Icon source={ErrorMinor} color="critical" />
 };
 
-export const Feedback = ({ show, title, message, variant = 'condensed', action, onDismiss }: FeedbackProps) => {
-    const iconContent = variantIcon[variant];
-    const isCondensed = variant === 'condensed';
-    const cardStyle = cx(styles.Card, isCondensed && styles.condensed);
-
-    if (isCondensed && message) {
-        console.error("Feedback in condensed mode doesn't display message. Use title instead.");
-    }
+export const Feedback = ({ show, title, message, variant, action, onDismiss }: FeedbackProps) => {
+    const iconContent = variant && variantIcon[variant];
+    const cardStyle = cx(styles.Card, !message && styles.condensed);
 
     const dismiss = useCallback(() => {
         onDismiss && onDismiss();
@@ -46,13 +40,18 @@ export const Feedback = ({ show, title, message, variant = 'condensed', action, 
     // Dismiss after 5 seconds once shown
     useTimeout(dismiss, 5000, show);
 
+    // Warning for title length
+    if (title && title.length > 40) {
+        console.error('Feedback title should be shorter than 40 characters. Add longer content in message.');
+    }
+
     const feedback = (
         <div className={styles.Feedback}>
             <div className={cardStyle}>
                 {iconContent && <div className={styles.Icon}>{iconContent}</div>}
                 <div className={styles.Content}>
                     <p className={styles.Title}>{title}</p>
-                    {!isCondensed && <p className={styles.Message}>{message}</p>}
+                    {message && <p className={styles.Message}>{message}</p>}
                     {action && <Button>{action.label}</Button>}
                 </div>
                 <div className={styles.Close}>
