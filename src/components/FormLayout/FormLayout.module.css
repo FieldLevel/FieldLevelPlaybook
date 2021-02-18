@@ -6,6 +6,10 @@
     @apply sm:col-span-full;
 }
 
+.oneSixth {
+    @apply sm:col-span-1;
+}
+
 .oneThird {
     @apply sm:col-span-2;
 }

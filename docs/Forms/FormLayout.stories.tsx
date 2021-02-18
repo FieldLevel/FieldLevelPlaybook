@@ -36,10 +36,10 @@ export const RowWithEmpty = () => (
             <FormLayout.Item size="oneThird">
                 <TextInput label="City" name="city" />
             </FormLayout.Item>
-            <FormLayout.Item size="oneThird">
+            <FormLayout.Item size="oneSixth">
                 <TextInput label="State" name="state" />
             </FormLayout.Item>
-            <FormLayout.Item size="oneThird">
+            <FormLayout.Item size="oneSixth">
                 <TextInput label="Zip" name="zip" />
             </FormLayout.Item>
         </FormLayout.Row>

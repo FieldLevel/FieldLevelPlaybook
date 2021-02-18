@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './FormLayout.module.css';
 
-type Size = 'oneThird' | 'oneHalf' | 'twoThirds' | 'full';
+type Size = 'oneSixth' | 'oneThird' | 'oneHalf' | 'twoThirds' | 'full';
 interface ItemProps {
     size: Size;
     empty?: boolean;
@@ -11,6 +11,7 @@ interface ItemProps {
 }
 
 const sizeStyles: { [key in Size]: string } = {
+    oneSixth: styles.oneSixth,
     oneThird: styles.oneThird,
     oneHalf: styles.oneHalf,
     twoThirds: styles.twoThirds,
@@ -28,6 +29,7 @@ interface RowProps {
 }
 
 const sizeSpanMap: { [key in Size]: number } = {
+    oneSixth: 1,
     oneThird: 2,
     oneHalf: 3,
     twoThirds: 4,
@@ -45,12 +47,21 @@ const getRowFill = (children: RowChildren): JSX.Element | null => {
         case 0:
         case 6:
             return null;
+        case 1:
+            return (
+                <>
+                    <Item size="oneSixth" empty />
+                    <Item size="twoThirds" empty />
+                </>
+            );
         case 2:
             return <Item size="twoThirds" empty />;
         case 3:
             return <Item size="oneHalf" empty />;
         case 4:
             return <Item size="oneThird" empty />;
+        case 5:
+            return <Item size="oneSixth" empty />;
         default:
             console.error('FormLayout.Row has an invalid combination of Item sizes.');
             return null;
@@ -68,20 +79,26 @@ const getEvenSize = (children: RowChildren): Size => {
             return 'oneHalf';
         case 3:
             return 'oneThird';
+        case 4:
+        case 5:
+            console.error(`FormLayout.Row cannot evenly space ${itemCount} Items.`);
+            return 'full';
+        case 6:
+            return 'oneSixth';
         default:
-            console.error('FormLayout.Row cannot have more than 3 Items.');
+            console.error('FormLayout.Row cannot have more than 6 Items.');
             return 'full';
     }
 };
 
 const Row = ({ children }: RowProps) => {
     const rowFill = getRowFill(children);
-    const evenSize = getEvenSize(children);
 
     const itemsContent = Children.map(children, (child) => {
         if (child.type === Item) {
             return child;
         }
+        const evenSize = getEvenSize(children);
         return <Item size={evenSize}>{child}</Item>;
     });
     return (
@@ -107,7 +124,7 @@ interface FormLayoutChildren {
 
 export const FormLayout = ({ children }: FormLayoutProps & FormLayoutChildren) => {
     const content = Children.map(children, (child) => {
-        if (child.type === Row) {
+        if (!child || child.type === Row) {
             return child;
         }
         return <Item size="full">{child}</Item>;
