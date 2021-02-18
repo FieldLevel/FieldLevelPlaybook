@@ -1,17 +1,10 @@
 import React, { Children } from 'react';
+import cx from 'classnames';
 
 import { Heading } from '../Heading';
 import { Subheading } from '../Subheading';
 
 import styles from './Card.module.css';
-
-const Title = ({ title }: { title: string }) => {
-    return (
-        <div className={styles.Title}>
-            <Heading>{title}</Heading>
-        </div>
-    );
-};
 
 const SectionTitle = ({ title }: { title: string }) => {
     return (
@@ -37,8 +30,22 @@ const Section = ({ title, children }: SectionProps) => {
     );
 };
 
+const Header = ({ title, subtitle }: { title: string; subtitle?: string }) => {
+    const subtitleContent = subtitle && <p className={styles.Subtitle}>{subtitle}</p>;
+    return (
+        <div className={styles.Header}>
+            <Heading>{title}</Heading>
+            {subtitleContent}
+        </div>
+    );
+};
+
+type spacing = 'none' | 'tight' | 'loose';
+
 export interface CardProps {
     title?: string;
+    subtitle?: string;
+    spacing?: spacing;
     children?: React.ReactNode;
 }
 
@@ -46,8 +53,15 @@ interface CardChildren {
     Section?: typeof Section;
 }
 
-export const Card = ({ title, children }: CardProps & CardChildren) => {
-    const titleContent = title && <Title title={title} />;
+const spacingStyles: { [s in spacing]: string } = {
+    none: styles.spaceNone,
+    tight: styles.spaceTight,
+    loose: styles.spaceLoose
+};
+
+export const Card = ({ title, subtitle, spacing, children }: CardProps & CardChildren) => {
+    const headerContent = title && <Header title={title} subtitle={subtitle} />;
+    const cardStyle = cx(styles.Card, spacing && spacingStyles[spacing]);
 
     const content = Children.map(children, (child) => {
         if (!React.isValidElement<React.ReactNode>(child)) {
@@ -60,8 +74,8 @@ export const Card = ({ title, children }: CardProps & CardChildren) => {
     });
 
     return (
-        <div className={styles.Card}>
-            {titleContent}
+        <div className={cardStyle}>
+            {headerContent}
             {content}
         </div>
     );

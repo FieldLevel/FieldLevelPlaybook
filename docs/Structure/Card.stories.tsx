@@ -11,6 +11,12 @@ export const Default = (args: any) => (
 
 export const NoTitle = () => <Card>This card has no title.</Card>;
 
+export const Subtitle = () => (
+    <Card title="Basic Card" subtitle="With some subtitle content">
+        This card has both a title and a subtitle!
+    </Card>
+);
+
 export const MultipleSections = () => (
     <Card title="Multiple Sections">
         <Card.Section>Section 1</Card.Section>
@@ -23,4 +29,18 @@ export const SectionTitles = () => (
         <Card.Section title="Section 1">Section 1 Content</Card.Section>
         <Card.Section title="Section 2">Section 2 Content</Card.Section>
     </Card>
+);
+
+export const Spacing = () => (
+    <>
+        <Card title="None" spacing="none">
+            No spacing
+        </Card>
+        <Card title="Tight" spacing="tight">
+            Tight spacing
+        </Card>
+        <Card title="Loose" spacing="loose">
+            Loose spacing
+        </Card>
+    </>
 );
