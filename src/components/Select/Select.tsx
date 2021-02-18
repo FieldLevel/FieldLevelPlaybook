@@ -17,14 +17,14 @@ export interface SelectProps {
     placeholder?: string;
     disabled?: boolean;
     error?: string;
-    onChange?(value: string): void;
+    onChange?(value: string, name: string): void;
 }
 
 export const Select = ({ options, name, value, label, placeholder, disabled, error, onChange }: SelectProps) => {
     const id = useUniqueId(name);
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        onChange && onChange(event.currentTarget.value);
+        onChange && onChange(event.currentTarget.value, event.currentTarget.name);
     };
 
     const labelContent = label && (
