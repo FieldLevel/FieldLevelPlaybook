@@ -1,5 +1,5 @@
 .Title {
-    @apply block font-bold text-base mb-2;
+    @apply block font-bold text-base text-body border-none mb-2 w-auto;
 }
 
 .Item {
