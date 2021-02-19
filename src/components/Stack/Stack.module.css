@@ -2,6 +2,10 @@
     @apply flex flex-wrap items-stretch m-0 space-x-4 space-y-0;
 }
 
+.Stack + .Stack {
+    @apply mt-4;
+}
+
 .spaceNone {
     @apply space-x-0 space-y-0;
 }
