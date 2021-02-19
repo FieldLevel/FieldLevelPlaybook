@@ -1,33 +1,37 @@
 .Stack {
-    @apply flex flex-wrap items-stretch mt-0 ml-0;
+    @apply flex flex-wrap items-stretch m-0 space-x-4 space-y-0;
 }
 
-.Stack > .Item {
-    @apply mt-4 ml-4;
+.spaceNone {
+    @apply space-x-0 space-y-0;
+}
+
+.spaceTight {
+    @apply space-x-2 space-y-0;
+}
+
+.spaceLoose {
+    @apply space-x-6 space-y-0;
 }
 
 .vertical {
-    @apply flex-col ml-0;
+    @apply flex-col space-y-4 space-x-0;
 }
 
-.vertical > .Item {
-    @apply ml-0;
+.spaceNone.vertical {
+    @apply space-y-0 space-x-0;
+}
+
+.spaceTight.vertical {
+    @apply space-y-2 space-x-0;
+}
+
+.spaceLoose.vertical {
+    @apply space-y-6 space-x-0;
 }
 
 .noWrap {
     @apply flex-nowrap;
-}
-
-.spaceNone > .Item {
-    @apply mt-0 ml-0 max-w-full;
-}
-
-.spaceTight > .Item {
-    @apply mt-2 ml-2 max-w-full;
-}
-
-.spaceLoose > .Item {
-    @apply mt-6 ml-6 max-w-full;
 }
 
 .alignStart {
