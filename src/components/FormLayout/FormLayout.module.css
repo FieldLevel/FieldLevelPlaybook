@@ -1,27 +1,28 @@
 .FormLayout {
-    @apply grid grid-cols-1 gap-y-6 gap-x-6 sm:grid-cols-6;
+    @apply grid grid-cols-1 gap-y-6 gap-x-6;
+    @apply large:grid-cols-6;
 }
 
 .Item {
-    @apply sm:col-span-full;
+    @apply large:col-span-full;
 }
 
 .oneSixth {
-    @apply sm:col-span-1;
+    @apply large:col-span-1;
 }
 
 .oneThird {
-    @apply sm:col-span-2;
+    @apply large:col-span-2;
 }
 
 .oneHalf {
-    @apply sm:col-span-3;
+    @apply large:col-span-3;
 }
 
 .twoThirds {
-    @apply sm:col-span-4;
+    @apply large:col-span-4;
 }
 
 .empty {
-    @apply hidden sm:block;
+    @apply hidden large:block;
 }

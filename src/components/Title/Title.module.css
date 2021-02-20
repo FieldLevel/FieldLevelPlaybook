@@ -4,7 +4,7 @@
     line-height: 1.75rem; /* 28px */
 }
 
-@screen lg {
+@screen large {
     .Title {
         font-size: 1.5rem; /* 24px */
         line-height: 2rem; /* 32px */
@@ -16,7 +16,7 @@
     line-height: 1.75rem; /* 28px */
 }
 
-@screen lg {
+@screen large {
     .small {
         font-size: 1.25rem; /* 20px */
         line-height: 1.75rem; /* 28px */
@@ -28,7 +28,7 @@
     line-height: 2rem; /* 32px */
 }
 
-@screen lg {
+@screen large {
     .large {
         font-size: 1.875rem; /* 30px */
         line-height: 2.25rem; /* 36px */
@@ -40,7 +40,7 @@
     line-height: 2.25rem; /* 36px */
 }
 
-@screen lg {
+@screen large {
     .extraLarge {
         font-size: 3rem; /* 48px */
         line-height: 1; /* 48px */

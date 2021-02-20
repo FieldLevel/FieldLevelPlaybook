@@ -4,6 +4,16 @@ const colors = require('tailwindcss/colors');
 module.exports = {
     darkMode: false,
     theme: {
+        screens: {
+            small: '576px',
+            medium: '768px',
+            large: '992px',
+            xlarge: '1200px'
+        },
+        container: {
+            center: true,
+            padding: '1rem'
+        },
         fontSize: {
             'body-sm': ['0.75rem', '1.25rem'],
             body: ['0.875rem', '1.25rem'],
