@@ -1,3 +1,7 @@
+.Overlay {
+    z-index: 9998; /* consider removing this once we clean up the z-index wars in the app */
+}
+
 .Content {
     @apply relative flex flex-col bg-foreground-base text-left overflow-hidden shadow-xl p-0 w-full h-screen m-0;
     @apply large:rounded-lg large:m-auto large:mt-40 large:max-w-screen-small large:max-h-96 large:h-auto;

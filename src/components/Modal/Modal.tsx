@@ -66,7 +66,7 @@ export const Modal = ({ open, title, onDismiss, primaryAction, secondaryAction, 
     const labelBy = title ? headerId : bodyId;
 
     return (
-        <DialogOverlay isOpen={open} onDismiss={onDismiss}>
+        <DialogOverlay className={styles.Overlay} isOpen={open} onDismiss={onDismiss}>
             <DialogContent className={styles.Content} aria-labelledby={labelBy}>
                 {closeContent}
                 {headerContent}
