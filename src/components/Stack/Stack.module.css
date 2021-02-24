@@ -22,6 +22,10 @@
     @apply flex-col space-y-4 space-x-0;
 }
 
+.full {
+    @apply w-full;
+}
+
 .spaceNone.vertical {
     @apply space-y-0 space-x-0;
 }

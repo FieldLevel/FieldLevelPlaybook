@@ -24,6 +24,7 @@ export interface StackProps {
     align?: align;
     distribute?: distribute;
     vertical?: boolean;
+    full?: boolean;
     noWrap?: boolean;
     children?: React.ReactNode;
 }
@@ -52,14 +53,15 @@ interface StackChildren {
     Item?: typeof Item;
 }
 
-export const Stack = ({ spacing, align, distribute, vertical, noWrap, children }: StackProps & StackChildren) => {
+export const Stack = ({ spacing, align, distribute, vertical, noWrap, full, children }: StackProps & StackChildren) => {
     const className = cx(
         styles.Stack,
         spacing && spacingStyles[spacing],
         align && alignStyles[align],
         distribute && distributeStyles[distribute],
         vertical && styles.vertical,
-        noWrap && styles.noWrap
+        noWrap && styles.noWrap,
+        full && styles.full
     );
 
     const content = Children.map(children, (child) => {
