@@ -17,14 +17,10 @@
         @apply text-body text-base;
     }
 
-    a,
-    a:visited {
+    a {
         @apply text-interactive-active no-underline;
         @apply focus:outline-none focus:underline;
-    }
-
-    a:hover {
-        @apply text-interactive-hover underline;
+        @apply hover:text-interactive-hover hover:underline;
     }
 
     b,
