@@ -46,6 +46,9 @@ export type { RadioButtonProps } from './RadioButton';
 export { Select } from './Select';
 export type { SelectProps } from './Select';
 
+export { Spinner } from './Spinner';
+export type { SpinnerProps } from './Spinner';
+
 export { Subheading } from './Subheading';
 export type { SubheadingProps } from './Subheading';
 

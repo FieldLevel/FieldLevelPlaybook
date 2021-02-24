@@ -1,0 +1,18 @@
+.Spinner {
+}
+
+.Spinner svg {
+    @apply h-10 w-10;
+}
+
+.small svg {
+    @apply h-5 w-5;
+}
+
+.colorPrimary {
+    @apply fill-icon-highlight;
+}
+
+.colorSecondary {
+    @apply fill-background-highlight;
+}
