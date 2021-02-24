@@ -139,6 +139,9 @@ module.exports = {
             current: 'currentColor',
             icon: {
                 ...theme('colors.icon')
+            },
+            background: {
+                ...theme('colors.background')
             }
         })
     },
