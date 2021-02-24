@@ -528,9 +528,10 @@ Add the correct display in Chrome and Safari.
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-    img,
+    /* Tailwind opt-out
+    /* img,
     video {
         max-width: 100%;
         height: auto;
-    }
+    } */
 }
