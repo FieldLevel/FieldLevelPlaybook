@@ -1,23 +1,11 @@
 .ButtonGroup {
-    @apply flex flex-wrap items-center -mt-4 -ml-4;
-}
-
-.Item {
-    @apply mt-4 ml-4;
+    @apply flex flex-wrap items-center space-x-3;
 }
 
 .tight {
-    @apply -mt-2 -ml-2;
-}
-
-.tight > .Item {
-    @apply mt-2 ml-2;
+    @apply space-x-2;
 }
 
 .loose {
-    @apply -mt-6 -ml-6;
-}
-
-.loose > .Item {
-    @apply mt-6 ml-6;
+    @apply space-x-4;
 }

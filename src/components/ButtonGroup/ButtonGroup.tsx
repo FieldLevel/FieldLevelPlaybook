@@ -1,15 +1,7 @@
-import React, { Children } from 'react';
+import React from 'react';
 import cx from 'classnames';
 
 import styles from './ButtonGroup.module.css';
-
-interface ItemProps {
-    children?: React.ReactNode;
-}
-
-const Item = ({ children }: ItemProps) => {
-    return <div className={styles.Item}>{children}</div>;
-};
 
 type spacing = 'tight' | 'loose';
 
@@ -25,7 +17,6 @@ const spacingStyles: { [key in spacing]: string } = {
 
 export const ButtonGroup = ({ spacing, children }: ButtonGroupProps) => {
     const className = cx(styles.ButtonGroup, spacing && spacingStyles[spacing]);
-    const content = Children.map(children, (child) => <Item>{child}</Item>);
 
-    return <div className={className}>{content}</div>;
+    return <div className={className}>{children}</div>;
 };
