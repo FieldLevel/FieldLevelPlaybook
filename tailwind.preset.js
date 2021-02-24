@@ -148,7 +148,11 @@ module.exports = {
     corePlugins: {
         preflight: false,
         lineHeight: false,
-        fontFamily: false
+        fontFamily: false,
+        textOpacity: false,
+        backgroundOpacity: false,
+        borderOpacity: false,
+        divideOpacity: false
     },
     variants: {
         extend: {
