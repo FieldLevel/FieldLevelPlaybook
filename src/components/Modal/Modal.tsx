@@ -21,6 +21,7 @@ const Header = ({ id, title }: { id: string; title: string }) => {
 
 interface Action {
     content?: string;
+    disabled?: boolean;
     onAction?(): void;
 }
 
@@ -49,9 +50,13 @@ export const Modal = ({ open, title, onDismiss, primaryAction, secondaryAction, 
     const footerContent = (primaryAction || secondaryAction) && (
         <div className={styles.Footer}>
             <ButtonGroup>
-                {secondaryAction && <Button onClick={secondaryAction.onAction}>{secondaryAction.content}</Button>}
+                {secondaryAction && (
+                    <Button onClick={secondaryAction.onAction} disabled={secondaryAction.disabled}>
+                        {secondaryAction.content}
+                    </Button>
+                )}
                 {primaryAction && (
-                    <Button variant="primary" onClick={primaryAction.onAction}>
+                    <Button variant="primary" disabled={primaryAction.disabled} onClick={primaryAction.onAction}>
                         {primaryAction.content}
                     </Button>
                 )}
