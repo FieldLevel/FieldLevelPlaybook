@@ -3,42 +3,50 @@
     @apply focus:outline-none focus:ring;
     @apply bg-secondary-base text-base border-base border;
     @apply hover:bg-secondary-hovered;
+    @apply active:bg-secondary-pressed;
 }
 
 .disabled {
     @apply cursor-default;
     @apply bg-secondary-disabled text-muted;
     @apply hover:bg-secondary-disabled;
+    @apply active:bg-secondary-disabled;
 }
 
 .primary {
     @apply bg-primary-base text-dark border-none;
     @apply hover:bg-primary-hovered;
+    @apply active:bg-primary-pressed;
 }
 
 .primary.disabled {
     @apply bg-primary-disabled text-muted;
     @apply hover:bg-primary-disabled;
+    @apply active:bg-primary-disabled;
 }
 
 .destructive {
     @apply bg-critical-base text-dark border-none;
     @apply hover:bg-critical-hovered;
+    @apply active:bg-critical-pressed;
 }
 
 .destructive.disabled {
     @apply bg-critical-disabled text-muted;
     @apply hover:bg-critical-disabled;
+    @apply active:bg-critical-disabled;
 }
 
 .plain {
     @apply bg-secondary-base shadow-none border-none;
     @apply hover:bg-secondary-hovered;
+    @apply active:bg-secondary-pressed;
 }
 
 .plain.disabled {
     @apply bg-secondary-disabled text-muted;
     @apply hover:bg-secondary-disabled;
+    @apply active:bg-secondary-disabled;
 }
 
 .slim {
