@@ -36,7 +36,7 @@ module.exports = {
                 warning: colors.amber[900],
                 highlight: colors.blue[900],
                 success: colors.emerald[900],
-                dark: colors.white
+                'on-dark': colors.white
             },
             interactive: {
                 active: colors.lightBlue[700],
@@ -95,14 +95,13 @@ module.exports = {
             },
             icon: {
                 base: colors.coolGray[600],
-                'base-hovered': colors.coolGray[800],
-                'base-pressed': colors.coolGray[700],
                 disabled: colors.coolGray[300],
                 muted: colors.coolGray[400],
                 critical: colors.red[800],
                 warning: colors.amber[800],
                 highlight: colors.blue[800],
-                success: colors.emerald[700]
+                success: colors.emerald[700],
+                'on-dark': colors.white
             }
         },
         textColor: (theme) => ({

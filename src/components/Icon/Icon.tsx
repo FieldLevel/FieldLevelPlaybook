@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './Icon.module.css';
 
-type color = 'current' | 'muted' | 'critical' | 'warning' | 'highlight' | 'success';
+type color = 'current' | 'muted' | 'critical' | 'warning' | 'highlight' | 'success' | 'onDark';
 
 export interface IconProps {
     source: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -16,7 +16,8 @@ const colorStyles: { [key in color]: string } = {
     critical: styles.critical,
     warning: styles.warning,
     highlight: styles.highlight,
-    success: styles.success
+    success: styles.success,
+    onDark: styles.onDark
 };
 
 export const Icon = ({ source, color }: IconProps) => {

@@ -14,7 +14,7 @@
 }
 
 .primary {
-    @apply bg-primary-base text-dark border-none;
+    @apply bg-primary-base text-on-dark border-none;
     @apply hover:bg-primary-hovered;
     @apply active:bg-primary-pressed;
 }
@@ -26,7 +26,7 @@
 }
 
 .destructive {
-    @apply bg-critical-base text-dark border-none;
+    @apply bg-critical-base text-on-dark border-none;
     @apply hover:bg-critical-hovered;
     @apply active:bg-critical-pressed;
 }

@@ -29,3 +29,7 @@
 .success {
     @apply fill-icon-success;
 }
+
+.onDark {
+    @apply fill-icon-on-dark;
+}
