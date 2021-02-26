@@ -21,3 +21,15 @@ export const Released = ({ version }) => <Badge type="success">Released in v{ver
 export const Deprecated = ({ version }) => <Badge type="critical">Deprecated in v{version}</Badge>;
 
 export const Planned = () => <Badge type="muted">Planned</Badge>;
+
+export const TextColor = ({ name, dark }) => (
+    <div className={cx('block bg-transparent h-6 w-18 text-center rounded', dark && 'bg-primary-base', name)}>
+        Example
+    </div>
+);
+
+export const BgColor = ({ name }) => <div className={cx('block h-6 w-16 rounded', name)}></div>;
+
+export const BorderColor = ({ name }) => (
+    <div className={cx('block h-6 w-16 border-2 bg-background-base rounded', name)}></div>
+);

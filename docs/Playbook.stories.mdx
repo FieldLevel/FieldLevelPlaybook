@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Playbook" />
+
+# FieldLevel Playbook
+
+Playbook is FieldLevel's product language. **A shared vocabulary and system for design that enables developers and designers
+to build better faster.**
+
+Playbook attempts to strike a balance between constraints and flexibility to make it efficient to deliver a consistent product
+experience for all FieldLevel users. It does so by providing a set of common presentional components built on top of a custom
+configuration of [Tailwind CSS](https://www.tailwindcss.com). Product teams are able to use components to move quickly when building
+new user experiences, but also have access to the same low level utility classes that Playbook was built with when more customization
+is required.
+
+## Components
+
+React components. Variations with clear guidance. [Component status](/?path=/story/status--page)
+
+```
+import { Card, Button } from @fieldlevel/playbook;
+
+const HelloCard = () => (
+    <Card title="Hello world!">
+        <Button>Hi Playbook!</Button>
+    </Card>
+);
+```
+
+## Tailwind Utility Classes
+
+There are two ways to use the Tailwind utility classes.
+
+**By class names on an element.** Use this method while initially prototyping component styles or when semantically naming
+an element would be overkill. Use sparingly since a long concatenation of classes in markup can be more difficult to read
+and the semantic intention of the element can be lost when revisiting in the future.
+
+```
+<div className="text-base font-bold">Example</div>
+```
+
+**Via @apply directive in a CSS file.** Use this method to. All Playbook components are built
+
+```
+.StrongText {
+    @apply text-base font-bold;
+}
+```
+
+### **[Colors](/?path=/story/css-utilities-colors--page)**
