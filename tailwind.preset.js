@@ -156,7 +156,9 @@ module.exports = {
     variants: {
         extend: {
             fill: ['hover', 'active'],
-            backgroundColor: ['active']
+            backgroundColor: ['active'],
+            outline: ['active'],
+            boxShadow: ['active']
         }
     }
 };
