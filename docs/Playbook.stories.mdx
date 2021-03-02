@@ -7,15 +7,21 @@ import { Meta } from '@storybook/addon-docs/blocks';
 Playbook is FieldLevel's product language. **A shared vocabulary and system for design that enables developers and designers
 to build better faster.**
 
-Playbook attempts to strike a balance between constraints and flexibility to make it efficient to deliver a consistent product
-experience for all FieldLevel users. It does so by providing a set of common presentional components built on top of a custom
-configuration of [Tailwind CSS](https://www.tailwindcss.com). Product teams are able to use components to move quickly when building
-new user experiences, but also have access to the same low level utility classes that Playbook was built with when more customization
-is required.
+Playbook attempts to strike a balance between constraints and flexibility and make it efficient to deliver a consistent product
+experience for all FieldLevel users. It provides a set of common presentional components built on top of a custom configuration
+of [Tailwind CSS](https://www.tailwindcss.com). Product teams are able to use components to move quickly when building new user
+experiences, but also have access to the same low level utility classes that Playbook was built with when more customization is
+required.
 
 ## Components
 
-React components. Variations with clear guidance. [Component status](/?path=/story/status--page)
+Common presentional patterns are encapsulated into a collection of React components with distinct opinionated variations and
+clear usage guidance. The majority of product experiences should be built using these components and any changes to components
+should be made in a thoughtful and collaborative manner. Overriding or extending the style of Playbook components should be done
+only when absolutely necessary since it makes it difficult to anticipate the impact of changes in the future and makes the system
+harder to reason about.
+
+See the [Component status](/?path=/story/status--page) page for a list of existing and planned components.
 
 ```
 import { Card, Button } from @fieldlevel/playbook;
@@ -29,7 +35,18 @@ const HelloCard = () => (
 
 ## Tailwind Utility Classes
 
-There are two ways to use the Tailwind utility classes.
+When you need more flexibility to build one-off experiences or have a desired product experience that can't be solved with existing
+components, you can style components using the same Tailwind utility classes that were used to build Playbook. There are two ways to
+use the Tailwind utility classes:
+
+**Via @apply directive in a CSS file.** Use this method to give an element a semantic class name and to make component behavior that
+impacts visual style easier to read and reason about. All Playbook components are built with this method.
+
+```
+.StrongText {
+    @apply text-base font-bold;
+}
+```
 
 **By class names on an element.** Use this method while initially prototyping component styles or when semantically naming
 an element would be overkill. Use sparingly since a long concatenation of classes in markup can be more difficult to read
@@ -39,12 +56,14 @@ and the semantic intention of the element can be lost when revisiting in the fut
 <div className="text-base font-bold">Example</div>
 ```
 
-**Via @apply directive in a CSS file.** Use this method to. All Playbook components are built
+Most of the default Tailwind CSS utility classes are available to be used as the [official documentation](https://tailwindcss.com/docs)
+describes. Our custom Tailwind configuration has the following exceptions:
 
-```
-.StrongText {
-    @apply text-base font-bold;
-}
-```
+-   **[Colors](/?path=/story/css-utilities-colors--page)**: **Text color**, **background color** and **border color** utilities draw from
+    a limited color palette and are named for semantic usage rather than color shade.
 
-### **[Colors](/?path=/story/css-utilities-colors--page)**
+-   **[Typography](/?path=/story/css-utilities-typography--page)**: Only a limited set of text **size** and **weight** is available and
+    utilities to modify **line-height**, **text opacity** and **font family** have been disabled.
+
+-   **[Breakpoints](/?path=/docs/css-utilities-breakpoints--page)**: Breakpoint widths have been modified to match what is already being
+    used in the FieldLevel app and have full-word names instead of abbreviations.
