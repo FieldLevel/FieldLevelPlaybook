@@ -71,7 +71,8 @@ module.exports = {
                 highlight: colors.blue[400],
                 'highlight-muted': colors.blue[200],
                 success: colors.emerald[500],
-                'success-muted': colors.emerald[200]
+                'success-muted': colors.emerald[200],
+                primary: colors.lightBlue[700]
             },
             background: {
                 base: colors.coolGray[100],
@@ -149,7 +150,6 @@ module.exports = {
         lineHeight: false,
         fontFamily: false,
         textOpacity: false,
-        backgroundOpacity: false,
         borderOpacity: false,
         divideOpacity: false
     },
@@ -157,6 +157,7 @@ module.exports = {
         extend: {
             fill: ['hover', 'active'],
             backgroundColor: ['active'],
+            backgroundOpacity: ['active'],
             outline: ['active'],
             boxShadow: ['active']
         }

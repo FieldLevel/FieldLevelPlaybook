@@ -29,6 +29,9 @@ export const Disabled = () => (
         <Button variant="primary" disabled>
             Primary
         </Button>
+        <Button variant="destructive" disabled>
+            Destructive
+        </Button>
         <Button variant="plain" disabled>
             Plain
         </Button>

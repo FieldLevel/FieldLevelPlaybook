@@ -1,16 +1,9 @@
 .Button {
-    @apply inline-flex rounded shadow-sm m-0 px-4 py-2 cursor-pointer text-center font-bold select-none no-underline;
+    @apply inline-flex rounded shadow-none m-0 px-4 py-2 cursor-pointer text-center font-bold select-none no-underline;
     @apply focus:outline-none focus:ring;
-    @apply bg-secondary-base text-base border-base border;
-    @apply hover:bg-secondary-hovered;
-    @apply active:bg-secondary-pressed;
-}
-
-.disabled {
-    @apply cursor-default;
-    @apply bg-secondary-disabled text-muted;
-    @apply hover:bg-secondary-disabled;
-    @apply active:bg-secondary-disabled;
+    @apply border-primary text-interactive-active bg-transparent border;
+    @apply hover:bg-primary-base hover:bg-opacity-5;
+    @apply active:bg-primary-base active:bg-opacity-10;
 }
 
 .primary {
@@ -19,32 +12,39 @@
     @apply active:bg-primary-pressed;
 }
 
-.primary.disabled {
-    @apply bg-primary-disabled text-muted;
-    @apply hover:bg-primary-disabled;
-    @apply active:bg-primary-disabled;
-}
-
 .destructive {
     @apply bg-critical-base text-on-dark border-none;
     @apply hover:bg-critical-hovered;
     @apply active:bg-critical-pressed;
 }
 
+.plain {
+    @apply text-interactive-active bg-transparent border-none;
+    @apply hover:bg-primary-base hover:bg-opacity-5;
+    @apply active:bg-primary-base active:bg-opacity-10;
+}
+
+.disabled {
+    @apply cursor-default;
+    @apply bg-transparent border-muted text-disabled;
+    @apply hover:bg-transparent;
+    @apply active:bg-transparent;
+}
+
+.primary.disabled {
+    @apply bg-primary-disabled text-disabled;
+    @apply hover:bg-primary-disabled;
+    @apply active:bg-primary-disabled;
+}
+
 .destructive.disabled {
-    @apply bg-critical-disabled text-muted;
+    @apply bg-critical-disabled text-disabled;
     @apply hover:bg-critical-disabled;
     @apply active:bg-critical-disabled;
 }
 
-.plain {
-    @apply bg-secondary-base shadow-none border-none;
-    @apply hover:bg-secondary-hovered;
-    @apply active:bg-secondary-pressed;
-}
-
 .plain.disabled {
-    @apply bg-secondary-disabled text-muted;
+    @apply bg-secondary-disabled text-disabled;
     @apply hover:bg-secondary-disabled;
     @apply active:bg-secondary-disabled;
 }
