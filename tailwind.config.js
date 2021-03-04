@@ -1,6 +1,6 @@
 module.exports = {
     purge: {
-        content: ['./src/**/*.tsx', './docs/**/*.tsx'],
+        content: ['./src/**/*.tsx', './docs/**/*.tsx', './docs/**/*.mdx'],
         options: {
             safelist: [/^Playbook-/]
         }
