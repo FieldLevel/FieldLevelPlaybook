@@ -19,6 +19,7 @@
 }
 
 .plain {
+    @apply p-2;
     @apply text-interactive-active bg-transparent border-none;
     @apply hover:bg-primary-base hover:bg-opacity-5;
     @apply active:bg-primary-base active:bg-opacity-10;
@@ -44,9 +45,9 @@
 }
 
 .plain.disabled {
-    @apply bg-secondary-disabled text-disabled;
-    @apply hover:bg-secondary-disabled;
-    @apply active:bg-secondary-disabled;
+    @apply bg-transparent text-disabled;
+    @apply hover:bg-transparent;
+    @apply active:bg-transparent;
 }
 
 .slim {
