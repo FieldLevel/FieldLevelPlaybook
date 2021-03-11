@@ -8,6 +8,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Bug fixes
 
+-   Fixed controlled/uncontrolled React error when setting placeholder in `Select` [#1](https://github.com/FieldLevel/FieldLevelPlaybook/pull/1)
+
 ### Documentation
 
 ### Development workflow
