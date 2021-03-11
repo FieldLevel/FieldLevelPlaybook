@@ -48,9 +48,8 @@ export const Select = ({ options, name, value, label, placeholder, disabled, err
                 <select
                     id={id}
                     name={name}
-                    value={value}
+                    value={value || placeholder}
                     disabled={disabled}
-                    defaultValue={placeholder}
                     onChange={handleChange}
                 >
                     {placeholder && (
