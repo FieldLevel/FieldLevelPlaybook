@@ -12,6 +12,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 -   Fixed controlled/uncontrolled React error when setting placeholder in `Select` [#1](https://github.com/FieldLevel/FieldLevelPlaybook/pull/1)
 
+-   Filter out null from RowChildren array in `FormLayout.Row` [#3](https://github.com/FieldLevel/FieldLevelPlaybook/pull/3)
+
 ### Documentation
 
 ### Development workflow
