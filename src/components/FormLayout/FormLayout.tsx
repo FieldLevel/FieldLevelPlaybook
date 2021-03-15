@@ -92,13 +92,17 @@ const getEvenSize = (children: RowChildren): Size => {
 };
 
 const Row = ({ children }: RowProps) => {
-    const rowFill = getRowFill(children);
+    const filteredChildren = Children.toArray(children).filter((child) => {
+        return child != null;
+    });
 
-    const itemsContent = Children.map(children, (child) => {
+    const rowFill = getRowFill(filteredChildren);
+
+    const itemsContent = Children.map(filteredChildren, (child) => {
         if (child.type === Item) {
             return child;
         }
-        const evenSize = getEvenSize(children);
+        const evenSize = getEvenSize(filteredChildren);
         return <Item size={evenSize}>{child}</Item>;
     });
     return (
