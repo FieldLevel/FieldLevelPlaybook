@@ -6,6 +6,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   Added ability for `Select` to accept either an array of string or Options [#2](https://github.com/FieldLevel/FieldLevelPlaybook/pull/2)
+
 ### Bug fixes
 
 -   Fixed controlled/uncontrolled React error when setting placeholder in `Select` [#1](https://github.com/FieldLevel/FieldLevelPlaybook/pull/1)

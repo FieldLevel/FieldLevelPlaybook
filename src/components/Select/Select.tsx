@@ -9,8 +9,23 @@ import { useUniqueId } from '../../utilities/use-unique-id';
 
 import { SelectMinor } from '../../icons/Minor';
 
+interface Option {
+    label: string;
+    value: string;
+}
+
+class MyOption implements Option {
+    label: string;
+    value: string;
+
+    constructor(label: string, value: string) {
+        this.label = label;
+        this.value = value;
+    }
+}
+
 export interface SelectProps {
-    options: string[];
+    options: (Option | string)[];
     name: string;
     value?: string;
     label?: string;
@@ -41,24 +56,28 @@ export const Select = ({ options, name, value, label, placeholder, disabled, err
 
     const selectClass = cx(styles.Select, disabled && styles.disabled, error && styles.error);
 
+    const optionsAsOptions: Option[] = options.map(function (option: Option | string): Option {
+        if (typeof option === 'string') {
+            return new MyOption(option, option);
+        } else {
+            return option;
+        }
+    });
+
     return (
         <div>
             {labelContent}
             <div className={selectClass}>
-                <select
-                    id={id}
-                    name={name}
-                    value={value || placeholder}
-                    disabled={disabled}
-                    onChange={handleChange}
-                >
+                <select id={id} name={name} value={value || placeholder} disabled={disabled} onChange={handleChange}>
                     {placeholder && (
                         <option disabled value={placeholder}>
                             {placeholder}
                         </option>
                     )}
-                    {options.map((option) => (
-                        <option key={option}>{option}</option>
+                    {optionsAsOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
                     ))}
                 </select>
                 <div className={styles.Icon}>
