@@ -7,6 +7,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Enhancements
 
 -   Added ability for `Select` to accept either an array of string or Options [#2](https://github.com/FieldLevel/FieldLevelPlaybook/pull/2)
+-   Add ability for `ChoiceGroup` to accept either an array or single value for selected prop [#4](https://github.com/FieldLevel/FieldLevelPlaybook/pull/4)
 
 ### Bug fixes
 
