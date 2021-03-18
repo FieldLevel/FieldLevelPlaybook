@@ -10,7 +10,7 @@ import styles from './ChoiceGroup.module.css';
 
 interface Choice {
     label: string;
-    value: string;
+    value: string | boolean | number;
     disabled?: boolean;
 }
 
@@ -18,10 +18,10 @@ export interface ChoiceGroupProps {
     title?: string;
     name: string;
     choices: Choice[];
-    selected: string[];
+    selected: (string | boolean | number)[] | (string | boolean | number);
     multiple?: boolean;
     disabled?: boolean;
-    onChange?(selected: string[], name: string): void;
+    onChange?(selected: (string | boolean | number)[] | (string | boolean | number), name: string): void;
     error?: string;
 }
 
@@ -38,16 +38,32 @@ export const ChoiceGroup = ({
     const uniqueName = useUniqueId(name);
     const Control = multiple ? Checkbox : RadioButton;
 
+    if (multiple && !Array.isArray(selected)) {
+        console.warn(
+            'Multiple prop is set to true but Selected value was not an array. Onchange callback will receive an array of values.'
+        );
+    }
+
+    if (!multiple && Array.isArray(selected)) {
+        console.warn(
+            'Multiple prop is set to false but Selected value was an array. Onchange callback will receive only one value and you may get unexpected results.'
+        );
+    }
+
     const isSelected = ({ value }: Choice) => {
-        return selected.includes(value);
+        return Array.isArray(selected) ? selected.includes(value) : selected === value;
     };
 
     const updateSelected = ({ value }: Choice, checked: boolean) => {
         if (checked) {
-            return multiple ? [...selected, value] : [value];
+            if (multiple) {
+                return Array.isArray(selected) ? [...selected, value] : [selected, value];
+            } else {
+                return value;
+            }
         }
 
-        return selected.filter((choice) => choice !== value);
+        return Array.isArray(selected) ? selected.filter((choice) => choice !== value) : selected;
     };
 
     const errorContent = error && (
@@ -63,7 +79,7 @@ export const ChoiceGroup = ({
         };
 
         return (
-            <li key={choice.value} className={styles.Item}>
+            <li key={choice.value.toString()} className={styles.Item}>
                 <Control
                     label={choice.label}
                     name={uniqueName}
