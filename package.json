@@ -1,6 +1,6 @@
 {
   "name": "@fieldlevel/playbook",
-  "version": "1.0.0",
+  "version": "1.1.0-1",
   "license": "UNLICENSED",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
