@@ -12,7 +12,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Bug fixes
 
--   Fix controlled/uncontrolled React error when setting placeholder in `Select` [#1](https://github.com/FieldLevel/FieldLevelPlaybook/pull/1)
+-   Fix controlled/uncontrolled React error when setting placeholder in `Select` [#1](https://github.com/FieldLevel/FieldLevelPlaybook/pull/1) [#5](https://github.com/FieldLevel/FieldLevelPlaybook/pull/5)
 
 -   Filter out null from RowChildren array in `FormLayout.Row` [#3](https://github.com/FieldLevel/FieldLevelPlaybook/pull/3)
 

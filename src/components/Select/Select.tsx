@@ -57,10 +57,10 @@ export const Select = ({ options, name, value, label, placeholder, disabled, err
     const selectClass = cx(styles.Select, disabled && styles.disabled, error && styles.error);
 
     const optionsAsOptions: Option[] = options.map(function (option: Option | string): Option {
-        if (typeof option === 'string') {
-            return new MyOption(option, option);
-        } else {
+        if (typeof option === 'object') {
             return option;
+        } else {
+            return new MyOption(option, option);
         }
     });
 
