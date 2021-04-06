@@ -65,7 +65,7 @@ export const Card = ({ title, subtitle, spacing, children }: CardProps & CardChi
 
     const content = Children.map(children, (child) => {
         if (!React.isValidElement<React.ReactNode>(child)) {
-            return <Section>{child}</Section>;
+            return null;
         }
         if (child.type === Section) {
             return child;
