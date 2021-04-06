@@ -16,6 +16,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 -   Filter out null from RowChildren array in `FormLayout.Row` [#3](https://github.com/FieldLevel/FieldLevelPlaybook/pull/3)
 
+-   Filter out null children from `Card` [#6](https://github.com/FieldLevel/FieldLevelPlaybook/pull/6)
+
 ### Documentation
 
 ### Development workflow
