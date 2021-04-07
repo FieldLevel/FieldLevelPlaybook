@@ -64,9 +64,14 @@ export const Card = ({ title, subtitle, spacing, children }: CardProps & CardChi
     const cardStyle = cx(styles.Card, spacing && spacingStyles[spacing]);
 
     const content = Children.map(children, (child) => {
+        if (child === null || child === undefined) {
+            return null;
+        }
+
         if (!React.isValidElement<React.ReactNode>(child)) {
             return <Section>{child}</Section>;
         }
+
         if (child.type === Section) {
             return child;
         }
