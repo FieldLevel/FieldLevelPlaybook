@@ -1,0 +1,23 @@
+name: Azure Artifacts Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: Set up npmrc
+        run: echo "${{secrets.AZURE_NPM_AUTH}}" > ~/.npmrc
+      - name: Configure yarn
+        run: yarn config set @fieldlevel:registry https://pkgs.dev.azure.com/fieldlevel/_packaging/fieldlevel/npm/registry/
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --ignore-scripts
+      - name: Publish package
+        run: yarn publish --verbose
