@@ -99,10 +99,18 @@ yalc remove @fieldlevel/playbook
 
 ### **Publishing**
 
+Refer to the [Versioning guidelines](VERSIONING.md) for instructions on proper version numbering.
+
 To publish a new version of Playbook run and increment the version number accordingly:
 
 ```
-yarn publish
+yarn version
 ```
 
-Refer to the [Versioning guidelines](VERSIONING.md) for proper versioning instructions.
+Then push the new commit including tags:
+
+```
+git push --follow-tags
+```
+
+Finally, follow the [instructions for creating a new release in Github](https://docs.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) using the tag that you just pushed. A Github Action will execute that builds and publishes the package to Azure Artifacts.
