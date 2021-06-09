@@ -13,12 +13,12 @@ export const Plain = () => <Button variant="plain">Learn More</Button>;
 
 export const Destructive = () => <Button variant="destructive">Delete</Button>;
 
-export const WithIcon = () => <Button icon={AddMinor}>Add Athlete</Button>;
+export const Icon = () => <Button icon={AddMinor}>Add Athlete</Button>;
 
 export const Size = () => (
     <ButtonGroup>
         <Button size="slim">Slim</Button>
-        <Button>Default</Button>
+        <Button>Base</Button>
         <Button size="large">Large</Button>
     </ButtonGroup>
 );

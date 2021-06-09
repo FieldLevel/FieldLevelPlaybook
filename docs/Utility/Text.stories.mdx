@@ -2,15 +2,15 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 import { TextStyle } from '../utils';
 
-<Meta title="CSS Utilities/Typography" />
+<Meta title="CSS Utilities/Text" />
 
-# Typography
+# Text
 
-A more limited set of typography variation is available with more distinct variations available via components with clear usage guidelines.
+Playbook exposes text-related CSS utilities through Tailwind. Use these utilities to customize font size, weight, and letter-spacing. See Titles and text to find all typographic components.
 
-## Text Size
+## Body
 
-Used only for body text variation. Otherwise use typography components.
+Use Body for all general-purpose application text needs. Body comes in base, small, and large variants. All body styles share a common line-height for easy stacking. Use large and small variants sparingly.
 
 |                |                                   |
 | -------------- | --------------------------------- |
@@ -18,9 +18,9 @@ Used only for body text variation. Otherwise use typography components.
 | `text-body`    | <TextStyle name="text-body" />    |
 | `text-body-lg` | <TextStyle name="text-body-lg" /> |
 
-## Font Weight
+## Weight
 
-Bold is available to add some weight variation.
+Text in Playbook comes in two weights: normal and bold. Use bold when you need to create contrast between text of the same size.
 
 |               |                                  |
 | ------------- | -------------------------------- |
@@ -29,7 +29,7 @@ Bold is available to add some weight variation.
 
 ## Letter Spacing
 
-For variation with letter spacing.
+Use letter-spacing to kern custom type. Do not kern text in Titles and Text components.
 
 |                  |                                     |
 | ---------------- | ----------------------------------- |
