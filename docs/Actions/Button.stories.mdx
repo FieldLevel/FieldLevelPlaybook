@@ -7,6 +7,8 @@ import * as stories from './Button.stories.tsx';
 
 # Button
 
+Buttons are identifiable, findable, and clear. They initiate actions or events using language that lets users know what will happen next.
+
 <Canvas>
     <Story story={stories.Default} name="Default" />
 </Canvas>
@@ -15,11 +17,15 @@ import * as stories from './Button.stories.tsx';
 
 ## Basic
 
+Basic should be the most commonly used button in the interface. It is our medium-emphasis button. If the action requires more or less emphasis or is a destructive action, use another style.
+
 <Canvas>
     <Story story={stories.Basic} />
 </Canvas>
 
 ## Primary
+
+Use to highlight the most critical action on the page. Don't use more than one primary button in a section or screen to avoid overloading customers with high emphasis calls-to-action.
 
 <Canvas>
     <Story story={stories.Primary} />
@@ -27,29 +33,39 @@ import * as stories from './Button.stories.tsx';
 
 ## Plain
 
+Use for less important actions or low-emphasis situations. Plain is commonly paired with basic as a secondary CTA.
+
 <Canvas>
     <Story story={stories.Plain} />
 </Canvas>
 
 ## Destructive
 
+Use for actions that could have a destructive effect on customer data, such as delete or remove.
+
 <Canvas>
     <Story story={stories.Destructive} />
 </Canvas>
 
-## With Icon
+## Icon
+
+Use to call attention to a button. Provide a label in most cases. There are few instances where an icon can operate on its own.
 
 <Canvas>
-    <Story story={stories.WithIcon} />
+    <Story story={stories.Icon} />
 </Canvas>
 
 ## Size
+
+Buttons come in three sizes: base, large, and slim. Use base for most usages.
 
 <Canvas>
     <Story story={stories.Size} />
 </Canvas>
 
 ## Disabled
+
+Use when an action is unavailable, or another process must be completed before the button is usable.
 
 <Canvas>
     <Story story={stories.Disabled} />

@@ -14,11 +14,11 @@ export const Spacing = () => (
     <>
         <Card title="Tight">
             <ButtonGroup spacing="tight">
-                <Button>Save</Button>
-                <Button>Cancel</Button>
+                <Button size="slim">Save</Button>
+                <Button size="slim">Cancel</Button>
             </ButtonGroup>
         </Card>
-        <Card title="Default">
+        <Card title="Base">
             <ButtonGroup>
                 <Button>Save</Button>
                 <Button>Cancel</Button>
@@ -26,8 +26,8 @@ export const Spacing = () => (
         </Card>
         <Card title="Loose">
             <ButtonGroup spacing="loose">
-                <Button>Save</Button>
-                <Button>Cancel</Button>
+                <Button size="large">Save</Button>
+                <Button size="large">Cancel</Button>
             </ButtonGroup>
         </Card>
     </>

@@ -10,6 +10,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Documentation
 
+-   Add guidance copy to documentation ([#10](https://github.com/FieldLevel/FieldLevelPlaybook/pull/10))
+
 ### Development workflow
 
 ### Dependency upgrades
