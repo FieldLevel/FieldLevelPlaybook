@@ -2,6 +2,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+    mode: 'jit',
     darkMode: false,
     theme: {
         screens: {
@@ -39,15 +40,15 @@ module.exports = {
                 'on-dark': colors.white
             },
             interactive: {
-                active: colors.lightBlue[700],
-                hover: colors.lightBlue[900],
+                active: colors.sky[700],
+                hover: colors.sky[900],
                 visited: colors.coolGray[800]
             },
             primary: {
-                base: colors.lightBlue[700],
+                base: colors.sky[700],
                 disabled: colors.coolGray[100],
-                hovered: colors.lightBlue[600],
-                pressed: colors.lightBlue[800]
+                hovered: colors.sky[600],
+                pressed: colors.sky[800]
             },
             secondary: {
                 base: colors.white,
@@ -72,7 +73,7 @@ module.exports = {
                 'highlight-muted': colors.blue[200],
                 success: colors.emerald[500],
                 'success-muted': colors.emerald[200],
-                primary: colors.lightBlue[700]
+                primary: colors.sky[700]
             },
             background: {
                 base: colors.coolGray[100],
