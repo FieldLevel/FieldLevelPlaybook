@@ -13,6 +13,7 @@ export interface ButtonProps {
     size?: size;
     variant?: variant;
     disabled?: boolean;
+    submit?: boolean;
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
     children?: React.ReactNode;
     onClick?(): void;
@@ -29,7 +30,7 @@ const variantStyles: { [key in variant]: string } = {
     destructive: styles.destructive
 };
 
-export const Button = ({ size, variant, disabled, icon, onClick, children }: ButtonProps) => {
+export const Button = ({ size, variant, disabled, submit, icon, onClick, children }: ButtonProps) => {
     const className = cx(
         styles.Button,
         size && sizeStyles[size],
@@ -43,7 +44,7 @@ export const Button = ({ size, variant, disabled, icon, onClick, children }: But
     );
 
     return (
-        <button className={className} disabled={disabled} onClick={onClick}>
+        <button className={className} disabled={disabled} type={submit ? 'submit' : 'button'} onClick={onClick}>
             {iconContent}
             {children}
         </button>
