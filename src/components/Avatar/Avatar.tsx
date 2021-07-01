@@ -8,6 +8,7 @@ type size = 'small' | 'large';
 export interface AvatarProps {
     source?: string;
     size?: size;
+    alt?: string;
 }
 
 const sizeStyles: { [key in size]: string } = {
@@ -15,12 +16,12 @@ const sizeStyles: { [key in size]: string } = {
     large: styles.large
 };
 
-export const Avatar = ({ source, size }: AvatarProps) => {
+export const Avatar = ({ source, size, alt }: AvatarProps) => {
     const avatarStyle = cx(styles.Avatar, size && sizeStyles[size]);
 
     return (
         <span role="img" className={avatarStyle}>
-            <img src={source} className={styles.Image} role="presentation" />
+            <img src={source} className={styles.Image} alt={alt} role="presentation" />
         </span>
     );
 };
