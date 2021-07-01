@@ -66,7 +66,7 @@ Storybook is used to develop new Playbook components in a sandboxed environment.
 Start Storybook:
 
 ```
-yarn dev
+yarn start
 ```
 
 ### **Testing locally in a consuming project**
