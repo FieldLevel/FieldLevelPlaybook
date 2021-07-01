@@ -8,6 +8,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   Add alt prop to Avatar and Logo ([#18](https://github.com/FieldLevel/FieldLevelPlaybook/pull/18))
+
 ### Bug fixes
 
 -   Allow null/undefined children in Stack ([#16](https://github.com/FieldLevel/FieldLevelPlaybook/pull/16))
