@@ -17,6 +17,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Dependency upgrades
 
 -   Upgrade to Storybook 6.2.9 and PostCSS 8 ([#11](https://github.com/FieldLevel/FieldLevelPlaybook/pull/11))
+-   Upgrade Tailwind to 2.2.4 and enable JIT mode ([#12](https://github.com/FieldLevel/FieldLevelPlaybook/pull/12))
 
 ### Code quality
 
