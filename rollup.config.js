@@ -5,7 +5,7 @@ import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 import pkg from './package.json';
 
-// TODO: Better custom class names?
+// TODO: standardize this with getLocalIdent in .storybook/main.js
 const generateScopedName = (name, filename) => {
     const file = path.basename(filename, '.module.css');
     return `Playbook-${file}__${name}`;

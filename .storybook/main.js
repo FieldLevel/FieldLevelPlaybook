@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const loaderUtils = require('loader-utils');
 
 module.exports = {
     stories: ['../bullpen/index.ts', '../docs/**/*.stories.mdx'],
@@ -37,8 +38,15 @@ module.exports = {
                         sourceMap: true,
                         importLoaders: 1,
                         modules: {
-                            // TODO: use shared class name creation?
-                            localIdentName: '[name]-[local]_[hash:base64:5]'
+                            // TODO: standardize this with generateScopedName in rollup.config.js
+                            getLocalIdent: (context, localIdentName, localName, options) => {
+                                let interpolatedName = loaderUtils.interpolateName(
+                                    context,
+                                    `Playbook-[name]__${localName}`,
+                                    options
+                                );
+                                return interpolatedName.replace('.module', '');
+                            }
                         }
                     }
                 },
@@ -60,7 +68,10 @@ module.exports = {
                 {
                     loader: 'postcss-loader',
                     options: {
-                        sourceMap: true
+                        sourceMap: true,
+                        postcssOptions: {
+                            config: path.resolve(__dirname, 'postcss.config.js')
+                        }
                     }
                 }
             ]
