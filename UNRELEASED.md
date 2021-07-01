@@ -8,6 +8,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Bug fixes
 
+-   Allow null/undefined children in Stack ([#16](https://github.com/FieldLevel/FieldLevelPlaybook/pull/16))
+
 ### Documentation
 
 -   Add guidance copy to documentation ([#10](https://github.com/FieldLevel/FieldLevelPlaybook/pull/10))
