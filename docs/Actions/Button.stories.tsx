@@ -37,3 +37,19 @@ export const Disabled = () => (
         </Button>
     </ButtonGroup>
 );
+
+export const Submit = () => (
+    <form
+        onSubmit={(e) => {
+            e.preventDefault();
+            alert('Submitted!');
+        }}
+    >
+        <ButtonGroup>
+            <Button submit variant="primary">
+                Save
+            </Button>
+            <Button>Cancel</Button>
+        </ButtonGroup>
+    </form>
+);

@@ -4,6 +4,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Breaking changes
 
+-   Make default button type "button" and add submit prop ([#17](https://github.com/FieldLevel/FieldLevelPlaybook/pull/17))
+
 ### Enhancements
 
 ### Bug fixes
