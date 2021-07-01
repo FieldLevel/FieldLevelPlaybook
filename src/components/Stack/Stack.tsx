@@ -65,10 +65,14 @@ export const Stack = ({ spacing, align, distribute, vertical, noWrap, full, chil
     );
 
     const content = Children.map(children, (child) => {
-        if (!React.isValidElement<React.ReactNode>(child)) {
-            console.warn('Found a Stack with no Stack.Item. Child content was not rendered.');
+        if (child === null || child === undefined) {
             return null;
         }
+
+        if (!React.isValidElement<React.ReactNode>(child)) {
+            return <Item>{child}</Item>;
+        }
+
         if (child.type === Item) {
             return child;
         }
