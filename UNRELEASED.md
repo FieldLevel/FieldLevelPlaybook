@@ -9,6 +9,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Enhancements
 
 -   Add alt prop to Avatar and Logo ([#18](https://github.com/FieldLevel/FieldLevelPlaybook/pull/18))
+-   Add a large variant to Modal ([#19](https://github.com/FieldLevel/FieldLevelPlaybook/pull/19))
 
 ### Bug fixes
 

@@ -7,6 +7,10 @@
     @apply large:rounded-lg large:m-auto large:mt-40 large:max-w-screen-small large:max-h-96 large:h-auto;
 }
 
+.large {
+    @apply large:max-w-screen-xlarge large:max-h-screen-m large:mt-8 large:mb-8;
+}
+
 .Header {
     @apply p-4 pb-0;
 }

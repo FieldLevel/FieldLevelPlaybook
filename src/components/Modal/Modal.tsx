@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
 import { Heading } from '../Heading';
@@ -25,16 +26,23 @@ interface Action {
     onAction?(): void;
 }
 
+type variant = 'large';
+
 export interface ModalProps {
     open: boolean;
     title?: string;
+    variant?: variant;
     onDismiss(): void;
     primaryAction?: Action;
     secondaryAction?: Action;
     children?: React.ReactNode;
 }
 
-export const Modal = ({ open, title, onDismiss, primaryAction, secondaryAction, children }: ModalProps) => {
+const variantStyles: { [key in variant]: string } = {
+    large: styles.large
+};
+
+export const Modal = ({ open, title, variant, onDismiss, primaryAction, secondaryAction, children }: ModalProps) => {
     const headerId = useUniqueId('ModalHeader');
     const bodyId = useUniqueId('ModalBody');
 
@@ -63,16 +71,19 @@ export const Modal = ({ open, title, onDismiss, primaryAction, secondaryAction, 
             </ButtonGroup>
         </div>
     );
+
     const bodyContent = (
         <div id={bodyId} className={styles.Body}>
             {children}
         </div>
     );
+
     const labelBy = title ? headerId : bodyId;
+    const contentStyles = cx(styles.Content, variant && variantStyles[variant]);
 
     return (
         <DialogOverlay className={styles.Overlay} isOpen={open} onDismiss={onDismiss}>
-            <DialogContent className={styles.Content} aria-labelledby={labelBy}>
+            <DialogContent className={contentStyles} aria-labelledby={labelBy}>
                 {closeContent}
                 {headerContent}
                 {bodyContent}
