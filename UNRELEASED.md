@@ -4,9 +4,15 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Breaking changes
 
+-   Make default button type "button" and add submit prop ([#17](https://github.com/FieldLevel/FieldLevelPlaybook/pull/17))
+
 ### Enhancements
 
+-   Add alt prop to Avatar and Logo ([#18](https://github.com/FieldLevel/FieldLevelPlaybook/pull/18))
+
 ### Bug fixes
+
+-   Allow null/undefined children in Stack ([#16](https://github.com/FieldLevel/FieldLevelPlaybook/pull/16))
 
 ### Documentation
 
