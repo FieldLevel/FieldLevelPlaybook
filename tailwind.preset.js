@@ -144,7 +144,12 @@ module.exports = {
             background: {
                 ...theme('colors.background')
             }
-        })
+        }),
+        extend: {
+            maxHeight: {
+                'screen-m': 'calc(100vh - theme(spacing.16))'
+            }
+        }
     },
     corePlugins: {
         preflight: false,

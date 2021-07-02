@@ -94,3 +94,42 @@ export const Scrollable = () => {
         </>
     );
 };
+
+export const Large = () => {
+    const [open, setOpen] = useState(false);
+    const toggleOpen = useCallback(() => {
+        setOpen(!open);
+    }, [open]);
+
+    return (
+        <>
+            <Button onClick={toggleOpen}>Open</Button>
+            <Modal
+                title="Large Modal"
+                variant="large"
+                open={open}
+                onDismiss={toggleOpen}
+                primaryAction={{ content: 'Confirm' }}
+                secondaryAction={{ content: 'Cancel', onAction: toggleOpen }}
+            >
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+                <Lorem />
+            </Modal>
+        </>
+    );
+};
