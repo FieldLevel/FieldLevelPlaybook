@@ -12,6 +12,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Development workflow
 
+-   Include bullpen in tailwind watch files for storybook ([#21](https://github.com/FieldLevel/FieldLevelPlaybook/pull/21))
+
 ### Dependency upgrades
 
 ### Code quality
