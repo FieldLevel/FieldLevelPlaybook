@@ -156,7 +156,6 @@ module.exports = {
         lineHeight: false,
         fontFamily: false,
         textOpacity: false,
-        borderOpacity: false,
         divideOpacity: false
     },
     variants: {

@@ -7,21 +7,21 @@
 }
 
 .primary {
-    @apply bg-primary-base text-on-dark border-none;
+    @apply bg-primary-base text-on-dark border-primary;
     @apply hover:bg-primary-hovered;
     @apply active:bg-primary-pressed;
 }
 
 .destructive {
-    @apply bg-critical-base text-on-dark border-none;
+    @apply bg-critical-base text-on-dark border-critical;
     @apply hover:bg-critical-hovered;
     @apply active:bg-critical-pressed;
 }
 
 .plain {
     @apply p-2;
-    @apply text-interactive-active bg-transparent border-none;
-    @apply hover:bg-primary-base hover:bg-opacity-5;
+    @apply text-interactive-active bg-transparent border-opacity-0;
+    @apply hover:bg-primary-base hover:bg-opacity-5 hover:border hover:border-primary hover:border-opacity-5;
     @apply active:bg-primary-base active:bg-opacity-10;
 }
 
@@ -46,7 +46,7 @@
 
 .plain.disabled {
     @apply bg-transparent text-disabled;
-    @apply hover:bg-transparent;
+    @apply hover:bg-transparent hover:border-muted hover:border-opacity-100;
     @apply active:bg-transparent;
 }
 
