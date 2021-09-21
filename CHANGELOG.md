@@ -8,6 +8,16 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 1.3.0 - 2021-09-21
+
+### Enhancements
+
+-   Fix button border sizing ([#23](https://github.com/FieldLevel/FieldLevelPlaybook/pull/23))
+
+### Development workflow
+
+-   Include bullpen in tailwind watch files for storybook ([#21](https://github.com/FieldLevel/FieldLevelPlaybook/pull/21))
+
 ## 1.2.0 - 2021-07-02
 
 ### Breaking changes
