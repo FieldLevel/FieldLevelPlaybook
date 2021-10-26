@@ -31,6 +31,9 @@ export type { HeadingProps } from './Heading';
 export { Icon } from './Icon';
 export type { IconProps } from './Icon';
 
+export { LazyImage } from './LazyImage';
+export type { LazyImageProps } from './LazyImage';
+
 export { Link } from './Link';
 export type { LinkProps } from './Link';
 
