@@ -6,6 +6,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   Update the Logo and Avatar components to support lazy loading
+
 ### Bug fixes
 
 ### Documentation
