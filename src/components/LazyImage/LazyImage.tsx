@@ -23,10 +23,10 @@ export const LazyImage = ({ src, alt, width, height, lazy }: LazyImageProps) => 
         <div ref={ref} style={{ position: 'relative', paddingBottom: `${ratioPadding}%` }}>
             {inView || supportsLazyLoading ? (
                 <img
+                    loading={lazy ? 'lazy' : 'eager'}
                     src={src}
                     width={width}
                     height={height}
-                    loading={lazy ? 'lazy' : 'eager'}
                     alt={alt}
                     className={styles.Image}
                     role="presentation"
