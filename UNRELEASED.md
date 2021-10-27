@@ -6,7 +6,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
--   Update the Logo and Avatar components to support lazy loading
+-   Update the Logo and Avatar components to support lazy loading ([#27](https://github.com/FieldLevel/FieldLevelPlaybook/pull/27))
 
 ### Bug fixes
 
