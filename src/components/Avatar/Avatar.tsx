@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { LazyImage } from '../LazyImage';
+import { Image } from '../Image';
 
 import styles from './Avatar.module.css';
 
@@ -32,7 +32,7 @@ export const Avatar = ({ source, size, alt, lazy }: AvatarProps) => {
 
     return (
         <span role="img" className={avatarStyle}>
-            <LazyImage src={source} height={dimension} width={dimension} alt={alt} lazy={lazy} />
+            <Image src={source} height={dimension} width={dimension} alt={alt} lazy={lazy} />
         </span>
     );
 };

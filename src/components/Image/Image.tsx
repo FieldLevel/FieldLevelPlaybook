@@ -1,8 +1,8 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import styles from './LazyImage.module.css';
-export interface LazyImageProps {
+import styles from './Image.module.css';
+export interface ImageProps {
     src?: string;
     alt?: string;
     width: number;
@@ -10,7 +10,7 @@ export interface LazyImageProps {
     lazy?: boolean;
 }
 
-const NativeLazyImage = ({ src, alt, width, height, lazy }: LazyImageProps) => {
+const NativeImage = ({ src, alt, width, height, lazy }: ImageProps) => {
     return (
         <img
             loading={lazy ? 'lazy' : 'eager'}
@@ -24,7 +24,7 @@ const NativeLazyImage = ({ src, alt, width, height, lazy }: LazyImageProps) => {
     );
 };
 
-const FallbackLazyImage = ({ src, alt, width, height }: LazyImageProps) => {
+const FallbackImage = ({ src, alt, width, height }: ImageProps) => {
     const ratioPadding = (height / width) * 100;
     const { ref, inView } = useInView({
         rootMargin: '200px 0px',
@@ -41,15 +41,15 @@ const FallbackLazyImage = ({ src, alt, width, height }: LazyImageProps) => {
     );
 };
 
-export const LazyImage = ({ src, alt, width, height, lazy }: LazyImageProps) => {
+export const Image = ({ src, alt, width, height, lazy }: ImageProps) => {
     const supportsLazyLoading = HTMLImageElement.prototype.hasOwnProperty('loading');
 
     return (
         <>
             {supportsLazyLoading && false ? (
-                <NativeLazyImage lazy={lazy} src={src} alt={alt} height={height} width={width} />
+                <NativeImage lazy={lazy} src={src} alt={alt} height={height} width={width} />
             ) : (
-                <FallbackLazyImage src={src} alt={alt} height={height} width={width} />
+                <FallbackImage src={src} alt={alt} height={height} width={width} />
             )}
         </>
     );
