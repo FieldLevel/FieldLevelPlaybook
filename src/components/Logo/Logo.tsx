@@ -27,7 +27,8 @@ const sizeInPixels: { [key in pixelSize]: number } = {
 
 export const Logo = ({ source, size, alt, lazy }: LogoProps) => {
     const logoStyle = cx(styles.Logo, size && sizeStyles[size]);
-    const dimension = sizeInPixels[size || 'base'] || sizeInPixels.base;
+    const pixelSize = size ?? 'base';
+    const dimension = sizeInPixels[pixelSize];
 
     return (
         <span role="img" className={logoStyle}>

@@ -27,7 +27,8 @@ const sizeInPixels: { [key in pixelSize]: number } = {
 
 export const Avatar = ({ source, size, alt, lazy }: AvatarProps) => {
     const avatarStyle = cx(styles.Avatar, size && sizeStyles[size]);
-    const dimension = sizeInPixels[size || 'base'] || sizeInPixels.base;
+    const pixelSize = size ?? 'base';
+    const dimension = sizeInPixels[pixelSize];
 
     return (
         <span role="img" className={avatarStyle}>
