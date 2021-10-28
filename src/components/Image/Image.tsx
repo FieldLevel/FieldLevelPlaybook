@@ -58,7 +58,7 @@ export const Image = ({ src, alt, width, height, lazy, cover }: ImageProps) => {
             {supportsLazyLoading ? (
                 <NativeImage lazy={lazy} src={src} alt={alt} height={height} width={width} cover={cover} />
             ) : (
-                <FallbackImage src={src} alt={alt} height={height} width={width} />
+                <FallbackImage src={src} alt={alt} height={height} width={width} cover={cover} />
             )}
         </>
     );
