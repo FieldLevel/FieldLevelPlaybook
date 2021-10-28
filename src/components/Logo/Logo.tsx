@@ -32,7 +32,7 @@ export const Logo = ({ source, size, alt, lazy }: LogoProps) => {
 
     return (
         <span role="img" className={logoStyle}>
-            <Image src={source} height={dimension} width={dimension} alt={alt} lazy={lazy} />
+            <Image src={source} height={dimension} width={dimension} alt={alt} lazy={lazy} cover={false} />
         </span>
     );
 };
