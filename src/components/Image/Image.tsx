@@ -4,21 +4,16 @@ import styles from './Image.module.css';
 import cx from 'classnames';
 
 export interface ImageProps {
-    src?: string;
+    src: string;
     alt?: string;
     width: number;
     height: number;
     lazy?: boolean;
     cover?: boolean;
+    className: string;
 }
 
-const getObjectFitClass = (cover = true): string => {
-    return cover ? 'object-cover' : 'object-contain';
-};
-
-const NativeImage = ({ src, alt, width, height, lazy, cover }: ImageProps) => {
-    const className = cx(styles.Image, getObjectFitClass(cover));
-
+const NativeImage = ({ src, alt, width, height, lazy, className }: ImageProps) => {
     return (
         <img
             loading={lazy ? 'lazy' : 'eager'}
@@ -32,8 +27,7 @@ const NativeImage = ({ src, alt, width, height, lazy, cover }: ImageProps) => {
     );
 };
 
-const FallbackImage = ({ src, alt, width, height, cover }: ImageProps) => {
-    const className = `${styles.Image} ${getObjectFitClass(cover)}`;
+const FallbackImage = ({ src, alt, width, height, className }: ImageProps) => {
     const ratioPadding = (height / width) * 100;
     const { ref, inView } = useInView({
         rootMargin: '200px 0px',
@@ -50,15 +44,26 @@ const FallbackImage = ({ src, alt, width, height, cover }: ImageProps) => {
     );
 };
 
-export const Image = ({ src, alt, width, height, lazy, cover }: ImageProps) => {
+export const Image = ({ src, alt, width, height, lazy = false, cover = true }: ImageProps) => {
     const supportsLazyLoading = HTMLImageElement.prototype.hasOwnProperty('loading');
+    const fitClass = cover ? styles.Cover : styles.Contain;
+    const className = cx(styles.Image, fitClass);
+    const useFallbackImage = lazy && !supportsLazyLoading;
 
     return (
         <>
-            {supportsLazyLoading ? (
-                <NativeImage lazy={lazy} src={src} alt={alt} height={height} width={width} cover={cover} />
+            {useFallbackImage ? (
+                <FallbackImage src={src} alt={alt} height={height} width={width} cover={cover} className={className} />
             ) : (
-                <FallbackImage src={src} alt={alt} height={height} width={width} cover={cover} />
+                <NativeImage
+                    lazy={lazy}
+                    src={src}
+                    alt={alt}
+                    height={height}
+                    width={width}
+                    cover={cover}
+                    className={className}
+                />
             )}
         </>
     );
