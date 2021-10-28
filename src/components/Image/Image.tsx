@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './Image.module.css';
+import cx from 'classnames';
 
 export interface ImageProps {
     src?: string;
@@ -16,7 +17,7 @@ const getObjectFitClass = (cover = true): string => {
 };
 
 const NativeImage = ({ src, alt, width, height, lazy, cover }: ImageProps) => {
-    const className = `${styles.Image} ${getObjectFitClass(cover)}`;
+    const className = cx(styles.Image, getObjectFitClass(cover));
 
     return (
         <img
