@@ -29,21 +29,13 @@ export const Avatar = ({ source, size, alt, lazy = false }: AvatarProps) => {
     const avatarStyle = cx(styles.Avatar, size && sizeStyles[size]);
     const pixelSize = size ?? 'base';
     const dimension = sizeInPixels[pixelSize];
-    const imageClassName = styles.Image;
 
     return (
         <span role="img" className={avatarStyle}>
             {lazy ? (
-                <LazyImage
-                    src={source}
-                    height={dimension}
-                    width={dimension}
-                    alt={alt}
-                    cover={true}
-                    className={imageClassName}
-                />
+                <LazyImage src={source} height={dimension} width={dimension} alt={alt} cover={true} />
             ) : (
-                <img src={source} height={dimension} width={dimension} alt={alt} className={imageClassName} />
+                <img src={source} height={dimension} width={dimension} alt={alt} className={styles.Image} />
             )}
         </span>
     );
