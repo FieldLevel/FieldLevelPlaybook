@@ -3,7 +3,11 @@ import React from 'react';
 
 import { Avatar, Stack } from '../../src';
 
-export const Default = (args: any) => <Avatar {...args} source="http://placekitten.com/80/80" />;
+export const Default = (args: any) => <Avatar {...args} />;
+
+Default.args = {
+    source: 'http://placekitten.com/80/80'
+};
 
 export const Size = () => (
     <Stack align="center">

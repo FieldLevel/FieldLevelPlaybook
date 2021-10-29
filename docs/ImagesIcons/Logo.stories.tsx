@@ -3,7 +3,11 @@ import React from 'react';
 
 import { Logo, Stack } from '../../src';
 
-export const Default = (args: any) => <Logo {...args} source="http://placekitten.com/80/80" />;
+export const Default = (args: any) => <Logo {...args} />;
+
+Default.args = {
+    source: 'http://placekitten.com/80/80'
+};
 
 export const Size = () => (
     <Stack align="center">

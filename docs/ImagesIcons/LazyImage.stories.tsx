@@ -5,9 +5,15 @@ import { LazyImage, Stack } from '../../src';
 
 export const Default = (args: any) => (
     <div className="h-10 w-10">
-        <LazyImage {...args} src="http://placekitten.com/80/80" />
+        <LazyImage {...args} />
     </div>
 );
+
+Default.args = {
+    src: 'http://placekitten.com/80/80',
+    width: 40,
+    height: 40
+};
 
 export const Lazy = () => {
     const images = 16;
