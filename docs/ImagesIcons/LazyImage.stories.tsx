@@ -1,9 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 
-import { Image, Stack } from '../../src';
+import { LazyImage, Stack } from '../../src';
 
-export const Default = (args: any) => <Image {...args} src="http://placekitten.com/80/80" />;
+export const Default = (args: any) => (
+    <div className="h-10 w-10">
+        <LazyImage {...args} src="http://placekitten.com/80/80" />
+    </div>
+);
 
 export const Lazy = () => {
     const images = 16;
@@ -17,8 +21,8 @@ export const Lazy = () => {
         <Stack vertical>
             {urls.map((url, index) => (
                 <Stack.Item key={index}>
-                    <div className="pb-4">
-                        <Image lazy src={url} height={40} width={40} />
+                    <div className="h-10 w-10 pb-4">
+                        <LazyImage src={url} height={40} width={40} />
                     </div>
                 </Stack.Item>
             ))}

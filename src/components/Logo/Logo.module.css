@@ -2,6 +2,10 @@
     @apply relative block overflow-hidden w-10 h-10 rounded-md select-none;
 }
 
+.Image {
+    @apply absolute w-full h-full;
+}
+
 .small {
     @apply w-5 h-5;
 }
