@@ -1,11 +1,11 @@
 .Image {
-    @apply w-full h-full;
+    @apply absolute w-full h-full;
 }
 
-.Cover {
+.cover {
     @apply object-cover;
 }
 
-.Contain {
+.contain {
     @apply object-contain;
 }
