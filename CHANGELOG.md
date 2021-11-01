@@ -8,6 +8,14 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 1.4.0 - 2021-11-01
+
+### Enhancements
+
+-   Update the Logo and Avatar components to support lazy loading ([#27](https://github.com/FieldLevel/FieldLevelPlaybook/pull/27))
+-   Add onClick event handler to Link component ([#29](https://github.com/FieldLevel/FieldLevelPlaybook/pull/29))
+-   Add distribute to ButtonGroup component ([#30](https://github.com/FieldLevel/FieldLevelPlaybook/pull/30))
+
 ## 1.3.0 - 2021-09-21
 
 ### Enhancements
