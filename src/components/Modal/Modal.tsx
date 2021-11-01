@@ -57,7 +57,7 @@ export const Modal = ({ open, title, variant, onDismiss, primaryAction, secondar
     const headerContent = title && <Header id={headerId} title={title} />;
     const footerContent = (primaryAction || secondaryAction) && (
         <div className={styles.Footer}>
-            <ButtonGroup>
+            <ButtonGroup distribute="end">
                 {secondaryAction && (
                     <Button onClick={secondaryAction.onAction} disabled={secondaryAction.disabled}>
                         {secondaryAction.content}
