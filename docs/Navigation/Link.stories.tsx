@@ -14,3 +14,9 @@ export const External = () => (
         Recruiting Guidance
     </Link>
 );
+
+export const ClickEvent = () => (
+    <Link url="#" onClick={() => alert('Clicked!')}>
+        Click me!
+    </Link>
+);
