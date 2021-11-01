@@ -5,8 +5,11 @@ import styles from './ButtonGroup.module.css';
 
 type spacing = 'tight' | 'loose';
 
+type distribute = 'end' | 'between';
+
 export interface ButtonGroupProps {
     spacing?: spacing;
+    distribute?: distribute;
     children?: React.ReactNode;
 }
 
@@ -15,8 +18,17 @@ const spacingStyles: { [key in spacing]: string } = {
     loose: styles.loose
 };
 
-export const ButtonGroup = ({ spacing, children }: ButtonGroupProps) => {
-    const className = cx(styles.ButtonGroup, spacing && spacingStyles[spacing]);
+const distributeStyles: { [key in distribute]: string } = {
+    end: styles.end,
+    between: styles.between
+};
+
+export const ButtonGroup = ({ spacing, distribute, children }: ButtonGroupProps) => {
+    const className = cx(
+        styles.ButtonGroup,
+        spacing && spacingStyles[spacing],
+        distribute && distributeStyles[distribute]
+    );
 
     return <div className={className}>{children}</div>;
 };

@@ -32,3 +32,27 @@ export const Spacing = () => (
         </Card>
     </>
 );
+
+export const Distribute = () => (
+    <>
+        <Card title="End">
+            <ButtonGroup distribute="end">
+                <Button>Save</Button>
+                <Button>Cancel</Button>
+            </ButtonGroup>
+        </Card>
+        <Card title="Between">
+            <ButtonGroup distribute="between">
+                <Button>Save</Button>
+                <Button>Cancel</Button>
+            </ButtonGroup>
+        </Card>
+        <Card title="Between with multiple buttons">
+            <ButtonGroup distribute="between">
+                <Button>Save</Button>
+                <Button>Other</Button>
+                <Button>Cancel</Button>
+            </ButtonGroup>
+        </Card>
+    </>
+);

@@ -9,3 +9,11 @@
 .loose {
     @apply space-x-4;
 }
+
+.end {
+    @apply justify-end;
+}
+
+.between {
+    @apply justify-between;
+}

@@ -20,7 +20,7 @@
 }
 
 .Footer {
-    @apply bg-foreground-muted flex flex-row-reverse px-6 py-3;
+    @apply bg-foreground-muted px-6 py-3;
 }
 
 .Close {
