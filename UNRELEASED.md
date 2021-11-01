@@ -7,6 +7,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Enhancements
 
 -   Update the Logo and Avatar components to support lazy loading ([#27](https://github.com/FieldLevel/FieldLevelPlaybook/pull/27))
+-   Add onClick event handler to Link component ([#29](https://github.com/FieldLevel/FieldLevelPlaybook/pull/29))
 
 ### Bug fixes
 
