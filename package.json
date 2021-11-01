@@ -1,6 +1,6 @@
 {
   "name": "@fieldlevel/playbook",
-  "version": "1.4.0-2",
+  "version": "1.4.0",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=14.15",
