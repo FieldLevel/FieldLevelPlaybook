@@ -3,7 +3,7 @@
 }
 
 .Image {
-    @apply absolute object-cover w-full h-full;
+    @apply absolute w-full h-full;
 }
 
 .small {
