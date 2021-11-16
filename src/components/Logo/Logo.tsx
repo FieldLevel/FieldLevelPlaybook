@@ -11,6 +11,7 @@ export interface LogoProps {
     source: string;
     size?: size;
     alt?: string;
+    title?: string;
     lazy?: boolean;
 }
 
@@ -25,7 +26,7 @@ const sizeInPixels: { [key in pixelSize]: number } = {
     large: 60
 };
 
-export const Logo = ({ source, size, alt, lazy = false }: LogoProps) => {
+export const Logo = ({ source, size, alt, title, lazy = false }: LogoProps) => {
     const logoStyle = cx(styles.Logo, size && sizeStyles[size]);
     const pixelSize = size ?? 'base';
     const dimension = sizeInPixels[pixelSize];
@@ -33,9 +34,16 @@ export const Logo = ({ source, size, alt, lazy = false }: LogoProps) => {
     return (
         <span role="img" className={logoStyle}>
             {lazy ? (
-                <LazyImage src={source} height={dimension} width={dimension} alt={alt} cover={false} />
+                <LazyImage src={source} height={dimension} width={dimension} alt={alt} title={title} cover={false} />
             ) : (
-                <img src={source} height={dimension} width={dimension} alt={alt} className={styles.Image} />
+                <img
+                    src={source}
+                    height={dimension}
+                    width={dimension}
+                    alt={alt}
+                    title={title}
+                    className={styles.Image}
+                />
             )}
         </span>
     );
