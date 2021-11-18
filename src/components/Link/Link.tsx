@@ -5,7 +5,7 @@ export interface LinkProps {
     external?: boolean;
     target?: string;
     children?: React.ReactNode;
-    onClick?(): void;
+    onClick?(e?: React.MouseEvent<HTMLAnchorElement>): void;
 }
 
 export const Link = ({ url, target, external, children, onClick }: LinkProps) => {
