@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import { Checkbox } from '../../src';
 
@@ -7,12 +7,10 @@ export const Default = (args: any) => <Checkbox name="text" label="Text me impor
 
 export const Controlled = () => {
     const [checked, setChecked] = useState(true);
-    const handleChange = useCallback(
-        (value) => {
-            setChecked(value);
-        },
-        [checked]
-    );
+    const handleChange = (value) => {
+        setChecked(value);
+    };
+
     return <Checkbox name="text" label="Text me important information" checked={checked} onChange={handleChange} />;
 };
 

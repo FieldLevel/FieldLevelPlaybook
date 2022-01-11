@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import { Modal, Button } from '../../src';
 
 export const Default = (args: any) => {
     const [open, setOpen] = useState(false);
-    const toggleOpen = useCallback(() => {
+    const toggleOpen = () => {
         setOpen(!open);
-    }, [open]);
+    };
 
     return (
         <>
@@ -21,9 +21,9 @@ export const Default = (args: any) => {
 
 export const NoTitle = () => {
     const [open, setOpen] = useState(false);
-    const toggleOpen = useCallback(() => {
+    const toggleOpen = () => {
         setOpen(!open);
-    }, [open]);
+    };
 
     return (
         <>
@@ -37,9 +37,9 @@ export const NoTitle = () => {
 
 export const WithActions = () => {
     const [open, setOpen] = useState(false);
-    const toggleOpen = useCallback(() => {
+    const toggleOpen = () => {
         setOpen(!open);
-    }, [open]);
+    };
 
     return (
         <>
@@ -69,9 +69,9 @@ const Lorem = () => (
 
 export const Scrollable = () => {
     const [open, setOpen] = useState(false);
-    const toggleOpen = useCallback(() => {
+    const toggleOpen = () => {
         setOpen(!open);
-    }, [open]);
+    };
 
     return (
         <>
@@ -97,9 +97,9 @@ export const Scrollable = () => {
 
 export const Large = () => {
     const [open, setOpen] = useState(false);
-    const toggleOpen = useCallback(() => {
+    const toggleOpen = () => {
         setOpen(!open);
-    }, [open]);
+    };
 
     return (
         <>

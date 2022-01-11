@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import { Select } from '../../src';
 
@@ -9,12 +9,10 @@ export const Default = (args: any) => (
 
 export const Controlled = () => {
     const [selected, setSelected] = useState();
-    const handleChange = useCallback(
-        (value) => {
-            setSelected(value);
-        },
-        [selected]
-    );
+    const handleChange = (value) => {
+        setSelected(value);
+    };
+
     return (
         <Select
             label="Sport"

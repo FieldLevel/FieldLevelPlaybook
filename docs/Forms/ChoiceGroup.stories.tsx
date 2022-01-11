@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import { ChoiceGroup } from '../../src';
 
 export const Default = (args: any) => {
     const [selected, setSelected] = useState([]);
-    const handleChange = useCallback((value) => setSelected(value), []);
+    const handleChange = (value) => setSelected(value);
 
     return (
         <ChoiceGroup
@@ -25,7 +25,7 @@ export const Default = (args: any) => {
 
 export const SingleChoice = () => {
     const [selected, setSelected] = useState([]);
-    const handleChange = useCallback((value) => setSelected(value), []);
+    const handleChange = (value) => setSelected(value);
 
     return (
         <ChoiceGroup
@@ -44,7 +44,7 @@ export const SingleChoice = () => {
 
 export const MultiChoice = () => {
     const [selected, setSelected] = useState([]);
-    const handleChange = useCallback((value) => setSelected(value), []);
+    const handleChange = (value) => setSelected(value);
 
     return (
         <ChoiceGroup
@@ -64,7 +64,7 @@ export const MultiChoice = () => {
 
 export const Disabled = () => {
     const [selected, setSelected] = useState(['baseball']);
-    const handleChange = useCallback((value) => setSelected(value), []);
+    const handleChange = (value) => setSelected(value);
     return (
         <ChoiceGroup
             title="Disabled Sports"
@@ -83,7 +83,7 @@ export const Disabled = () => {
 
 export const DisabledChoice = () => {
     const [selected, setSelected] = useState(['baseball']);
-    const handleChange = useCallback((value) => setSelected(value), []);
+    const handleChange = (value) => setSelected(value);
     return (
         <ChoiceGroup
             title="Sports"
@@ -101,7 +101,7 @@ export const DisabledChoice = () => {
 
 export const WithError = () => {
     const [selected, setSelected] = useState(['football']);
-    const handleChange = useCallback((value) => setSelected(value), []);
+    const handleChange = (value) => setSelected(value);
 
     return (
         <ChoiceGroup

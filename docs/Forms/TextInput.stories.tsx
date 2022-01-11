@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import { TextInput, FormLayout } from '../../src';
 import { SearchMinor } from '../../src';
@@ -8,12 +8,9 @@ export const Default = (args: any) => <TextInput {...args} label="Headline" name
 
 export const Controlled = () => {
     const [value, setValue] = useState('Head coach at FieldLevel');
-    const handleChange = useCallback(
-        (value) => {
-            setValue(value);
-        },
-        [value]
-    );
+    const handleChange = (value) => {
+        setValue(value);
+    };
     return <TextInput label="Headline" name="headline" value={value} onChange={handleChange} />;
 };
 
