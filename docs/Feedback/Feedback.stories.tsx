@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import { Feedback, Button } from '../../src';
 
 export const Default = (args: any) => {
     const [show, setShow] = useState(false);
-    const toggleShow = useCallback(() => {
+    const toggleShow = () => {
         setShow(!show);
-    }, [show]);
+    };
 
     return (
         <>
@@ -19,9 +19,9 @@ export const Default = (args: any) => {
 
 export const WithAction = () => {
     const [show, setShow] = useState(false);
-    const toggleShow = useCallback(() => {
+    const toggleShow = () => {
         setShow(!show);
-    }, [show]);
+    };
 
     return (
         <>
@@ -43,9 +43,9 @@ export const WithAction = () => {
 
 export const WithMessage = () => {
     const [show, setShow] = useState(false);
-    const toggleShow = useCallback(() => {
+    const toggleShow = () => {
         setShow(!show);
-    }, [show]);
+    };
 
     return (
         <>
@@ -62,9 +62,9 @@ export const WithMessage = () => {
 
 export const WithMessageAction = () => {
     const [show, setShow] = useState(false);
-    const toggleShow = useCallback(() => {
+    const toggleShow = () => {
         setShow(!show);
-    }, [show]);
+    };
 
     return (
         <>
@@ -87,9 +87,9 @@ export const WithMessageAction = () => {
 
 export const Success = () => {
     const [show, setShow] = useState(false);
-    const toggleShow = useCallback(() => {
+    const toggleShow = () => {
         setShow(!show);
-    }, [show]);
+    };
 
     return (
         <>
@@ -107,9 +107,9 @@ export const Success = () => {
 
 export const Critical = () => {
     const [show, setShow] = useState(false);
-    const toggleShow = useCallback(() => {
+    const toggleShow = () => {
         setShow(!show);
-    }, [show]);
+    };
 
     return (
         <>

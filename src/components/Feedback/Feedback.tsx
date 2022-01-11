@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import cx from 'classnames';
 
 import { Icon } from '../Icon';
@@ -33,9 +33,9 @@ export const Feedback = ({ show, title, message, variant, action, onDismiss }: F
     const iconContent = variant && variantIcon[variant];
     const cardStyle = cx(styles.Card, !message && styles.condensed);
 
-    const dismiss = useCallback(() => {
+    const dismiss = () => {
         onDismiss && onDismiss();
-    }, [onDismiss]);
+    };
 
     // Dismiss after 5 seconds once shown
     useTimeout(dismiss, 5000, show);
