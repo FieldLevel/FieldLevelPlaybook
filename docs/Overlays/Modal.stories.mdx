@@ -17,14 +17,26 @@ Modals focus the user's attention exclusively on one task by displaying content 
 
 ## No Title
 
+The Modal title is optional to allow arbitrary content to be placed in any Modal.
+
 <Canvas>
     <Story story={stories.NoTitle} />
 </Canvas>
 
 ## With Actions
 
+Use the `primaryAction` or `secondaryAction` prop to add the appropriate Buttons to a Modal footer.
+
 <Canvas>
     <Story story={stories.WithActions} />
+</Canvas>
+
+## With Disabled Action
+
+Either action can be disabled by using the `disabled` flag to the appropriate action.
+
+<Canvas>
+    <Story story={stories.WithDisabledAction} />
 </Canvas>
 
 ## With Destructive Action
@@ -36,6 +48,8 @@ The primary action be made destructive by using the `destructive` flag.
 </Canvas>
 
 ## Scrollable Body
+
+Modal has a max height by design so if the content in the modal body overflows the body will automatically scroll.
 
 <Canvas>
     <Story story={stories.Scrollable} />
