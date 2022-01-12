@@ -30,17 +30,25 @@ export const Logo = ({ source, size, alt, title, lazy = false }: LogoProps) => {
     const logoStyle = cx(styles.Logo, size && sizeStyles[size]);
     const pixelSize = size ?? 'base';
     const dimension = sizeInPixels[pixelSize];
+    const finalAlt = alt ?? title;
 
     return (
         <span role="img" className={logoStyle}>
             {lazy ? (
-                <LazyImage src={source} height={dimension} width={dimension} alt={alt} title={title} cover={false} />
+                <LazyImage
+                    src={source}
+                    height={dimension}
+                    width={dimension}
+                    alt={finalAlt}
+                    title={title}
+                    cover={false}
+                />
             ) : (
                 <img
                     src={source}
                     height={dimension}
                     width={dimension}
-                    alt={alt}
+                    alt={finalAlt}
                     title={title}
                     className={styles.Image}
                 />
