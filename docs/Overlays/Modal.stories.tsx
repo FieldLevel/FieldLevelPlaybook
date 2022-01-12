@@ -57,6 +57,50 @@ export const WithActions = () => {
     );
 };
 
+export const WithDisabledAction = () => {
+    const [open, setOpen] = useState(false);
+    const toggleOpen = () => {
+        setOpen(!open);
+    };
+
+    return (
+        <>
+            <Button onClick={toggleOpen}>Open</Button>
+            <Modal
+                title="With Disabled Action"
+                open={open}
+                onDismiss={toggleOpen}
+                primaryAction={{ content: 'Save', disabled: true }}
+                secondaryAction={{ content: 'Cancel', onAction: toggleOpen }}
+            >
+                This modal has some actions and one is disabled.
+            </Modal>
+        </>
+    );
+};
+
+export const WithDestructiveAction = () => {
+    const [open, setOpen] = useState(false);
+    const toggleOpen = () => {
+        setOpen(!open);
+    };
+
+    return (
+        <>
+            <Button onClick={toggleOpen}>Open</Button>
+            <Modal
+                title="With Destructive Action"
+                open={open}
+                onDismiss={toggleOpen}
+                primaryAction={{ content: 'Delete', destructive: true }}
+                secondaryAction={{ content: 'Cancel', onAction: toggleOpen }}
+            >
+                This modal has some actions and one is destructive.
+            </Modal>
+        </>
+    );
+};
+
 const Lorem = () => (
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore

@@ -26,14 +26,18 @@ interface Action {
     onAction?(): void;
 }
 
+interface PrimaryAction extends Action {
+    destructive?: boolean;
+}
+
 type variant = 'large';
 
 export interface ModalProps {
     open: boolean;
+    onDismiss(): void;
     title?: string;
     variant?: variant;
-    onDismiss(): void;
-    primaryAction?: Action;
+    primaryAction?: PrimaryAction;
     secondaryAction?: Action;
     children?: React.ReactNode;
 }
@@ -42,7 +46,7 @@ const variantStyles: { [key in variant]: string } = {
     large: styles.large
 };
 
-export const Modal = ({ open, title, variant, onDismiss, primaryAction, secondaryAction, children }: ModalProps) => {
+export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondaryAction, children }: ModalProps) => {
     const headerId = useUniqueId('ModalHeader');
     const bodyId = useUniqueId('ModalBody');
 
@@ -55,6 +59,7 @@ export const Modal = ({ open, title, variant, onDismiss, primaryAction, secondar
     );
 
     const headerContent = title && <Header id={headerId} title={title} />;
+    const primaryVariant = primaryAction?.destructive ? 'destructive' : 'primary';
     const footerContent = (primaryAction || secondaryAction) && (
         <div className={styles.Footer}>
             <ButtonGroup distribute="end">
@@ -64,7 +69,7 @@ export const Modal = ({ open, title, variant, onDismiss, primaryAction, secondar
                     </Button>
                 )}
                 {primaryAction && (
-                    <Button variant="primary" disabled={primaryAction.disabled} onClick={primaryAction.onAction}>
+                    <Button variant={primaryVariant} disabled={primaryAction.disabled} onClick={primaryAction.onAction}>
                         {primaryAction.content}
                     </Button>
                 )}
