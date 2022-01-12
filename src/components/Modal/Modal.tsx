@@ -23,8 +23,11 @@ const Header = ({ id, title }: { id: string; title: string }) => {
 interface Action {
     content?: string;
     disabled?: boolean;
-    destructive?: boolean;
     onAction?(): void;
+}
+
+interface PrimaryAction extends Action {
+    destructive?: boolean;
 }
 
 type variant = 'large';
@@ -34,7 +37,7 @@ export interface ModalProps {
     onDismiss(): void;
     title?: string;
     variant?: variant;
-    primaryAction?: Action;
+    primaryAction?: PrimaryAction;
     secondaryAction?: Action;
     children?: React.ReactNode;
 }
@@ -82,10 +85,6 @@ export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondar
 
     const labelBy = title ? headerId : bodyId;
     const contentStyles = cx(styles.Content, variant && variantStyles[variant]);
-
-    if (secondaryAction?.destructive) {
-        console.warn('Playbook: Modal secondaryActions should never be destructive. Use a primaryAction instead.');
-    }
 
     return (
         <DialogOverlay className={styles.Overlay} isOpen={open} onDismiss={onDismiss}>
