@@ -23,6 +23,7 @@ const Header = ({ id, title }: { id: string; title: string }) => {
 interface Action {
     content?: string;
     disabled?: boolean;
+    destructive?: boolean;
     onAction?(): void;
 }
 
@@ -30,9 +31,9 @@ type variant = 'large';
 
 export interface ModalProps {
     open: boolean;
+    onDismiss(): void;
     title?: string;
     variant?: variant;
-    onDismiss(): void;
     primaryAction?: Action;
     secondaryAction?: Action;
     children?: React.ReactNode;
@@ -42,7 +43,7 @@ const variantStyles: { [key in variant]: string } = {
     large: styles.large
 };
 
-export const Modal = ({ open, title, variant, onDismiss, primaryAction, secondaryAction, children }: ModalProps) => {
+export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondaryAction, children }: ModalProps) => {
     const headerId = useUniqueId('ModalHeader');
     const bodyId = useUniqueId('ModalBody');
 
@@ -55,6 +56,7 @@ export const Modal = ({ open, title, variant, onDismiss, primaryAction, secondar
     );
 
     const headerContent = title && <Header id={headerId} title={title} />;
+    const primaryVariant = primaryAction?.destructive ? 'destructive' : 'primary';
     const footerContent = (primaryAction || secondaryAction) && (
         <div className={styles.Footer}>
             <ButtonGroup distribute="end">
@@ -64,7 +66,7 @@ export const Modal = ({ open, title, variant, onDismiss, primaryAction, secondar
                     </Button>
                 )}
                 {primaryAction && (
-                    <Button variant="primary" disabled={primaryAction.disabled} onClick={primaryAction.onAction}>
+                    <Button variant={primaryVariant} disabled={primaryAction.disabled} onClick={primaryAction.onAction}>
                         {primaryAction.content}
                     </Button>
                 )}
@@ -80,6 +82,10 @@ export const Modal = ({ open, title, variant, onDismiss, primaryAction, secondar
 
     const labelBy = title ? headerId : bodyId;
     const contentStyles = cx(styles.Content, variant && variantStyles[variant]);
+
+    if (secondaryAction?.destructive) {
+        console.warn('Playbook: Modal secondaryActions should never be destructive. Use a primaryAction instead.');
+    }
 
     return (
         <DialogOverlay className={styles.Overlay} isOpen={open} onDismiss={onDismiss}>
