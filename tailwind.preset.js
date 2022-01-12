@@ -36,7 +36,7 @@ module.exports = {
                 critical: colors.red[900],
                 warning: colors.amber[900],
                 highlight: colors.blue[900],
-                success: colors.emerald[900],
+                success: '#105e26',
                 'on-dark': colors.white
             },
             interactive: {
