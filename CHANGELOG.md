@@ -8,6 +8,19 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 1.5.0 - 2022-01-12
+
+### Enhancements
+
+-   Add destructive action option to `Modal` component ([#43](https://github.com/FieldLevel/FieldLevelPlaybook/pull/43))
+-   Add title prop to `Avatar`, `Logo`, and `LazyImage` ([#36](https://github.com/FieldLevel/FieldLevelPlaybook/pull/36))
+-   Add target prop to Link component. Update onClick signature to include optional event parameters. ([#37](https://github.com/FieldLevel/FieldLevelPlaybook/pull/37))
+-   Update text-success color ([#45](https://github.com/FieldLevel/FieldLevelPlaybook/pull/45))
+
+### Documentation
+
+-   Remove unnecessary usage of useCallback in doc examples ([#42](https://github.com/FieldLevel/FieldLevelPlaybook/pull/42))
+
 ## 1.4.0 - 2021-11-01
 
 ### Enhancements
