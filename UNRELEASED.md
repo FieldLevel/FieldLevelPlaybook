@@ -6,6 +6,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   Add destructive action option to `Modal` component ([#43](https://github.com/FieldLevel/FieldLevelPlaybook/pull/43))
+
 ### Bug fixes
 
 ### Documentation
