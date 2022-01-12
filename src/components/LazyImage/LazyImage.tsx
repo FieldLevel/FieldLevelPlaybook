@@ -68,15 +68,16 @@ const FallbackImage = ({ src, alt, title, width, height, cover }: LazyImageProps
 
 export const LazyImage = ({ src, alt, title, width, height, cover = false }: LazyImageProps) => {
     const supportsLazyLoading = HTMLImageElement.prototype.hasOwnProperty('loading');
+    const finalAlt = alt ?? title;
 
     if (!width || !height) console.warn('LazyImage requires a height and width to function properly.');
 
     return (
         <>
             {supportsLazyLoading ? (
-                <NativeImage src={src} alt={alt} title={title} height={height} width={width} cover={cover} />
+                <NativeImage src={src} alt={finalAlt} title={title} height={height} width={width} cover={cover} />
             ) : (
-                <FallbackImage src={src} alt={alt} title={title} height={height} width={width} cover={cover} />
+                <FallbackImage src={src} alt={finalAlt} title={title} height={height} width={width} cover={cover} />
             )}
         </>
     );
