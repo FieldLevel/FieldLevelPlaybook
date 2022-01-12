@@ -7,7 +7,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Enhancements
 
 -   Add destructive action option to `Modal` component ([#43](https://github.com/FieldLevel/FieldLevelPlaybook/pull/43))
--   Add title prop to Avatar, Logo, and LazyImage ([#36](https://github.com/FieldLevel/FieldLevelPlaybook/pull/36))
+-   Add title prop to `Avatar`, `Logo`, and `LazyImage` ([#36](https://github.com/FieldLevel/FieldLevelPlaybook/pull/36))
 
 ### Bug fixes
 
