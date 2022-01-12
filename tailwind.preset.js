@@ -30,41 +30,41 @@ module.exports = {
         },
         colors: {
             text: {
-                base: colors.coolGray[800],
-                muted: colors.coolGray[500],
-                disabled: colors.coolGray[300],
+                base: colors.gray[800],
+                muted: colors.gray[500],
+                disabled: colors.gray[300],
                 critical: colors.red[900],
                 warning: colors.amber[900],
                 highlight: colors.blue[900],
-                success: colors.emerald[900],
+                success: '#105e26',
                 'on-dark': colors.white
             },
             interactive: {
                 active: colors.sky[700],
                 hover: colors.sky[900],
-                visited: colors.coolGray[800]
+                visited: colors.gray[800]
             },
             primary: {
                 base: colors.sky[700],
-                disabled: colors.coolGray[100],
+                disabled: colors.gray[100],
                 hovered: colors.sky[600],
                 pressed: colors.sky[800]
             },
             secondary: {
                 base: colors.white,
-                disabled: colors.coolGray[100],
-                hovered: colors.coolGray[100],
-                pressed: colors.coolGray[200]
+                disabled: colors.gray[100],
+                hovered: colors.gray[100],
+                pressed: colors.gray[200]
             },
             critical: {
                 base: colors.red[600],
-                disabled: colors.coolGray[100],
+                disabled: colors.gray[100],
                 hovered: colors.red[700],
                 pressed: colors.red[800]
             },
             border: {
-                base: colors.coolGray[300],
-                muted: colors.coolGray[200],
+                base: colors.gray[300],
+                muted: colors.gray[200],
                 critical: colors.red[400],
                 'critical-muted': colors.red[200],
                 warning: colors.amber[600],
@@ -76,8 +76,8 @@ module.exports = {
                 primary: colors.sky[700]
             },
             background: {
-                base: colors.coolGray[100],
-                muted: colors.coolGray[50],
+                base: colors.gray[100],
+                muted: colors.gray[50],
                 critical: colors.red[100],
                 'critical-muted': colors.red[50],
                 warning: colors.amber[100],
@@ -89,16 +89,16 @@ module.exports = {
             },
             foreground: {
                 base: colors.white,
-                muted: colors.coolGray[50]
+                muted: colors.gray[50]
             },
             divider: {
-                base: colors.coolGray[200],
-                muted: colors.coolGray[100]
+                base: colors.gray[200],
+                muted: colors.gray[100]
             },
             icon: {
-                base: colors.coolGray[600],
-                disabled: colors.coolGray[300],
-                muted: colors.coolGray[400],
+                base: colors.gray[600],
+                disabled: colors.gray[300],
+                muted: colors.gray[400],
                 critical: colors.red[800],
                 warning: colors.amber[800],
                 highlight: colors.blue[800],

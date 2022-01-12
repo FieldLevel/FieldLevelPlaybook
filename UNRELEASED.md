@@ -9,6 +9,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 -   Add destructive action option to `Modal` component ([#43](https://github.com/FieldLevel/FieldLevelPlaybook/pull/43))
 -   Add title prop to `Avatar`, `Logo`, and `LazyImage` ([#36](https://github.com/FieldLevel/FieldLevelPlaybook/pull/36))
 -   Add target prop to Link component. Update onClick signature to include optional event parameters. ([#37](https://github.com/FieldLevel/FieldLevelPlaybook/pull/37))
+-   Update text-success color ([#45](https://github.com/FieldLevel/FieldLevelPlaybook/pull/45))
 
 ### Bug fixes
 
