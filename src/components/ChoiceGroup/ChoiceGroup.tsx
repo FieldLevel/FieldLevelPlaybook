@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 
 import { Checkbox } from '../Checkbox';
 import { RadioButton } from '../RadioButton';
@@ -14,6 +15,8 @@ interface Choice {
     disabled?: boolean;
 }
 
+type spacing = 'loose';
+
 export interface ChoiceGroupProps {
     title?: string;
     name: string;
@@ -21,6 +24,7 @@ export interface ChoiceGroupProps {
     selected: (string | boolean | number)[] | (string | boolean | number);
     multiple?: boolean;
     disabled?: boolean;
+    spacing?: spacing;
     onChange?(selected: (string | boolean | number)[] | (string | boolean | number), name: string): void;
     error?: string;
 }
@@ -32,6 +36,7 @@ export const ChoiceGroup = ({
     selected,
     multiple,
     disabled,
+    spacing,
     onChange,
     error
 }: ChoiceGroupProps) => {
@@ -67,10 +72,14 @@ export const ChoiceGroup = ({
     };
 
     const errorContent = error && (
-        <div className="mt-1">
+        <div className={styles.error}>
             <InlineError error={error} />
         </div>
     );
+
+    const spacingStyles: { [key in spacing]: string } = {
+        loose: styles.loose
+    };
 
     const choicesContent = choices.map((choice) => {
         const handleChange = (checked: boolean) => {
@@ -78,8 +87,10 @@ export const ChoiceGroup = ({
             onChange && onChange(newSelected, name);
         };
 
+        const itemStyle = cx(styles.Item, spacing && spacingStyles[spacing]);
+
         return (
-            <li key={choice.value.toString()} className={styles.Item}>
+            <li key={choice.value.toString()} className={itemStyle}>
                 <Control
                     label={choice.label}
                     name={uniqueName}
@@ -91,9 +102,11 @@ export const ChoiceGroup = ({
         );
     });
 
+    const titleStyle = cx(styles.Title, spacing && spacingStyles[spacing]);
+
     return (
         <fieldset>
-            {title && <legend className={styles.Title}>{title}</legend>}
+            {title && <legend className={titleStyle}>{title}</legend>}
             <ul>{choicesContent}</ul>
             {errorContent}
         </fieldset>

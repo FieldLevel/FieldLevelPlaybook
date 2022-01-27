@@ -5,3 +5,11 @@
 .Item {
     @apply mb-2;
 }
+
+.Error {
+    @apply mt-1;
+}
+
+.loose {
+    @apply mb-4;
+}

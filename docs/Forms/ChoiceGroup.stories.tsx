@@ -81,6 +81,27 @@ export const Disabled = () => {
     );
 };
 
+export const Spacing = () => {
+    const [selected, setSelected] = useState([]);
+    const handleChange = (value) => setSelected(value);
+
+    return (
+        <ChoiceGroup
+            multiple
+            title="Multiple Sports"
+            selected={selected}
+            onChange={handleChange}
+            spacing="loose"
+            name="sport"
+            choices={[
+                { label: 'Baseball', value: 'baseball' },
+                { label: 'Football', value: 'football' },
+                { label: 'Basketball', value: 'basketball' }
+            ]}
+        />
+    );
+};
+
 export const DisabledChoice = () => {
     const [selected, setSelected] = useState(['baseball']);
     const handleChange = (value) => setSelected(value);
