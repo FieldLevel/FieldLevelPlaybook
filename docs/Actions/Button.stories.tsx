@@ -23,6 +23,12 @@ export const Size = () => (
     </ButtonGroup>
 );
 
+export const FullWidth = () => (
+    <div className="w-80">
+        <Button fullWidth>Full Width</Button>
+    </div>
+);
+
 export const Disabled = () => (
     <ButtonGroup>
         <Button disabled>Basic</Button>

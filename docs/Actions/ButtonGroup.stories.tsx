@@ -56,3 +56,14 @@ export const Distribute = () => (
         </Card>
     </>
 );
+
+export const Vertical = () => (
+    <div className="w-80">
+        <ButtonGroup vertical>
+            <Button variant="primary" fullWidth>
+                Continue
+            </Button>
+            <Button fullWidth>Cancel</Button>
+        </ButtonGroup>
+    </div>
+);

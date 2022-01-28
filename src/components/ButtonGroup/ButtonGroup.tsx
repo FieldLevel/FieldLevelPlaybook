@@ -10,6 +10,7 @@ type distribute = 'end' | 'between';
 export interface ButtonGroupProps {
     spacing?: spacing;
     distribute?: distribute;
+    vertical?: boolean;
     children?: React.ReactNode;
 }
 
@@ -23,11 +24,12 @@ const distributeStyles: { [key in distribute]: string } = {
     between: styles.between
 };
 
-export const ButtonGroup = ({ spacing, distribute, children }: ButtonGroupProps) => {
+export const ButtonGroup = ({ spacing, distribute, vertical, children }: ButtonGroupProps) => {
     const className = cx(
         styles.ButtonGroup,
         spacing && spacingStyles[spacing],
-        distribute && distributeStyles[distribute]
+        distribute && distributeStyles[distribute],
+        vertical && styles.vertical
     );
 
     return <div className={className}>{children}</div>;

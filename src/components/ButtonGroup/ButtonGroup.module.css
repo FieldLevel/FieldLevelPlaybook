@@ -17,3 +17,15 @@
 .between {
     @apply justify-between;
 }
+
+.vertical {
+    @apply flex-col space-x-0 space-y-3 justify-center;
+}
+
+.vertical.tight {
+    @apply space-x-0 space-y-2;
+}
+
+.vertical.loose {
+    @apply space-x-0 space-y-4;
+}
