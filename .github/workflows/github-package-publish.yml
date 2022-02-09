@@ -1,1 +1,28 @@
+name: GitHub Package Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@fieldlevel'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --ignore-scripts
+      - name: Publish package
+        run: yarn publish --verbose
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
