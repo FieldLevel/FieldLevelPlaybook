@@ -2,27 +2,22 @@
 
 ## **Installation**
 
-Playbook can be added to a project by installing the private npm package, importing the CSS file and then importing the available React components. The Playbook library is currently exported as ES6 modules so the consuming project will need to transpile them to the correct target.
+Playbook can be added to a project by installing the npm package, importing the CSS file and then importing the available React components. The Playbook library is currently exported as ES6 modules so the consuming project will need to transpile them to the correct target if necessary.
 
-### **Authenticate with Azure Artifacts**
+### **Authenticate with GitHub Packages**
 
-Install VSTS Auth helper:
+Create a [GitHub PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) with `repo` and `read:packages` scope.
+
+Authenticate with the GitHub Package Registry using your PAT:
 
 ```
-npm install -g vsts-npm-auth --registry https://registry.npmjs.com --always-auth false
+npm login --registry=https://npm.pkg.github.com --scope=@fieldlevel
 ```
 
 Create an `.npmrc` file in the root of your project with the following contents:
 
 ```
-@fieldlevel:registry=https://pkgs.dev.azure.com/fieldlevel/_packaging/fieldlevel/npm/registry/
-always-auth=true
-```
-
-Bootstrap local auth credentials (follow onscreen prompts):
-
-```
-vsts-npm-auth -config .npmrc
+@fieldlevel:registry=https://npm.pkg.github.com
 ```
 
 ### **Install NPM Package**
@@ -82,7 +77,7 @@ npm install -g yalc
 Build and deploy Playbook to the local Yalc store
 
 ```
-yalc push
+yalc publish
 ```
 
 In the consuming project:
@@ -91,7 +86,7 @@ In the consuming project:
 yalc add @fieldlevel/playbook
 ```
 
-Any subsequent usage of `yalc push` will automatically update the package in the consuming project until you run:
+Any subsequent usage of `yalc publish` will build and update the package in the consuming project until you run:
 
 ```
 yalc remove @fieldlevel/playbook
@@ -113,4 +108,4 @@ Then push the new commit including tags:
 git push --follow-tags
 ```
 
-Finally, follow the [instructions for creating a new release in Github](https://docs.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) using the tag that you just pushed. A Github Action will execute that builds and publishes the package to Azure Artifacts.
+Finally, follow the [instructions for creating a new release in GitHub](https://docs.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) using the tag that you just pushed. A GitHub Action will execute that builds and publishes the package to GitHub Packages.
