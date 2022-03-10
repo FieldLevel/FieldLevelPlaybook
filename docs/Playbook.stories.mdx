@@ -17,7 +17,7 @@ should be made in a thoughtful and collaborative manner. Overriding or extending
 only when absolutely necessary since it makes it difficult to anticipate the impact of changes in the future and makes the system
 harder to reason about.
 
-See the [Component status](/?path=/story/status--page) page for a list of existing and planned components.
+See the [Component status](/docs/status--page) page for a list of existing and planned components.
 
 ```
 import { Card, Button } from @fieldlevel/playbook;
@@ -55,11 +55,11 @@ and the semantic intention of the element can be lost when revisiting in the fut
 Most of the default Tailwind CSS utility classes are available to be used as the [official documentation](https://tailwindcss.com/docs)
 describes. Our custom Tailwind configuration has the following exceptions:
 
--   **[Colors](/?path=/story/css-utilities-colors--page)**: **Text color**, **background color** and **border color** utilities draw from
+-   **[Breakpoints](/docs/css-utilities-breakpoints--page)**: Breakpoint widths have been modified to match what is already being
+    used in the FieldLevel app.
+
+-   **[Colors](/docs/css-utilities-colors--page)**: **Text color**, **background color** and **border color** utilities draw from
     a limited color palette and are named for semantic usage rather than color shade.
 
--   **[Typography](/?path=/story/css-utilities-typography--page)**: Only a limited set of text **size** and **weight** is available and
+-   **[Text](/docs/css-utilities-text--page)**: Only a limited set of text **size** and **weight** is available and
     utilities to modify **line-height**, **text opacity** and **font family** have been disabled.
-
--   **[Breakpoints](/?path=/docs/css-utilities-breakpoints--page)**: Breakpoint widths have been modified to match what is already being
-    used in the FieldLevel app and have full-word names instead of abbreviations.
