@@ -1,6 +1,6 @@
 .Card {
     @apply bg-foreground-base shadow overflow-hidden;
-    @apply large:rounded;
+    @apply lg:rounded;
 }
 
 .Card + .Card {

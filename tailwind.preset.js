@@ -6,10 +6,12 @@ module.exports = {
     darkMode: false,
     theme: {
         screens: {
-            small: '576px',
-            medium: '768px',
-            large: '992px',
-            xlarge: '1200px'
+            xs: '400px',
+            sm: '576px',
+            md: '768px',
+            lg: '992px',
+            xl: '1200px',
+            '2xl': '1440px'
         },
         container: {
             center: true,
