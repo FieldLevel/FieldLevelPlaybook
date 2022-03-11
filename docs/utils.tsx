@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import pkg from '../package.json';
 
 const colorStyles = {
     success: 'text-success bg-background-success',
@@ -13,6 +14,10 @@ const Badge = ({ type, children }) => {
     const style = cx('inline-block mt-2 px-2 py-0.5 rounded shadow', colorStyle);
     return <div className={style}>{children}</div>;
 };
+
+export const TitleWithVersion = `Playbook v${pkg.version}`;
+
+export const CurrentVersion = () => <Badge type="success">v{pkg.version}</Badge>;
 
 export const InDevelopment = () => <Badge type="warning">In Development</Badge>;
 
