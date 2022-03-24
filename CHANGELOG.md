@@ -8,6 +8,17 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 2.0.0 - 2022-03-24
+
+### Breaking changes
+
+-   Change tailwind breakpoint names ([#56](https://github.com/FieldLevel/FieldLevelPlaybook/pull/56))
+
+### Enhancements
+
+-   Add "loose" spacing option for `ChoiceGroup` ([#50](https://github.com/FieldLevel/FieldLevelPlaybook/pull/50))
+-   Add `fullWidth` to `Button` and `vertical` to `ButtonGroup` ([#49](https://github.com/FieldLevel/FieldLevelPlaybook/pull/49))
+
 ## 1.5.0 - 2022-01-12
 
 ### Enhancements
