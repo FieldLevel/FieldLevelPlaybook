@@ -8,6 +8,12 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 2.1.0 - 2022-05-04
+
+### Enhancements
+
+-   Add two new minor icons, email and information ([#59](https://github.com/FieldLevel/FieldLevelPlaybook/pull/59))
+
 ## 2.0.0 - 2022-03-24
 
 ### Breaking changes
