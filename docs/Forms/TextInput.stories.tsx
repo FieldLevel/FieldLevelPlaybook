@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
-import { TextInput, FormLayout } from '../../src';
+import { TextInput, FormLayout, Button, Stack } from '../../src';
 import { SearchMinor } from '../../src';
 
 export const Default = (args: any) => <TextInput {...args} label="Headline" name="headline" />;
@@ -61,3 +61,18 @@ export const Type = () => (
 export const MaxLength = () => <TextInput label="Headline" name="headline" maxLength={20} />;
 
 export const Multiline = () => <TextInput label="Headline" name="headline" multiline />;
+
+export const Reference = () => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const focusInput = () => {
+        inputRef.current.focus();
+    };
+
+    return (
+        <Stack align="end">
+            <TextInput label="Headline" name="headline" ref={inputRef} />
+            <Button onClick={focusInput}>Focus!</Button>
+        </Stack>
+    );
+};
