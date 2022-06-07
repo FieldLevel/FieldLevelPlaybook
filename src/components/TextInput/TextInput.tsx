@@ -1,4 +1,5 @@
-import React, { createElement, Ref } from 'react';
+import React, { createElement } from 'react';
+import type { Ref } from 'react';
 import cx from 'classnames';
 
 import { Icon } from '../Icon';
@@ -45,94 +46,92 @@ export interface TextInputProps {
     onChange?(value: string, name: string): void;
 }
 
-export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
-    (
-        {
-            name,
-            type,
-            label,
-            action,
-            value,
-            placeholder,
-            multiline,
-            maxLength,
-            disabled,
-            readonly,
-            icon,
-            error,
-            onChange
-        }: TextInputProps,
-        ref: Ref<HTMLInputElement>
-    ) => {
-        const id = useUniqueId(name);
+export const TextInput = React.forwardRef(function TextInput(
+    {
+        name,
+        type,
+        label,
+        action,
+        value,
+        placeholder,
+        multiline,
+        maxLength,
+        disabled,
+        readonly,
+        icon,
+        error,
+        onChange
+    }: TextInputProps,
+    forwardedRef: Ref<HTMLInputElement>
+) {
+    const id = useUniqueId(name);
 
-        const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-            if (readonly) {
-                return;
-            }
-            onChange && onChange(event.currentTarget.value, event.currentTarget.name);
-        };
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (readonly) {
+            return;
+        }
+        onChange && onChange(event.currentTarget.value, event.currentTarget.name);
+    };
 
-        const labelContent = label && (
-            <label htmlFor={id} className={styles.Label}>
-                {label}
-            </label>
-        );
+    const labelContent = label && (
+        <label htmlFor={id} className={styles.Label}>
+            {label}
+        </label>
+    );
 
-        const actionContent = action && (
-            <div className={styles.Action}>
-                {action.onClick ? (
-                    <button onClick={action.onClick}>{action.label}</button>
-                ) : (
-                    <Link url={action.url}>{action.label}</Link>
-                )}
+    const actionContent = action && (
+        <div className={styles.Action}>
+            {action.onClick ? (
+                <button onClick={action.onClick}>{action.label}</button>
+            ) : (
+                <Link url={action.url}>{action.label}</Link>
+            )}
+        </div>
+    );
+
+    const iconContent = icon && (
+        <div className={styles.Icon}>
+            <Icon source={icon} />
+        </div>
+    );
+
+    const errorContent = error && (
+        <div className="mt-1">
+            <InlineError error={error} />
+        </div>
+    );
+
+    const inputClass = cx(
+        styles.TextInput,
+        icon && styles.withIcon,
+        disabled && styles.disabled,
+        readonly && styles.readonly,
+        error && styles.error
+    );
+
+    const inputEl = createElement(multiline ? 'textarea' : 'input', {
+        id,
+        type: type || 'text',
+        name,
+        value,
+        placeholder,
+        maxLength,
+        rows: 3,
+        readOnly: readonly,
+        disabled,
+        onChange: handleChange,
+        ref: forwardedRef
+    });
+
+    return (
+        <div className={inputClass}>
+            {labelContent}
+            {actionContent}
+            <div className={styles.Wrapper}>
+                {iconContent}
+                {inputEl}
             </div>
-        );
-
-        const iconContent = icon && (
-            <div className={styles.Icon}>
-                <Icon source={icon} />
-            </div>
-        );
-
-        const errorContent = error && (
-            <div className="mt-1">
-                <InlineError error={error} />
-            </div>
-        );
-
-        const inputClass = cx(
-            styles.TextInput,
-            icon && styles.withIcon,
-            disabled && styles.disabled,
-            readonly && styles.readonly,
-            error && styles.error
-        );
-
-        const inputEl = createElement(multiline ? 'textarea' : 'input', {
-            id,
-            type: type || 'text',
-            name,
-            value,
-            placeholder,
-            maxLength,
-            rows: 3,
-            readOnly: readonly,
-            disabled,
-            onChange: handleChange,
-            ref: ref
-        });
-
-        return (
-            <div className={inputClass}>
-                {labelContent}
-                {actionContent}
-                <div className={styles.Wrapper}>
-                    {iconContent}
-                    {inputEl}
-                </div>
-                {errorContent}
-            </div>
-        );
-    }
-);
+            {errorContent}
+        </div>
+    );
+});
