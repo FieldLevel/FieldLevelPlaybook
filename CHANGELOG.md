@@ -12,7 +12,7 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ### Enhancements
 
--   Add ref prop to TextInput that attaches ref to the underlying html input/textarea element ([#62] (https://github.com/FieldLevel/FieldLevelPlaybook/pull/62))
+-   Add ref prop to TextInput that attaches ref to the underlying html input/textarea element ([#62](https://github.com/FieldLevel/FieldLevelPlaybook/pull/62))
 
 ## 2.1.0 - 2022-05-04
 
