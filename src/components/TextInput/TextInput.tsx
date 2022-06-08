@@ -1,4 +1,5 @@
 import React, { createElement } from 'react';
+import type { Ref } from 'react';
 import cx from 'classnames';
 
 import { Icon } from '../Icon';
@@ -45,21 +46,24 @@ export interface TextInputProps {
     onChange?(value: string, name: string): void;
 }
 
-export const TextInput = ({
-    name,
-    type,
-    label,
-    action,
-    value,
-    placeholder,
-    multiline,
-    maxLength,
-    disabled,
-    readonly,
-    icon,
-    error,
-    onChange
-}: TextInputProps) => {
+export const TextInput = React.forwardRef(function TextInput(
+    {
+        name,
+        type,
+        label,
+        action,
+        value,
+        placeholder,
+        multiline,
+        maxLength,
+        disabled,
+        readonly,
+        icon,
+        error,
+        onChange
+    }: TextInputProps,
+    forwardedRef: Ref<HTMLInputElement>
+) {
     const id = useUniqueId(name);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -115,7 +119,8 @@ export const TextInput = ({
         rows: 3,
         readOnly: readonly,
         disabled,
-        onChange: handleChange
+        onChange: handleChange,
+        ref: forwardedRef
     });
 
     return (
@@ -129,4 +134,4 @@ export const TextInput = ({
             {errorContent}
         </div>
     );
-};
+});
