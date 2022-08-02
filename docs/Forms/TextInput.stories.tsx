@@ -60,13 +60,13 @@ export const Type = () => (
 
 export const MaxLength = () => <TextInput label="Headline" name="headline" maxLength={20} />;
 
-export const Multiline = () => <TextInput label="Headline" name="headline" multiline />;
+export const Rows = () => <TextInput label="Headline" name="headline" rows={3} maxRows={5} />;
 
 export const Reference = () => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const focusInput = () => {
-        inputRef.current.focus();
+        inputRef.current?.focus();
     };
 
     return (
