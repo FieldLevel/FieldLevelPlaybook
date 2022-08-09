@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import React, { createElement, useState } from 'react';
 import type { Ref } from 'react';
 import cx from 'classnames';
 
@@ -8,6 +8,8 @@ import { InlineError } from '../shared/InlineError';
 import { useUniqueId } from '../../utilities/use-unique-id';
 
 import styles from './TextInput.module.css';
+
+const LineHeight = 20;
 
 type Type =
     | 'text'
@@ -37,7 +39,12 @@ export interface TextInputProps {
     action?: Action;
     value?: string;
     placeholder?: string;
+    /**
+     * @deprecated Use rows and maxRows instead
+     */
     multiline?: boolean;
+    rows?: number;
+    maxRows?: number;
     maxLength?: number;
     disabled?: boolean;
     readonly?: boolean;
@@ -55,6 +62,8 @@ export const TextInput = React.forwardRef(function TextInput(
         value,
         placeholder,
         multiline,
+        rows,
+        maxRows,
         maxLength,
         disabled,
         readonly,
@@ -62,14 +71,62 @@ export const TextInput = React.forwardRef(function TextInput(
         error,
         onChange
     }: TextInputProps,
-    forwardedRef: Ref<HTMLInputElement>
+    forwardedRef: Ref<HTMLInputElement | HTMLTextAreaElement>
 ) {
     const id = useUniqueId(name);
+    const [currentRows, setCurrentRows] = useState(rows);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (readonly) {
-            return;
+    if (multiline) {
+        rows = 3;
+        console.warn(
+            `TextInput :: The multiline prop has been deprecated. Use rows and maxRows to control multiline behavior.`
+        );
+    }
+
+    let multiMaxRows: number;
+    if (rows) {
+        multiMaxRows = maxRows || rows;
+        if (multiMaxRows < rows) {
+            multiMaxRows = rows;
+            console.warn(
+                `TextInput :: The value for rows cannot be greater than maxRows. Using maxRows of ${multiMaxRows} instead.`
+            );
         }
+    }
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (readonly) return;
+
+        onChange && onChange(event.currentTarget.value, event.currentTarget.name);
+    };
+
+    const handleTextAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        if (readonly) return;
+
+        const target = event.target;
+        const previousRows = target.rows;
+
+        // Reset textarea to the initial rows so that auto-shrink works
+        target.rows = rows ?? 1;
+
+        // Calculate the total rows needed for the current content
+        const contentRows = Math.floor(target.scrollHeight / LineHeight);
+
+        // If we already had the right number of rows use that
+        if (contentRows === previousRows) {
+            target.rows = previousRows;
+        }
+
+        // If we will exceed the max, set to max and fix the scroll position
+        if (contentRows >= multiMaxRows) {
+            target.rows = multiMaxRows;
+            target.scrollTop = target.scrollHeight;
+        }
+
+        // Finally, set the new current rows to content or max
+        const visibleRows = contentRows < multiMaxRows ? contentRows : multiMaxRows;
+        setCurrentRows(visibleRows);
+
         onChange && onChange(event.currentTarget.value, event.currentTarget.name);
     };
 
@@ -109,17 +166,17 @@ export const TextInput = React.forwardRef(function TextInput(
         error && styles.error
     );
 
-    const inputEl = createElement(multiline ? 'textarea' : 'input', {
+    const inputEl = createElement(rows ? 'textarea' : 'input', {
         id,
         type: type || 'text',
         name,
         value,
         placeholder,
         maxLength,
-        rows: 3,
+        rows: rows && currentRows,
         readOnly: readonly,
         disabled,
-        onChange: handleChange,
+        onChange: rows ? handleTextAreaChange : handleInputChange,
         ref: forwardedRef
     });
 
