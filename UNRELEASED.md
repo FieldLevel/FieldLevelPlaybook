@@ -10,6 +10,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Bug fixes
 
+-   Fix vertical alignment of `TextInput` in multiline mode ([#74](https://github.com/FieldLevel/FieldLevelPlaybook/pull/74))
+
 ### Documentation
 
 ### Development workflow
