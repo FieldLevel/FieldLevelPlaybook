@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 
 import { TextInput, FormLayout, Button, Stack } from '../../src';
+import type { TextInputRef } from '../../src/components/TextInput';
 import { SearchMinor } from '../../src';
 
 export const Default = (args: any) => <TextInput {...args} label="Headline" name="headline" />;
@@ -62,8 +63,8 @@ export const MaxLength = () => <TextInput label="Headline" name="headline" maxLe
 
 export const Rows = () => <TextInput label="Headline" name="headline" rows={3} maxRows={5} />;
 
-export const Reference = () => {
-    const inputRef = useRef<HTMLInputElement>(null);
+export const Focus = () => {
+    const inputRef = useRef<TextInputRef>(null);
 
     const focusInput = () => {
         inputRef.current?.focus();
