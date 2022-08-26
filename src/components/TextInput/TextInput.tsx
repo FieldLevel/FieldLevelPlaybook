@@ -1,4 +1,4 @@
-import React, { createElement, useState } from 'react';
+import React, { createElement, useState, useEffect, useRef, useImperativeHandle } from 'react';
 import type { Ref } from 'react';
 import cx from 'classnames';
 
@@ -30,6 +30,10 @@ type Action = {
     label?: string;
     url?: string;
     onClick?(): void;
+};
+
+export type TextInputRef = {
+    focus: () => void;
 };
 
 export interface TextInputProps {
@@ -71,10 +75,19 @@ export const TextInput = React.forwardRef(function TextInput(
         error,
         onChange
     }: TextInputProps,
-    forwardedRef: Ref<HTMLInputElement | HTMLTextAreaElement>
+    forwardedRef: Ref<TextInputRef>
 ) {
     const id = useUniqueId(name);
     const [currentRows, setCurrentRows] = useState(rows);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
+    useImperativeHandle(forwardedRef, () => ({
+        focus: () => {
+            const el = inputRef?.current || textAreaRef?.current;
+            el?.focus();
+        }
+    }));
 
     if (multiline) {
         rows = 3;
@@ -94,41 +107,46 @@ export const TextInput = React.forwardRef(function TextInput(
         }
     }
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (readonly) return;
+    const resizeTextAreaRows = () => {
+        const el = textAreaRef?.current;
 
-        onChange && onChange(event.currentTarget.value, event.currentTarget.name);
-    };
+        if (!el) return;
 
-    const handleTextAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        if (readonly) return;
-
-        const target = event.target;
-        const previousRows = target.rows;
+        const previousRows = el.rows;
 
         // Reset textarea to the initial rows so that auto-shrink works
-        target.rows = rows ?? 1;
+        el.rows = rows ?? 1;
 
         // Calculate the total rows needed for the current content
-        const contentRows = Math.floor(target.scrollHeight / LineHeight);
+        const contentRows = Math.floor(el.scrollHeight / LineHeight);
 
         // If we already had the right number of rows use that
         if (contentRows === previousRows) {
-            target.rows = previousRows;
+            el.rows = previousRows;
         }
 
         // If we will exceed the max, set to max and fix the scroll position
         if (contentRows >= multiMaxRows) {
-            target.rows = multiMaxRows;
-            target.scrollTop = target.scrollHeight;
+            el.rows = multiMaxRows;
+            el.scrollTop = el.scrollHeight;
         }
 
         // Finally, set the new current rows to content or max
         const visibleRows = contentRows < multiMaxRows ? contentRows : multiMaxRows;
         setCurrentRows(visibleRows);
+    };
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        if (readonly) return;
+
+        resizeTextAreaRows();
 
         onChange && onChange(event.currentTarget.value, event.currentTarget.name);
     };
+
+    useEffect(() => {
+        resizeTextAreaRows();
+    }, [value]);
 
     const labelContent = label && (
         <label htmlFor={id} className={styles.Label}>
@@ -173,11 +191,11 @@ export const TextInput = React.forwardRef(function TextInput(
         value,
         placeholder,
         maxLength,
-        rows: rows && currentRows,
+        rows: rows && (currentRows || 1),
         readOnly: readonly,
         disabled,
-        onChange: rows ? handleTextAreaChange : handleInputChange,
-        ref: forwardedRef
+        onChange: handleChange,
+        ref: rows ? textAreaRef : inputRef
     });
 
     return (
