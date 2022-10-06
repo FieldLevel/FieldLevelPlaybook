@@ -2,13 +2,21 @@
     z-index: 9998; /* consider removing this once we clean up the z-index wars in the app */
 }
 
+.Container {
+    @apply fixed top-0 right-0 bottom-0 left-0 flex flex-col justify-center pointer-events-none;
+}
+
 .Content {
-    @apply relative flex flex-col bg-foreground-base text-left overflow-hidden shadow-xl p-0 w-full h-screen m-0;
-    @apply lg:rounded-lg lg:m-auto lg:mt-40 lg:max-w-screen-sm lg:max-h-96 lg:h-auto;
+    @apply relative flex flex-col bg-foreground-base text-left overflow-hidden shadow-xl p-0 w-full h-screen m-0 pointer-events-auto;
+    @apply lg:rounded-lg lg:my-0 lg:mx-auto lg:max-w-screen-sm lg:max-h-screen-m lg:h-auto;
+}
+
+.small {
+    @apply lg:max-w-screen-xs;
 }
 
 .large {
-    @apply lg:max-w-screen-xl lg:max-h-screen-m lg:mt-8 lg:mb-8;
+    @apply lg:max-w-screen-lg;
 }
 
 .Header {

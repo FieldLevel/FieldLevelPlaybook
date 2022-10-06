@@ -30,7 +30,7 @@ interface PrimaryAction extends Action {
     destructive?: boolean;
 }
 
-type variant = 'large';
+type variant = 'small' | 'large';
 
 export interface ModalProps {
     open: boolean;
@@ -43,6 +43,7 @@ export interface ModalProps {
 }
 
 const variantStyles: { [key in variant]: string } = {
+    small: styles.small,
     large: styles.large
 };
 
@@ -88,12 +89,14 @@ export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondar
 
     return (
         <DialogOverlay className={styles.Overlay} isOpen={open} onDismiss={onDismiss}>
-            <DialogContent className={contentStyles} aria-labelledby={labelBy}>
-                {closeContent}
-                {headerContent}
-                {bodyContent}
-                {footerContent}
-            </DialogContent>
+            <div className={styles.Container}>
+                <DialogContent className={contentStyles} aria-labelledby={labelBy}>
+                    {closeContent}
+                    {headerContent}
+                    {bodyContent}
+                    {footerContent}
+                </DialogContent>
+            </div>
         </DialogOverlay>
     );
 };

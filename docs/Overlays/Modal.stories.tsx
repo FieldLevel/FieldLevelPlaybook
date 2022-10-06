@@ -139,6 +139,22 @@ export const Scrollable = () => {
     );
 };
 
+export const Small = () => {
+    const [open, setOpen] = useState(false);
+    const toggleOpen = () => {
+        setOpen(!open);
+    };
+
+    return (
+        <>
+            <Button onClick={toggleOpen}>Open</Button>
+            <Modal title="Small Modal" variant="small" open={open} onDismiss={toggleOpen}>
+                This is a small modal.
+            </Modal>
+        </>
+    );
+};
+
 export const Large = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
