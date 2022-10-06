@@ -65,7 +65,7 @@ export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondar
         <div className={styles.Footer}>
             <ButtonGroup distribute="end">
                 {secondaryAction && (
-                    <Button onClick={secondaryAction.onAction} disabled={secondaryAction.disabled}>
+                    <Button variant="secondary" onClick={secondaryAction.onAction} disabled={secondaryAction.disabled}>
                         {secondaryAction.content}
                     </Button>
                 )}
