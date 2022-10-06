@@ -32,6 +32,7 @@ module.exports = {
         },
         colors: {
             text: {
+                current: 'currentColor',
                 base: colors.gray[800],
                 muted: colors.gray[500],
                 disabled: colors.gray[300],

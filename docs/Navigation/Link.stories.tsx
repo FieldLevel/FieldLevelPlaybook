@@ -9,6 +9,12 @@ export const Default = (args: any) => (
     </Link>
 );
 
+export const Unstyled = () => (
+    <Link unstyled url="https://www.fieldlevel.com">
+        <div className="p-6 border rounded">This whole card is a link.</div>
+    </Link>
+);
+
 export const External = () => (
     <Link external url="https://recruiting.fieldlevel.com">
         Recruiting Guidance

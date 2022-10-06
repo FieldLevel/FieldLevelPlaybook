@@ -8,6 +8,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   Add unstyled option to `Link` component ([#83](https://github.com/FieldLevel/FieldLevelPlaybook/pull/83))
+
 ### Bug fixes
 
 ### Documentation
