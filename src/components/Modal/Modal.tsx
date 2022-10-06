@@ -88,12 +88,14 @@ export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondar
 
     return (
         <DialogOverlay className={styles.Overlay} isOpen={open} onDismiss={onDismiss}>
-            <DialogContent className={contentStyles} aria-labelledby={labelBy}>
-                {closeContent}
-                {headerContent}
-                {bodyContent}
-                {footerContent}
-            </DialogContent>
+            <div className={styles.Container}>
+                <DialogContent className={contentStyles} aria-labelledby={labelBy}>
+                    {closeContent}
+                    {headerContent}
+                    {bodyContent}
+                    {footerContent}
+                </DialogContent>
+            </div>
         </DialogOverlay>
     );
 };
