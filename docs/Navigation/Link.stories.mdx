@@ -15,13 +15,25 @@ Use Link when the result of the action is the member being taken to another plac
 
 <ArgsTable story="Default" />
 
+## Unstyled
+
+The unstyled option will remove the default link styling to allow Link to be used semantically around different types of elements.
+
+<Canvas>
+    <Story story={stories.Unstyled} />
+</Canvas>
+
 ## External
+
+Use when the link is to an external site.
 
 <Canvas>
     <Story story={stories.External} />
 </Canvas>
 
 ## Click event
+
+Link has an `onClick` to allow an action before the navigation event.
 
 <Canvas>
     <Story story={stories.ClickEvent} />

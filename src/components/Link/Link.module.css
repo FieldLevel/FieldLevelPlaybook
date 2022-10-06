@@ -1,0 +1,5 @@
+.unstyled {
+	@apply no-underline text-current;
+	@apply hover:no-underline hover:text-current;
+	@apply focus:no-underline focus:text-current;
+}
