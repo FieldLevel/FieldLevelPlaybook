@@ -13,7 +13,7 @@
 }
 
 .large {
-    @apply lg:max-w-screen-xl lg:max-h-screen-m lg:mt-8 lg:mb-8;
+    @apply lg:max-w-screen-lg;
 }
 
 .Header {
