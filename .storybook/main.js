@@ -4,6 +4,7 @@ const loaderUtils = require('loader-utils');
 
 module.exports = {
     stories: ['../bullpen/index.ts', '../docs/**/*.stories.mdx'],
+    staticDirs: ['../static'],
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
@@ -16,16 +17,8 @@ module.exports = {
             }
         }
     ],
-    // workaround for babel issue supposedly fixed in storybook 6.3: https://github.com/storybookjs/storybook/issues/14805
-    babel: async (options) => {
-        const { plugins = [] } = options;
-        return {
-            ...options,
-            plugins: [
-                ...plugins,
-                [require.resolve('@babel/plugin-proposal-private-property-in-object'), { loose: true }]
-            ]
-        };
+    core: {
+        disableTelemetry: true
     },
     webpackFinal: (config) => {
         const cssModulesRule = {
