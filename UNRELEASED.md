@@ -10,6 +10,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 -   Add unstyled option to `Link` component ([#83](https://github.com/FieldLevel/FieldLevelPlaybook/pull/83))
 
+-   Make `Modal` sizing more flexible ([#84](https://github.com/FieldLevel/FieldLevelPlaybook/pull/84))
+
 ### Bug fixes
 
 ### Documentation
