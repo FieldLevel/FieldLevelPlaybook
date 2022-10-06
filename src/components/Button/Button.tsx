@@ -7,7 +7,7 @@ import styles from './Button.module.css';
 
 type size = 'slim' | 'large';
 
-type variant = 'primary' | 'plain' | 'destructive';
+type variant = 'primary' | 'secondary' | 'plain' | 'destructive';
 
 export interface ButtonProps {
     size?: size;
@@ -27,6 +27,7 @@ const sizeStyles: { [key in size]: string } = {
 
 const variantStyles: { [key in variant]: string } = {
     primary: styles.primary,
+    secondary: styles.secondary,
     plain: styles.plain,
     destructive: styles.destructive
 };
@@ -39,6 +40,7 @@ export const Button = ({ size, variant, disabled, fullWidth, submit, icon, onCli
         disabled && styles.disabled,
         fullWidth && styles.fullWidth
     );
+
     const iconContent = icon && (
         <span className={styles.Icon}>
             <Icon source={icon} color="current" />

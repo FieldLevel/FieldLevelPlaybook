@@ -12,6 +12,12 @@
     @apply active:bg-primary-pressed;
 }
 
+.secondary {
+    @apply text-base border border-base bg-transparent;
+    @apply hover:bg-secondary-hovered;
+    @apply active:bg-secondary-pressed;
+}
+
 .destructive {
     @apply bg-critical-base text-on-dark border-critical;
     @apply hover:bg-critical-hovered;
@@ -36,6 +42,12 @@
     @apply bg-primary-disabled text-disabled;
     @apply hover:bg-primary-disabled;
     @apply active:bg-primary-disabled;
+}
+
+.secondary.disabled {
+    @apply bg-secondary-disabled text-disabled;
+    @apply hover:bg-secondary-disabled;
+    @apply active:bg-secondary-disabled;
 }
 
 .destructive.disabled {
