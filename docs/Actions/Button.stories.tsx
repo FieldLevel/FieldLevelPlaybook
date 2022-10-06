@@ -9,6 +9,8 @@ export const Basic = () => <Button>Continue</Button>;
 
 export const Primary = () => <Button variant="primary">Upgrade</Button>;
 
+export const Secondary = () => <Button variant="secondary">Cancel</Button>;
+
 export const Plain = () => <Button variant="plain">Learn More</Button>;
 
 export const Destructive = () => <Button variant="destructive">Delete</Button>;
@@ -35,6 +37,9 @@ export const Disabled = () => (
         <Button variant="primary" disabled>
             Primary
         </Button>
+        <Button variant="secondary" disabled>
+            Secondary
+        </Button>
         <Button variant="destructive" disabled>
             Destructive
         </Button>
@@ -55,7 +60,7 @@ export const Submit = () => (
             <Button submit variant="primary">
                 Save
             </Button>
-            <Button>Cancel</Button>
+            <Button variant="secondary">Cancel</Button>
         </ButtonGroup>
     </form>
 );
