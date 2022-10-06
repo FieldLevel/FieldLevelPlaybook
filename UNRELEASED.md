@@ -12,6 +12,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 -   Make `Modal` sizing more flexible ([#84](https://github.com/FieldLevel/FieldLevelPlaybook/pull/84))
 
+-   Add secondary Button variant ([#85](https://github.com/FieldLevel/FieldLevelPlaybook/pull/85))
+
 ### Bug fixes
 
 ### Documentation
