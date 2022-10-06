@@ -49,6 +49,12 @@ export const Disabled = () => (
     </ButtonGroup>
 );
 
+export const Url = () => (
+    <Button url="http://www.fieldlevel.com" variant="primary">
+        Go to FieldLevel
+    </Button>
+);
+
 export const Submit = () => (
     <form
         onSubmit={(e) => {

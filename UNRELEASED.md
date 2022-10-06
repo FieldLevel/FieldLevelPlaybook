@@ -14,6 +14,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 -   Add secondary Button variant ([#85](https://github.com/FieldLevel/FieldLevelPlaybook/pull/85))
 
+-   Add url to Button ([#86](https://github.com/FieldLevel/FieldLevelPlaybook/pull/86))
+
 ### Bug fixes
 
 ### Documentation
