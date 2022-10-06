@@ -30,7 +30,7 @@ interface PrimaryAction extends Action {
     destructive?: boolean;
 }
 
-type variant = 'large';
+type variant = 'small' | 'large';
 
 export interface ModalProps {
     open: boolean;
@@ -43,6 +43,7 @@ export interface ModalProps {
 }
 
 const variantStyles: { [key in variant]: string } = {
+    small: styles.small,
     large: styles.large
 };
 

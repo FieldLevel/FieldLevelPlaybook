@@ -10,6 +10,9 @@
     @apply relative flex flex-col bg-foreground-base text-left overflow-hidden shadow-xl p-0 w-full h-screen m-0 pointer-events-auto;
     @apply lg:rounded-lg lg:my-0 lg:mx-auto lg:max-w-screen-sm lg:max-h-screen-m lg:h-auto;
 }
+
+.small {
+    @apply lg:max-w-screen-xs;
 }
 
 .large {
