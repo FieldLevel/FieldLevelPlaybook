@@ -7,7 +7,7 @@ import * as stories from './Select.stories.tsx';
 
 # Select
 
-Select gives users the ability to make a single selection or multiple choices from several options. Use Select when you have four or more options to avoid noisy lists in the app, when the default option is the recommended option, when a large number of familiar options are available (CA, AZ, NV, OR and etc.), and when you have more than seven options.
+Select gives users the ability to make a single selection from multiple options. Use Select when you have four or more options to avoid noisy lists in the app, when the default option is the recommended option, when a large number of familiar options are available (CA, AZ, NV, OR, etc).
 
 <Canvas>
     <Story story={stories.Default} name="Default" />
@@ -15,13 +15,9 @@ Select gives users the ability to make a single selection or multiple choices fr
 
 <ArgsTable story="Default" />
 
-## Controlled
-
-<Canvas>
-    <Story story={stories.Controlled} />
-</Canvas>
-
 ## Placeholder
+
+Include a placeholder if there is no default selection or initial value.
 
 <Canvas>
     <Story story={stories.Placeholder} />
