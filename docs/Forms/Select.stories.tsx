@@ -3,11 +3,25 @@ import React, { useState } from 'react';
 
 import { Select } from '../../src';
 
-export const Default = (args: any) => (
-    <Select {...args} label="Sport" name="sport" options={['Baseball', 'Football', 'Basketball']} />
-);
+export const Default = (args: any) => {
+    const [selected, setSelected] = useState();
+    const handleChange = (value) => {
+        setSelected(value);
+    };
 
-export const Controlled = () => {
+    return (
+        <Select
+            {...args}
+            value={selected}
+            label="Sport"
+            name="sport"
+            options={['Baseball', 'Football', 'Basketball']}
+            onChange={handleChange}
+        />
+    );
+};
+
+export const Placeholder = () => {
     const [selected, setSelected] = useState();
     const handleChange = (value) => {
         setSelected(value);
@@ -17,17 +31,13 @@ export const Controlled = () => {
         <Select
             label="Sport"
             name="sport"
-            value={selected}
             options={['Baseball', 'Football', 'Basketball']}
             placeholder="Pick a sport"
+            value={selected}
             onChange={handleChange}
         />
     );
 };
-
-export const Placeholder = () => (
-    <Select label="Sport" name="sport" options={['Baseball', 'Football', 'Basketball']} placeholder="Pick a sport" />
-);
 
 export const Disabled = () => (
     <Select label="Sport" name="sport" options={['Baseball', 'Football', 'Basketball']} disabled />

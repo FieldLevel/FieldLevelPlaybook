@@ -9,31 +9,39 @@ import { useUniqueId } from '../../utilities/use-unique-id';
 
 import { SelectMinor } from '../../icons/Minor';
 
-interface Option {
+type Option = {
     label: string;
     value: string;
-}
-
-class MyOption implements Option {
-    label: string;
-    value: string;
-
-    constructor(label: string, value: string) {
-        this.label = label;
-        this.value = value;
-    }
-}
+};
 
 export interface SelectProps {
-    options: (Option | string)[];
+    options: (string | Option)[];
     name: string;
     value?: string;
     label?: string;
-    placeholder?: string;
+    placeholder?: string | Option;
     disabled?: boolean;
     error?: string;
     onChange?(value: string, name: string): void;
 }
+
+const standardizeOptions = (options: (string | Option)[]): Option[] => {
+    return options.map((option: string | Option): Option => {
+        if (typeof option === 'string') {
+            return { label: option, value: option } as Option;
+        } else {
+            return option;
+        }
+    });
+};
+
+const standardizePlaceholder = (placeholder: string | Option): Option => {
+    if (typeof placeholder === 'string') {
+        return { label: placeholder, value: placeholder } as Option;
+    } else {
+        return placeholder;
+    }
+};
 
 export const Select = ({ options, name, value, label, placeholder, disabled, error, onChange }: SelectProps) => {
     const id = useUniqueId(name);
@@ -56,25 +64,17 @@ export const Select = ({ options, name, value, label, placeholder, disabled, err
 
     const selectClass = cx(styles.Select, disabled && styles.disabled, error && styles.error);
 
-    const optionsAsOptions: Option[] = options.map(function (option: Option | string): Option {
-        if (typeof option === 'object') {
-            return option;
-        } else {
-            return new MyOption(option, option);
-        }
-    });
+    const stdPlaceholder = placeholder && standardizePlaceholder(placeholder);
+    const stdOptions = standardizeOptions(options);
+    const currentValue = value || (stdPlaceholder && stdPlaceholder.value);
 
     return (
         <div>
             {labelContent}
             <div className={selectClass}>
-                <select id={id} name={name} value={value || placeholder} disabled={disabled} onChange={handleChange}>
-                    {placeholder && (
-                        <option disabled value={placeholder}>
-                            {placeholder}
-                        </option>
-                    )}
-                    {optionsAsOptions.map((option) => (
+                <select id={id} name={name} value={currentValue} disabled={disabled} onChange={handleChange}>
+                    {stdPlaceholder && <option value={stdPlaceholder.value}>{stdPlaceholder.label}</option>}
+                    {stdOptions.map((option) => (
                         <option key={option.value} value={option.value}>
                             {option.label}
                         </option>
