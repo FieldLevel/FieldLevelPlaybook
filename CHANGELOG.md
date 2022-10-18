@@ -26,6 +26,7 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 -   Make `Modal` sizing more flexible ([#84](https://github.com/FieldLevel/FieldLevelPlaybook/pull/84))
 -   Add secondary Button variant ([#85](https://github.com/FieldLevel/FieldLevelPlaybook/pull/85))
 -   Add url to Button ([#86](https://github.com/FieldLevel/FieldLevelPlaybook/pull/86))
+-   Allow Select placeholder re-select ([#87](https://github.com/FieldLevel/FieldLevelPlaybook/pull/87))
 
 ## 2.3.0 - 2022-09-01
 
