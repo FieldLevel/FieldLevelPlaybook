@@ -23,9 +23,8 @@ const Item = ({ size, empty, children }: ItemProps) => {
     return <div className={className}>{children}</div>;
 };
 
-type RowChildren = React.ReactElement<ItemProps> | React.ReactElement<ItemProps>[];
 interface RowProps {
-    children: RowChildren;
+    children?: React.ReactNode;
 }
 
 const sizeSpanMap: { [key in Size]: number } = {
@@ -38,11 +37,12 @@ const sizeSpanMap: { [key in Size]: number } = {
 
 // FormLayout.Row can have Items that are smaller than full width. In order to keep the grid intact,
 // we figure out what size Item is needed to fill in the empty space and add an empty filler Item.
-const getRowFill = (children: RowChildren): JSX.Element | null => {
-    const itemSpans = Children.map(children, (child: React.ReactElement<ItemProps>) => {
-        return child.props.size ? sizeSpanMap[child.props.size] : 0;
+const getRowFill = (children?: React.ReactNode): React.ReactNode => {
+    const itemSpans = Children.map(children, (child) => {
+        const childEl = child as React.ReactElement<ItemProps>;
+        return childEl.props.size ? sizeSpanMap[childEl.props.size] : 0;
     });
-    const totalSpan = itemSpans.reduce((total: number, span: number) => total + span);
+    const totalSpan = itemSpans && itemSpans.reduce((total: number, span: number) => total + span);
     switch (totalSpan) {
         case 0:
         case 6:
@@ -70,7 +70,7 @@ const getRowFill = (children: RowChildren): JSX.Element | null => {
 
 // Form elements can be placed directly in a FormLayout.Row without needing to explicitly wrap them
 // in a FormLayout.Item. In that case we wrap each element in an Item and size them evenly.
-const getEvenSize = (children: RowChildren): Size => {
+const getEvenSize = (children?: React.ReactNode): Size => {
     const itemCount = Children.count(children);
     switch (itemCount) {
         case 1:
@@ -92,15 +92,21 @@ const getEvenSize = (children: RowChildren): Size => {
 };
 
 const Row = ({ children }: RowProps) => {
-    const rowFill = getRowFill(children);
+    const filteredChildren = Children.toArray(children).filter((child) => {
+        return child != null;
+    });
 
-    const itemsContent = Children.map(children, (child) => {
-        if (child.type === Item) {
+    const rowFill = getRowFill(filteredChildren);
+
+    const itemsContent = Children.map(filteredChildren, (child) => {
+        const childEl = child as React.ReactElement<ItemProps>;
+        if (childEl.type === Item) {
             return child;
         }
-        const evenSize = getEvenSize(children);
+        const evenSize = getEvenSize(filteredChildren);
         return <Item size={evenSize}>{child}</Item>;
     });
+
     return (
         <>
             {itemsContent}
