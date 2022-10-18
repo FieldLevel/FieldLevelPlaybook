@@ -8,6 +8,12 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 3.0.1 - 2022-10-17
+
+### Bug fixes
+
+-   Fix FormLayout typing to allow for null Items and Rows properly ([#82](https://github.com/FieldLevel/FieldLevelPlaybook/issues/82))
+
 ## 3.0.0 - 2022-10-17
 
 ### Breaking changes
