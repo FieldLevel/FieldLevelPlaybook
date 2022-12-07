@@ -3,20 +3,30 @@
 }
 
 .Container {
-    @apply fixed top-0 right-0 bottom-0 left-0 flex flex-col justify-center pointer-events-none;
+    @apply fixed top-auto right-0 bottom-0 left-0 flex flex-col justify-center pointer-events-none;
+    @apply lg:top-0 lg:right-0 lg:bottom-0 lg:left-0;
+}
+
+.smallContainer {
+    @apply top-8 right-4 bottom-8 left-4;
+}
+
+.largeContainer {
+    @apply top-0 right-0 bottom-0 left-0;
 }
 
 .Content {
-    @apply relative flex flex-col bg-foreground-base text-left overflow-hidden shadow-xl p-0 w-full h-screen m-0 pointer-events-auto;
-    @apply lg:rounded-lg lg:my-0 lg:mx-auto lg:max-w-screen-sm lg:max-h-screen-m lg:h-auto;
+    @apply relative flex flex-col bg-foreground-base text-left rounded-t-lg overflow-hidden shadow-xl pointer-events-auto;
+    @apply w-full h-auto p-0 m-0 max-h-screen-m;
+    @apply lg:my-0 lg:rounded-lg lg:mx-auto lg:max-w-screen-sm lg:max-h-screen-m lg:h-auto;
 }
 
-.small {
-    @apply lg:max-w-screen-xs;
+.smallContent {
+    @apply max-h-screen-m rounded-lg lg:max-w-screen-xs;
 }
 
-.large {
-    @apply lg:max-w-screen-lg;
+.largeContent {
+    @apply h-screen max-h-screen rounded-none lg:rounded-lg lg:max-w-screen-lg;
 }
 
 .Header {

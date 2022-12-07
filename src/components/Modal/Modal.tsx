@@ -42,9 +42,14 @@ export interface ModalProps {
     children?: React.ReactNode;
 }
 
-const variantStyles: { [key in variant]: string } = {
-    small: styles.small,
-    large: styles.large
+const variantContainerStyles: { [key in variant]: string } = {
+    small: styles.smallContainer,
+    large: styles.largeContainer
+};
+
+const variantContentStyles: { [key in variant]: string } = {
+    small: styles.smallContent,
+    large: styles.largeContent
 };
 
 export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondaryAction, children }: ModalProps) => {
@@ -85,11 +90,12 @@ export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondar
     );
 
     const labelBy = title ? headerId : bodyId;
-    const contentStyles = cx(styles.Content, variant && variantStyles[variant]);
+    const containerStyles = cx(styles.Container, variant && variantContainerStyles[variant]);
+    const contentStyles = cx(styles.Content, variant && variantContentStyles[variant]);
 
     return (
         <DialogOverlay className={styles.Overlay} isOpen={open} onDismiss={onDismiss}>
-            <div className={styles.Container}>
+            <div className={containerStyles}>
                 <DialogContent className={contentStyles} aria-labelledby={labelBy}>
                     {closeContent}
                     {headerContent}
