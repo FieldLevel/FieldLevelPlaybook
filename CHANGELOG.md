@@ -8,6 +8,12 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 3.1.0 - 2022-12-07
+
+### Enhancements
+
+-   Update mobile Modal variant styles ([#96](https://github.com/FieldLevel/FieldLevelPlaybook/pull/96))
+
 ## 3.0.1 - 2022-10-17
 
 ### Bug fixes
