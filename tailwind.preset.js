@@ -2,8 +2,6 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-    mode: 'jit',
-    darkMode: false,
     theme: {
         screens: {
             xs: '400px',
@@ -160,14 +158,5 @@ module.exports = {
         fontFamily: false,
         textOpacity: false,
         divideOpacity: false
-    },
-    variants: {
-        extend: {
-            fill: ['hover', 'active'],
-            backgroundColor: ['active'],
-            backgroundOpacity: ['active'],
-            outline: ['active'],
-            boxShadow: ['active']
-        }
     }
 };
