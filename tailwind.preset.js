@@ -1,6 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const colors = require('tailwindcss/colors');
 
+const LOCAL_COLORS = {
+    success: '#105e26',
+    premiumPrimary: '#927827',
+    premiumSecondary: '#B5A059',
+    premiumTertiary: '#C3AA59',
+    premiumQuaternary: '#DAC785',
+    premiumFifty: '#F5F0DB'
+};
+
 module.exports = {
     theme: {
         screens: {
@@ -38,9 +47,11 @@ module.exports = {
                 critical: colors.red[900],
                 warning: colors.amber[900],
                 highlight: colors.blue[900],
-                success: '#105e26',
+                success: LOCAL_COLORS.success,
                 'on-dark': colors.white,
-                black: colors.black
+                black: colors.black,
+                'premium-primary': LOCAL_COLORS.premiumPrimary,
+                'premium-secondary': LOCAL_COLORS.premiumSecondary
             },
             interactive: {
                 active: colors.sky[700],
@@ -77,7 +88,10 @@ module.exports = {
                 success: colors.emerald[500],
                 'success-muted': colors.emerald[200],
                 primary: colors.sky[700],
-                black: colors.black
+                black: colors.black,
+                'premium-secondary': LOCAL_COLORS.premiumSecondary,
+                'premium-tertiary': LOCAL_COLORS.premiumTertiary,
+                'premium-quaternary': LOCAL_COLORS.premiumQuaternary
             },
             background: {
                 base: colors.gray[100],
@@ -90,11 +104,18 @@ module.exports = {
                 'highlight-muted': colors.blue[50],
                 success: colors.emerald[100],
                 'success-muted': colors.emerald[50],
-                black: colors.black
+                black: colors.black,
+                'premium-primary': LOCAL_COLORS.premiumPrimary,
+                'premium-secondary': LOCAL_COLORS.premiumSecondary,
+                'premium-tertiary': LOCAL_COLORS.premiumTertiary,
+                'premium-quaternary': LOCAL_COLORS.premiumQuaternary,
+                'premium-fifty': LOCAL_COLORS.premiumFifty
             },
             foreground: {
                 base: colors.white,
-                muted: colors.gray[50]
+                muted: colors.gray[50],
+                dark: colors.gray[200],
+                success: LOCAL_COLORS.success
             },
             divider: {
                 base: colors.gray[200],
@@ -108,7 +129,8 @@ module.exports = {
                 warning: colors.amber[800],
                 highlight: colors.blue[800],
                 success: colors.emerald[700],
-                'on-dark': colors.white
+                'on-dark': colors.white,
+                'premium-primary': LOCAL_COLORS.premiumPrimary
             }
         },
         textColor: (theme) => ({
