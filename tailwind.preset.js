@@ -39,7 +39,8 @@ module.exports = {
                 warning: colors.amber[900],
                 highlight: colors.blue[900],
                 success: '#105e26',
-                'on-dark': colors.white
+                'on-dark': colors.white,
+                black: colors.black
             },
             interactive: {
                 active: colors.sky[700],
@@ -75,7 +76,8 @@ module.exports = {
                 'highlight-muted': colors.blue[200],
                 success: colors.emerald[500],
                 'success-muted': colors.emerald[200],
-                primary: colors.sky[700]
+                primary: colors.sky[700],
+                black: colors.black
             },
             background: {
                 base: colors.gray[100],
@@ -87,7 +89,8 @@ module.exports = {
                 highlight: colors.blue[100],
                 'highlight-muted': colors.blue[50],
                 success: colors.emerald[100],
-                'success-muted': colors.emerald[50]
+                'success-muted': colors.emerald[50],
+                black: colors.black
             },
             foreground: {
                 base: colors.white,
