@@ -2,8 +2,8 @@
     @apply inline-flex rounded shadow-none m-0 px-4 py-2 cursor-pointer text-center font-bold select-none no-underline;
     @apply focus:outline-none focus:ring;
     @apply border-primary text-interactive-active bg-transparent border;
-    @apply hover:bg-primary-base hover:bg-opacity-5;
-    @apply active:bg-primary-base active:bg-opacity-10;
+    @apply hover:bg-primary-base/5;
+    @apply active:bg-primary-base/10;
 }
 
 .primary {
@@ -26,9 +26,9 @@
 
 .plain {
     @apply p-2;
-    @apply text-interactive-active bg-transparent border-opacity-0;
-    @apply hover:bg-primary-base hover:bg-opacity-5 hover:border hover:border-primary hover:border-opacity-5;
-    @apply active:bg-primary-base active:bg-opacity-10;
+    @apply text-interactive-active bg-transparent border-none;
+    @apply hover:bg-primary-base/5 hover:border hover:border-primary/5;
+    @apply active:bg-primary-base/10;
 }
 
 .disabled {
@@ -58,7 +58,7 @@
 
 .plain.disabled {
     @apply bg-transparent text-disabled;
-    @apply hover:bg-transparent hover:border-muted hover:border-opacity-100;
+    @apply hover:bg-transparent hover:border-muted;
     @apply active:bg-transparent;
 }
 
