@@ -129,8 +129,8 @@ module.exports = {
                 warning: colors.amber[800],
                 highlight: colors.blue[800],
                 success: colors.emerald[700],
-                'on-dark': colors.white,
-                'premium-primary': LOCAL_COLORS.premiumPrimary
+                premium: LOCAL_COLORS.premiumPrimary,
+                'on-dark': colors.white
             }
         },
         textColor: (theme) => ({

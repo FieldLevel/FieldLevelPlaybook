@@ -30,6 +30,10 @@
     @apply fill-icon-success;
 }
 
+.premium {
+    @apply fill-icon-premium;
+}
+
 .onDark {
     @apply fill-icon-on-dark;
 }

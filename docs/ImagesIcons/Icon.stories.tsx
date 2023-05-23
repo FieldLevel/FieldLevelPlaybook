@@ -26,6 +26,9 @@ export const Color = () => (
             <Icon source={HomeMajor} color="success" />
         </Stack.Item>
         <Stack.Item>
+            <Icon source={HomeMajor} color="premium" />
+        </Stack.Item>
+        <Stack.Item>
             <Icon source={HomeMajor} color="highlight" />
         </Stack.Item>
     </Stack>
