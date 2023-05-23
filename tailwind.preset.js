@@ -29,6 +29,7 @@ module.exports = {
             wide: '.025em'
         },
         colors: {
+            current: 'currentColor',
             text: {
                 current: 'currentColor',
                 base: colors.gray[800],
