@@ -1,6 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const colors = require('tailwindcss/colors');
 
+const LOCAL_COLORS = {
+    success: '#105e26'
+};
+
 module.exports = {
     theme: {
         screens: {
@@ -38,7 +42,7 @@ module.exports = {
                 critical: colors.red[900],
                 warning: colors.amber[900],
                 highlight: colors.blue[900],
-                success: '#105e26',
+                success: LOCAL_COLORS.success,
                 'on-dark': colors.white,
                 black: colors.black
             },
@@ -94,7 +98,9 @@ module.exports = {
             },
             foreground: {
                 base: colors.white,
-                muted: colors.gray[50]
+                muted: colors.gray[50],
+                dark: colors.gray[200],
+                success: LOCAL_COLORS.success
             },
             divider: {
                 base: colors.gray[200],
