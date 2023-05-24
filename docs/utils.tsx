@@ -28,7 +28,7 @@ export const Deprecated = ({ version }) => <Badge type="critical">Deprecated in 
 export const Planned = () => <Badge type="muted">Planned</Badge>;
 
 export const TextColor = ({ name, dark }) => (
-    <div className={cx('block bg-transparent h-6 w-18 px-2 text-center rounded', dark && 'bg-primary-base', name)}>
+    <div className={cx('block h-6 w-18 px-2 text-center rounded', dark ? 'bg-primary-base' : 'bg-transparent', name)}>
         Example
     </div>
 );

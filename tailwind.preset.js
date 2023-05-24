@@ -1,9 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const colors = require('tailwindcss/colors');
 
+const LOCAL_COLORS = {
+    success: '#105e26'
+};
+
 module.exports = {
-    mode: 'jit',
-    darkMode: false,
     theme: {
         screens: {
             xs: '400px',
@@ -31,6 +33,7 @@ module.exports = {
             wide: '.025em'
         },
         colors: {
+            current: 'currentColor',
             text: {
                 current: 'currentColor',
                 base: colors.gray[800],
@@ -39,8 +42,9 @@ module.exports = {
                 critical: colors.red[900],
                 warning: colors.amber[900],
                 highlight: colors.blue[900],
-                success: '#105e26',
-                'on-dark': colors.white
+                success: LOCAL_COLORS.success,
+                'on-dark': colors.white,
+                black: colors.black
             },
             interactive: {
                 active: colors.sky[700],
@@ -66,6 +70,7 @@ module.exports = {
                 pressed: colors.red[800]
             },
             border: {
+                // NOTE: this is manually set to match in reset.css so if it changes here it needs to change there
                 base: colors.gray[300],
                 muted: colors.gray[200],
                 critical: colors.red[400],
@@ -76,7 +81,8 @@ module.exports = {
                 'highlight-muted': colors.blue[200],
                 success: colors.emerald[500],
                 'success-muted': colors.emerald[200],
-                primary: colors.sky[700]
+                primary: colors.sky[700],
+                black: colors.black
             },
             background: {
                 base: colors.gray[100],
@@ -88,11 +94,14 @@ module.exports = {
                 highlight: colors.blue[100],
                 'highlight-muted': colors.blue[50],
                 success: colors.emerald[100],
-                'success-muted': colors.emerald[50]
+                'success-muted': colors.emerald[50],
+                black: colors.black
             },
             foreground: {
                 base: colors.white,
-                muted: colors.gray[50]
+                muted: colors.gray[50],
+                dark: colors.gray[200],
+                success: LOCAL_COLORS.success
             },
             divider: {
                 base: colors.gray[200],
@@ -160,14 +169,5 @@ module.exports = {
         fontFamily: false,
         textOpacity: false,
         divideOpacity: false
-    },
-    variants: {
-        extend: {
-            fill: ['hover', 'active'],
-            backgroundColor: ['active'],
-            backgroundOpacity: ['active'],
-            outline: ['active'],
-            boxShadow: ['active']
-        }
     }
 };

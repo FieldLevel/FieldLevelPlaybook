@@ -13,7 +13,7 @@
 }
 
 .Icon {
-    @apply flex-shrink-0 mr-3;
+    @apply shrink-0 mr-3;
 }
 
 .Content {
@@ -45,7 +45,7 @@
 }
 
 .Close {
-    @apply ml-4 flex-shrink-0 flex;
+    @apply ml-4 shrink-0 flex;
 }
 
 .Close button {
