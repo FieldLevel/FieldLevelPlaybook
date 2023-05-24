@@ -8,6 +8,12 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 3.2.0 - 2023-05-24
+
+### Dependency upgrades
+
+-   Upgrade Tailwind and add colors ([#102](https://github.com/FieldLevel/FieldLevelPlaybook/pull/102))
+
 ## 3.1.0 - 2022-12-07
 
 ### Enhancements
