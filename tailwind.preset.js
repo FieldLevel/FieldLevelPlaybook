@@ -70,6 +70,7 @@ module.exports = {
                 pressed: colors.red[800]
             },
             border: {
+                // NOTE: this is manually set to match in reset.css so if it changes here it needs to change there
                 base: colors.gray[300],
                 muted: colors.gray[200],
                 critical: colors.red[400],
