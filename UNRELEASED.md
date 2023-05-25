@@ -14,8 +14,6 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Dependency upgrades
 
--   Upgrade Tailwind and add colors ([#102](https://github.com/FieldLevel/FieldLevelPlaybook/pull/102))
-
 ### Code quality
 
 ### Deprecations
