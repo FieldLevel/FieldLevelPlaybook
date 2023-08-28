@@ -20,9 +20,9 @@
     "prepare": "yarn run build",
     "build": "node ./scripts/build.js",
     "lint": "eslint --ext .ts,.tsx src docs --max-warnings=0",
-    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006 --no-manager-cache --ci",
-    "start-docs": "SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook --docs -p 6007",
-    "build-docs": "SET NODE_OPTIONS=--openssl-legacy-provider && build-storybook --docs --quiet -o public",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-manager-cache --ci",
+    "start-docs": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook --docs -p 6007",
+    "build-docs": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook --docs --quiet -o public",
     "generate-icons": "node ./scripts/generate-icons.js"
   },
   "dependencies": {
@@ -50,6 +50,7 @@
     "autoprefixer": "^10.4.14",
     "babel-loader": "^8.2.2",
     "cpy-cli": "^3.1.1",
+    "cross-env": "^7.0.3",
     "eslint": "^6.0.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.3.1",
