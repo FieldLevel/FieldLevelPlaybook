@@ -8,6 +8,12 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 4.0.0 - 2023-08-29
+
+### Dependency upgrades
+
+-   Upgrade to React 17 and Node 18 ([#109](https://github.com/FieldLevel/FieldLevelPlaybook/pull/109))
+
 ## 3.2.0 - 2023-05-24
 
 ### Dependency upgrades
