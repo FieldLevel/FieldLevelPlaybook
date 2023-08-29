@@ -7,8 +7,8 @@
     "url": "git://github.com/FieldLevel/FieldLevelPlaybook.git"
   },
   "engines": {
-    "node": ">=14.15",
-    "yarn": ">=1.22.5",
+    "node": ">=18.17",
+    "yarn": ">=1.22.19",
     "npm": "use yarn!"
   },
   "module": "dist/index.js",
@@ -20,17 +20,16 @@
     "prepare": "yarn run build",
     "build": "node ./scripts/build.js",
     "lint": "eslint --ext .ts,.tsx src docs --max-warnings=0",
-    "start": "start-storybook -p 6006 --no-manager-cache --ci",
-    "start-docs": "start-storybook --docs -p 6007",
-    "build-docs": "build-storybook --docs --quiet -o public",
-    "generate-icons": "node ./scripts/generate-icons.js",
-    "refresh-vs-token": "vsts-npm-auth -config .npmrc"
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-manager-cache --ci",
+    "start-docs": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook --docs -p 6007",
+    "build-docs": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook --docs --quiet -o public",
+    "generate-icons": "node ./scripts/generate-icons.js"
   },
   "dependencies": {
     "@reach/dialog": "^0.17.0",
     "classnames": "^2.2.6",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-intersection-observer": "^9.4.0"
   },
   "peerDependencies": {},
@@ -44,13 +43,14 @@
     "@storybook/react": "^6.5.12",
     "@svgr/cli": "^5.5.0",
     "@types/classnames": "^2.2.11",
-    "@types/react": "^16",
-    "@types/react-dom": "^16",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
     "@typescript-eslint/eslint-plugin": "^2.3.3",
     "@typescript-eslint/parser": "^2.3.3",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^8.2.2",
     "cpy-cli": "^3.1.1",
+    "cross-env": "^7.0.3",
     "eslint": "^6.0.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.3.1",
