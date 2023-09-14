@@ -2,7 +2,6 @@
 import React, { useRef, useState } from 'react';
 
 import { TextInput, FormLayout, Button, Stack } from '../../src';
-import type { TextInputRef } from '../../src/components/TextInput';
 import { SearchMinor } from '../../src';
 
 export const Default = (args: any) => <TextInput {...args} label="Headline" name="headline" />;
@@ -63,17 +62,28 @@ export const MaxLength = () => <TextInput label="Headline" name="headline" maxLe
 
 export const Rows = () => <TextInput label="Headline" name="headline" rows={3} maxRows={5} />;
 
-export const Focus = () => {
-    const inputRef = useRef<TextInputRef>(null);
+export const Ref = () => {
+    const inputRef = useRef<HTMLInputElement>(null);
+    const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
     const focusInput = () => {
         inputRef.current?.focus();
     };
 
+    const focusTextArea = () => {
+        textAreaRef.current?.focus();
+    };
+
     return (
-        <Stack align="end">
-            <TextInput label="Headline" name="headline" ref={inputRef} />
-            <Button onClick={focusInput}>Focus!</Button>
-        </Stack>
+        <>
+            <Stack align="end">
+                <TextInput label="Input" name="input" ref={inputRef} />
+                <Button onClick={focusInput}>Focus!</Button>
+            </Stack>
+            <Stack align="end">
+                <TextInput rows={3} label="TextArea" name="textarea" ref={textAreaRef} />
+                <Button onClick={focusTextArea}>Focus!</Button>
+            </Stack>
+        </>
     );
 };

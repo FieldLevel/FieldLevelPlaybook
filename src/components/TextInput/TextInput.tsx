@@ -32,10 +32,6 @@ type Action = {
     onClick?(): void;
 };
 
-export type TextInputRef = {
-    focus: () => void;
-};
-
 export interface TextInputProps {
     name: string;
     type?: Type;
@@ -75,19 +71,14 @@ export const TextInput = React.forwardRef(function TextInput(
         error,
         onChange
     }: TextInputProps,
-    forwardedRef: Ref<TextInputRef>
+    forwardedRef: Ref<HTMLInputElement | HTMLTextAreaElement | null>
 ) {
     const id = useUniqueId(name);
     const [currentRows, setCurrentRows] = useState(rows);
     const inputRef = useRef<HTMLInputElement>(null);
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
-    useImperativeHandle(forwardedRef, () => ({
-        focus: () => {
-            const el = inputRef?.current || textAreaRef?.current;
-            el?.focus();
-        }
-    }));
+    useImperativeHandle(forwardedRef, () => (rows ? textAreaRef?.current : inputRef?.current));
 
     if (multiline) {
         rows = 3;
