@@ -19,6 +19,8 @@ export interface ButtonProps {
     url?: string;
     submit?: boolean;
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
     children?: React.ReactNode;
     onClick?(): void;
 }
@@ -41,7 +43,19 @@ const hasChildren = (children: React.ReactNode): boolean => {
 };
 
 export const Button = React.forwardRef(function Button(
-    { size, variant, disabled, fullWidth, url, submit, icon, onClick, children }: ButtonProps,
+    {
+        size,
+        variant,
+        disabled,
+        fullWidth,
+        url,
+        submit,
+        icon,
+        ariaLabel,
+        ariaLabelledBy,
+        onClick,
+        children
+    }: ButtonProps,
     forwardedRef: Ref<HTMLButtonElement>
 ) {
     const hasLabel = hasChildren(children);
@@ -67,6 +81,8 @@ export const Button = React.forwardRef(function Button(
             className={buttonClassName}
             disabled={disabled}
             type={submit ? 'submit' : 'button'}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
             onClick={onClick}
         >
             {iconContent}

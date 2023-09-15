@@ -60,6 +60,18 @@ export const Url = () => (
     </Button>
 );
 
+export const Accessibility = () => (
+    <>
+        <div className="mb-4">
+            <Button icon={AddMinor} ariaLabel="Add" />
+        </div>
+        <ButtonGroup>
+            <Button icon={AddMinor} ariaLabelledBy="label" />
+            <div id="label">Some other label for the button</div>
+        </ButtonGroup>
+    </>
+);
+
 export const Submit = () => (
     <form
         onSubmit={(e) => {
