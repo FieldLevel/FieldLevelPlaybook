@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Button, ButtonGroup, AddMinor } from '../../src';
 
@@ -70,3 +70,21 @@ export const Submit = () => (
         </ButtonGroup>
     </form>
 );
+
+export const Ref = () => {
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const focusButton = () => {
+        buttonRef.current?.focus();
+    };
+
+    return (
+        <ButtonGroup>
+            <Button variant="primary" ref={buttonRef}>
+                Save
+            </Button>
+            <Button variant="secondary" onClick={focusButton}>
+                Don&apos;t cancel, save!
+            </Button>
+        </ButtonGroup>
+    );
+};

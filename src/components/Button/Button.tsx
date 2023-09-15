@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Ref } from 'react';
 import cx from 'classnames';
 
 import { Icon } from '../Icon';
@@ -34,7 +35,10 @@ const variantStyles: { [key in variant]: string } = {
     destructive: styles.destructive
 };
 
-export const Button = ({ size, variant, disabled, fullWidth, url, submit, icon, onClick, children }: ButtonProps) => {
+export const Button = React.forwardRef(function Button(
+    { size, variant, disabled, fullWidth, url, submit, icon, onClick, children }: ButtonProps,
+    forwardedRef: Ref<HTMLButtonElement>
+) {
     const className = cx(
         styles.Button,
         size && sizeStyles[size],
@@ -50,7 +54,13 @@ export const Button = ({ size, variant, disabled, fullWidth, url, submit, icon, 
     );
 
     const buttonContent = (
-        <button className={className} disabled={disabled} type={submit ? 'submit' : 'button'} onClick={onClick}>
+        <button
+            ref={forwardedRef}
+            className={className}
+            disabled={disabled}
+            type={submit ? 'submit' : 'button'}
+            onClick={onClick}
+        >
             {iconContent}
             {children}
         </button>
@@ -63,4 +73,4 @@ export const Button = ({ size, variant, disabled, fullWidth, url, submit, icon, 
     ) : (
         buttonContent
     );
-};
+});
