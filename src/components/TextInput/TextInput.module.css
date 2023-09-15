@@ -4,7 +4,7 @@
 
 .TextInput input,
 .TextInput textarea {
-    @apply rounded-md shadow-sm border border-base py-2 px-3 w-full max-h-40 align-bottom resize-none;
+    @apply rounded-md shadow-sm border border-base py-2 px-3 w-full align-bottom resize-none;
     @apply outline-none focus:ring placeholder-text-muted;
     line-height: 20px;
     min-height: 40px;
