@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Button, ButtonGroup, AddMinor } from '../../src';
 
@@ -15,7 +15,12 @@ export const Plain = () => <Button variant="plain">Learn More</Button>;
 
 export const Destructive = () => <Button variant="destructive">Delete</Button>;
 
-export const Icon = () => <Button icon={AddMinor}>Add Athlete</Button>;
+export const Icon = () => (
+    <ButtonGroup>
+        <Button icon={AddMinor}>Add Athlete</Button>
+        <Button icon={AddMinor} />
+    </ButtonGroup>
+);
 
 export const Size = () => (
     <ButtonGroup>
@@ -27,7 +32,12 @@ export const Size = () => (
 
 export const FullWidth = () => (
     <div className="w-80">
-        <Button fullWidth>Full Width</Button>
+        <ButtonGroup vertical>
+            <Button fullWidth>Full width</Button>
+            <Button fullWidth url="https://www.fieldlevel.com">
+                Full width with link
+            </Button>
+        </ButtonGroup>
     </div>
 );
 
@@ -50,9 +60,26 @@ export const Disabled = () => (
 );
 
 export const Url = () => (
-    <Button url="http://www.fieldlevel.com" variant="primary">
-        Go to FieldLevel
-    </Button>
+    <ButtonGroup>
+        <Button url="https://www.fieldlevel.com" variant="primary">
+            Go to FieldLevel
+        </Button>
+        <Button url="https://support.fieldlevel.com" target="_blank" variant="primary">
+            FieldLevel Support
+        </Button>
+    </ButtonGroup>
+);
+
+export const Accessibility = () => (
+    <>
+        <div className="mb-4">
+            <Button icon={AddMinor} ariaLabel="Add" />
+        </div>
+        <ButtonGroup>
+            <Button icon={AddMinor} ariaLabelledBy="label" />
+            <div id="label">Some other label for the button</div>
+        </ButtonGroup>
+    </>
 );
 
 export const Submit = () => (
@@ -70,3 +97,21 @@ export const Submit = () => (
         </ButtonGroup>
     </form>
 );
+
+export const Ref = () => {
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const focusButton = () => {
+        buttonRef.current?.focus();
+    };
+
+    return (
+        <ButtonGroup>
+            <Button variant="primary" ref={buttonRef}>
+                Save
+            </Button>
+            <Button variant="secondary" onClick={focusButton}>
+                Don&apos;t cancel, save!
+            </Button>
+        </ButtonGroup>
+    );
+};

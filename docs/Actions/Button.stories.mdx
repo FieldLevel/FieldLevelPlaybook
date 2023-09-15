@@ -89,10 +89,18 @@ Use when you need a button to expand to the full width of it's parent container.
 
 ## Url
 
-You can pass a "url" option to any Button to make sure it's semantically wrapped in a link if the action is a navigation change.
+You can pass `url` and/or `target` props to any Button to make sure it's semantically wrapped in a link if the action is a navigation change.
 
 <Canvas>
     <Story story={stories.Url} />
+</Canvas>
+
+## Accessibility
+
+Use the `ariaLabel` or `ariaLabelledBy` props to provide accessible button labels for any Button without a label.
+
+<Canvas>
+    <Story story={stories.Accessibility} />
 </Canvas>
 
 ## Submit
@@ -101,4 +109,12 @@ Use the submit option for the Button inside a Form that should trigger the form 
 
 <Canvas>
     <Story story={stories.Submit} />
+</Canvas>
+
+## Ref
+
+You can get access to the ref of the inner button element by utilizing the `ref` prop.
+
+<Canvas>
+    <Story story={stories.Ref} />
 </Canvas>

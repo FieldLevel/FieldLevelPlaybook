@@ -3,3 +3,7 @@
 	@apply hover:no-underline hover:text-current;
 	@apply focus:no-underline focus:text-current;
 }
+
+.fullWidth {
+    @apply w-full;
+}

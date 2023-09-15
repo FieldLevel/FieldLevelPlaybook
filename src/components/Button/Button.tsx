@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Ref } from 'react';
 import cx from 'classnames';
 
 import { Icon } from '../Icon';
@@ -16,8 +17,11 @@ export interface ButtonProps {
     disabled?: boolean;
     fullWidth?: boolean;
     url?: string;
+    target?: string;
     submit?: boolean;
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
     children?: React.ReactNode;
     onClick?(): void;
 }
@@ -34,8 +38,38 @@ const variantStyles: { [key in variant]: string } = {
     destructive: styles.destructive
 };
 
-export const Button = ({ size, variant, disabled, fullWidth, url, submit, icon, onClick, children }: ButtonProps) => {
-    const className = cx(
+const hasChildren = (children: React.ReactNode): boolean => {
+    const count = React.Children.count(children);
+    return count > 0;
+};
+
+export const Button = React.forwardRef(function Button(
+    {
+        size,
+        variant,
+        disabled,
+        fullWidth,
+        url,
+        target,
+        submit,
+        icon,
+        ariaLabel,
+        ariaLabelledBy,
+        onClick,
+        children
+    }: ButtonProps,
+    forwardedRef: Ref<HTMLButtonElement>
+) {
+    const hasLabel = hasChildren(children);
+    const iconClassName = cx(hasLabel && styles.iconWithLabel);
+
+    const iconContent = icon && (
+        <span className={iconClassName}>
+            <Icon source={icon} color="current" />
+        </span>
+    );
+
+    const buttonClassName = cx(
         styles.Button,
         size && sizeStyles[size],
         variant && variantStyles[variant],
@@ -43,24 +77,26 @@ export const Button = ({ size, variant, disabled, fullWidth, url, submit, icon, 
         fullWidth && styles.fullWidth
     );
 
-    const iconContent = icon && (
-        <span className={styles.Icon}>
-            <Icon source={icon} color="current" />
-        </span>
-    );
-
     const buttonContent = (
-        <button className={className} disabled={disabled} type={submit ? 'submit' : 'button'} onClick={onClick}>
+        <button
+            ref={forwardedRef}
+            className={buttonClassName}
+            disabled={disabled}
+            type={submit ? 'submit' : 'button'}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
+            onClick={onClick}
+        >
             {iconContent}
             {children}
         </button>
     );
 
     return url ? (
-        <Link unstyled url={url}>
+        <Link unstyled fullWidth={fullWidth} url={url} target={target}>
             {buttonContent}
         </Link>
     ) : (
         buttonContent
     );
-};
+});

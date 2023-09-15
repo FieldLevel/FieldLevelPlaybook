@@ -15,8 +15,8 @@ export const Unstyled = () => (
     </Link>
 );
 
-export const External = () => (
-    <Link external url="https://recruiting.fieldlevel.com">
+export const Target = () => (
+    <Link url="https://recruiting.fieldlevel.com" target="_blank">
         Recruiting Guidance
     </Link>
 );
