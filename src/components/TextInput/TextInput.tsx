@@ -39,10 +39,6 @@ export interface TextInputProps {
     action?: Action;
     value?: string;
     placeholder?: string;
-    /**
-     * @deprecated Use rows and maxRows instead
-     */
-    multiline?: boolean;
     rows?: number;
     maxRows?: number;
     maxLength?: number;
@@ -61,7 +57,6 @@ export const TextInput = React.forwardRef(function TextInput(
         action,
         value,
         placeholder,
-        multiline,
         rows,
         maxRows,
         maxLength,
@@ -79,13 +74,6 @@ export const TextInput = React.forwardRef(function TextInput(
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
     useImperativeHandle(forwardedRef, () => (rows ? textAreaRef?.current : inputRef?.current));
-
-    if (multiline) {
-        rows = 3;
-        console.warn(
-            `TextInput :: The multiline prop has been deprecated. Use rows and maxRows to control multiline behavior.`
-        );
-    }
 
     let multiMaxRows: number;
     if (rows) {
