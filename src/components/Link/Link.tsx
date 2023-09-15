@@ -5,6 +5,9 @@ import styles from './Link.module.css';
 
 export interface LinkProps {
     url?: string;
+    /**
+     * @deprecated Use target instead
+     */
     external?: boolean;
     target?: string;
     unstyled?: boolean;
@@ -16,6 +19,10 @@ export const Link = ({ url, target, external, unstyled, children, onClick }: Lin
     const targetValue = target || (external ? '_blank' : '');
     const rel = targetValue == '_blank' ? 'noopener noreferrer' : '';
     const style = cx(unstyled && styles.unstyled);
+
+    if (external) {
+        console.warn(`Link :: The external prop has been deprecated. Use target instead.`);
+    }
 
     return (
         <a href={url} target={targetValue} rel={rel} className={style} onClick={onClick}>
