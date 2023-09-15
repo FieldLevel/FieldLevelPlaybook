@@ -58,7 +58,7 @@ export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondar
 
     const closeContent = (
         <div className={styles.Close}>
-            <button onClick={onDismiss}>
+            <button aria-label="Close dialog" onClick={onDismiss}>
                 <Icon source={CloseMajor} />
             </button>
         </div>
@@ -96,11 +96,11 @@ export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondar
     return (
         <DialogOverlay className={styles.Overlay} isOpen={open} onDismiss={onDismiss}>
             <div className={containerStyles}>
-                <DialogContent className={contentStyles} aria-labelledby={labelBy}>
-                    {closeContent}
+                <DialogContent tabIndex={0} className={contentStyles} aria-labelledby={labelBy}>
                     {headerContent}
                     {bodyContent}
                     {footerContent}
+                    {closeContent}
                 </DialogContent>
             </div>
         </DialogOverlay>

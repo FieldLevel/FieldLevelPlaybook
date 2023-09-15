@@ -23,6 +23,10 @@
         @apply hover:text-interactive-hover hover:underline;
     }
 
+    button {
+        @apply focus:ring;
+    }
+
     b,
     strong {
         @apply font-bold;
