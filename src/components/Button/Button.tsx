@@ -17,6 +17,7 @@ export interface ButtonProps {
     disabled?: boolean;
     fullWidth?: boolean;
     url?: string;
+    target?: string;
     submit?: boolean;
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
     ariaLabel?: string;
@@ -49,6 +50,7 @@ export const Button = React.forwardRef(function Button(
         disabled,
         fullWidth,
         url,
+        target,
         submit,
         icon,
         ariaLabel,
@@ -91,7 +93,7 @@ export const Button = React.forwardRef(function Button(
     );
 
     return url ? (
-        <Link unstyled url={url}>
+        <Link unstyled url={url} target={target}>
             {buttonContent}
         </Link>
     ) : (

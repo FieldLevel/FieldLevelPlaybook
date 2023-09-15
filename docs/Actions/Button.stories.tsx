@@ -55,9 +55,14 @@ export const Disabled = () => (
 );
 
 export const Url = () => (
-    <Button url="http://www.fieldlevel.com" variant="primary">
-        Go to FieldLevel
-    </Button>
+    <ButtonGroup>
+        <Button url="https://www.fieldlevel.com" variant="primary">
+            Go to FieldLevel
+        </Button>
+        <Button url="https://support.fieldlevel.com" target="_blank" variant="primary">
+            FieldLevel Support
+        </Button>
+    </ButtonGroup>
 );
 
 export const Accessibility = () => (
