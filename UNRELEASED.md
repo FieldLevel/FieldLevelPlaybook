@@ -19,3 +19,5 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Code quality
 
 ### Deprecations
+
+-   Remove deprecated `multiline` prop from `TextInput` ([#112](https://github.com/FieldLevel/FieldLevelPlaybook/pull/112))
