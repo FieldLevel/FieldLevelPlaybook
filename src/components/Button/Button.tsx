@@ -35,11 +35,25 @@ const variantStyles: { [key in variant]: string } = {
     destructive: styles.destructive
 };
 
+const hasChildren = (children: React.ReactNode): boolean => {
+    const count = React.Children.count(children);
+    return count > 0;
+};
+
 export const Button = React.forwardRef(function Button(
     { size, variant, disabled, fullWidth, url, submit, icon, onClick, children }: ButtonProps,
     forwardedRef: Ref<HTMLButtonElement>
 ) {
-    const className = cx(
+    const hasLabel = hasChildren(children);
+    const iconClassName = cx(hasLabel && styles.iconWithLabel);
+
+    const iconContent = icon && (
+        <span className={iconClassName}>
+            <Icon source={icon} color="current" />
+        </span>
+    );
+
+    const buttonClassName = cx(
         styles.Button,
         size && sizeStyles[size],
         variant && variantStyles[variant],
@@ -47,16 +61,10 @@ export const Button = React.forwardRef(function Button(
         fullWidth && styles.fullWidth
     );
 
-    const iconContent = icon && (
-        <span className={styles.Icon}>
-            <Icon source={icon} color="current" />
-        </span>
-    );
-
     const buttonContent = (
         <button
             ref={forwardedRef}
-            className={className}
+            className={buttonClassName}
             disabled={disabled}
             type={submit ? 'submit' : 'button'}
             onClick={onClick}

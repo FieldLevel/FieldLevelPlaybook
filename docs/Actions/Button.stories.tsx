@@ -15,7 +15,12 @@ export const Plain = () => <Button variant="plain">Learn More</Button>;
 
 export const Destructive = () => <Button variant="destructive">Delete</Button>;
 
-export const Icon = () => <Button icon={AddMinor}>Add Athlete</Button>;
+export const Icon = () => (
+    <ButtonGroup>
+        <Button icon={AddMinor}>Add Athlete</Button>
+        <Button icon={AddMinor} />
+    </ButtonGroup>
+);
 
 export const Size = () => (
     <ButtonGroup>
