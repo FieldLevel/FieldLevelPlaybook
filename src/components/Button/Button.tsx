@@ -93,7 +93,7 @@ export const Button = React.forwardRef(function Button(
     );
 
     return url ? (
-        <Link unstyled url={url} target={target}>
+        <Link unstyled fullWidth={fullWidth} url={url} target={target}>
             {buttonContent}
         </Link>
     ) : (
