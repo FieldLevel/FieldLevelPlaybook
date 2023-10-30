@@ -6,6 +6,9 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+- Remove unnecessary/invalid "role='img'" on `Logo` container
+- Remove unnecessary/invalid "role='img'" on `Avatar` container
+
 ### Bug fixes
 
 ### Documentation
