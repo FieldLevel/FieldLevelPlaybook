@@ -8,6 +8,13 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 4.1.1 - 2023-10-31
+
+### Enhancements
+
+- Remove unnecessary/invalid "role='img'" on `Logo` container ([#116](https://github.com/FieldLevel/FieldLevelPlaybook/pull/116))
+- Remove unnecessary/invalid "role='img'" on `Avatar` container ([#116](https://github.com/FieldLevel/FieldLevelPlaybook/pull/116))
+
 ## 4.1.0 - 2023-09-15
 
 ### Bug fixes
