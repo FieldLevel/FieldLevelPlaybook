@@ -33,7 +33,7 @@ export const Logo = ({ source, size, alt, title, lazy = false }: LogoProps) => {
     const finalAlt = alt ?? title;
 
     return (
-        <span role="img" className={logoStyle}>
+        <span className={logoStyle}>
             {lazy ? (
                 <LazyImage
                     src={source}

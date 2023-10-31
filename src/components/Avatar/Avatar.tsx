@@ -33,7 +33,7 @@ export const Avatar = ({ source, size, alt, title, lazy = false }: AvatarProps) 
     const finalAlt = alt ?? title;
 
     return (
-        <span role="img" className={avatarStyle}>
+        <span className={avatarStyle}>
             {lazy ? (
                 <LazyImage
                     src={source}
