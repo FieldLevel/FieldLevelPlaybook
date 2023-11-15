@@ -9,6 +9,7 @@ type pixelSize = size | 'base';
 
 export interface LogoProps {
     source: string;
+    sourceSet?: string;
     size?: size;
     alt?: string;
     title?: string;
@@ -26,7 +27,7 @@ const sizeInPixels: { [key in pixelSize]: number } = {
     large: 60
 };
 
-export const Logo = ({ source, size, alt, title, lazy = false }: LogoProps) => {
+export const Logo = ({ source, sourceSet, size, alt, title, lazy = false }: LogoProps) => {
     const logoStyle = cx(styles.Logo, size && sizeStyles[size]);
     const pixelSize = size ?? 'base';
     const dimension = sizeInPixels[pixelSize];
@@ -37,6 +38,7 @@ export const Logo = ({ source, size, alt, title, lazy = false }: LogoProps) => {
             {lazy ? (
                 <LazyImage
                     src={source}
+                    srcSet={sourceSet}
                     height={dimension}
                     width={dimension}
                     alt={finalAlt}
@@ -46,6 +48,7 @@ export const Logo = ({ source, size, alt, title, lazy = false }: LogoProps) => {
             ) : (
                 <img
                     src={source}
+                    srcSet={sourceSet}
                     height={dimension}
                     width={dimension}
                     alt={finalAlt}
