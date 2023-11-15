@@ -9,6 +9,7 @@ type pixelSize = size | 'base';
 
 export interface AvatarProps {
     source: string;
+    sourceSet?: string;
     size?: size;
     alt?: string;
     title?: string;
@@ -26,7 +27,7 @@ const sizeInPixels: { [key in pixelSize]: number } = {
     large: 60
 };
 
-export const Avatar = ({ source, size, alt, title, lazy = false }: AvatarProps) => {
+export const Avatar = ({ source, sourceSet, size, alt, title, lazy = false }: AvatarProps) => {
     const avatarStyle = cx(styles.Avatar, size && sizeStyles[size]);
     const pixelSize = size ?? 'base';
     const dimension = sizeInPixels[pixelSize];
@@ -37,6 +38,7 @@ export const Avatar = ({ source, size, alt, title, lazy = false }: AvatarProps) 
             {lazy ? (
                 <LazyImage
                     src={source}
+                    srcSet={sourceSet}
                     height={dimension}
                     width={dimension}
                     alt={finalAlt}
@@ -46,6 +48,7 @@ export const Avatar = ({ source, size, alt, title, lazy = false }: AvatarProps) 
             ) : (
                 <img
                     src={source}
+                    srcSet={sourceSet}
                     height={dimension}
                     width={dimension}
                     alt={finalAlt}

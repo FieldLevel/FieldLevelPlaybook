@@ -8,6 +8,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 - Add srcSet support on Logo
 - Add srcSet support on LazyImage
+- Add srcSet support on Avatar
 
 ### Bug fixes
 
