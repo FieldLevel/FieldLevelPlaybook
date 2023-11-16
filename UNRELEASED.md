@@ -6,11 +6,19 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+- Add srcSet support on Logo
+- Add srcSet support on LazyImage
+- Add srcSet support on Avatar
+
 ### Bug fixes
+
+- Fix invalid aria role on LazyImage
 
 ### Documentation
 
 ### Development workflow
+
+- Ignore IntelliJ IDE project settings (.idea folder)
 
 ### Dependency upgrades
 

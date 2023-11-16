@@ -5,6 +5,7 @@ import cx from 'classnames';
 
 export interface LazyImageProps {
     src: string;
+    srcSet?: string;
     alt?: string;
     title?: string;
     width: number;
@@ -21,7 +22,7 @@ const getImageAttributes = (width: number, height: number, cover?: boolean) => {
     return { classNames, wrapperStyle };
 };
 
-const NativeImage = ({ src, alt, title, width, height, cover }: LazyImageProps) => {
+const NativeImage = ({ src, srcSet, alt, title, width, height, cover }: LazyImageProps) => {
     const { classNames, wrapperStyle } = getImageAttributes(width, height, cover);
 
     return (
@@ -29,18 +30,19 @@ const NativeImage = ({ src, alt, title, width, height, cover }: LazyImageProps) 
             <img
                 loading="lazy"
                 src={src}
+                srcSet={srcSet}
                 width={width}
                 height={height}
                 alt={alt}
                 title={title}
                 className={classNames}
-                role="presentation"
+                role={alt === '' ? 'presentation' : undefined}
             />
         </div>
     );
 };
 
-const FallbackImage = ({ src, alt, title, width, height, cover }: LazyImageProps) => {
+const FallbackImage = ({ src, srcSet, alt, title, width, height, cover }: LazyImageProps) => {
     const { classNames, wrapperStyle } = getImageAttributes(width, height, cover);
 
     const { ref, inView } = useInView({
@@ -54,19 +56,20 @@ const FallbackImage = ({ src, alt, title, width, height, cover }: LazyImageProps
             {inView ? (
                 <img
                     src={src}
+                    srcSet={srcSet}
                     width={width}
                     height={height}
                     alt={alt}
                     title={title}
                     className={classNames}
-                    role="presentation"
+                    role={alt === '' ? 'presentation' : undefined}
                 />
             ) : null}
         </div>
     );
 };
 
-export const LazyImage = ({ src, alt, title, width, height, cover = false }: LazyImageProps) => {
+export const LazyImage = ({ src, srcSet, alt, title, width, height, cover = false }: LazyImageProps) => {
     const supportsLazyLoading = HTMLImageElement.prototype.hasOwnProperty('loading');
     const finalAlt = alt ?? title;
 
@@ -75,9 +78,25 @@ export const LazyImage = ({ src, alt, title, width, height, cover = false }: Laz
     return (
         <>
             {supportsLazyLoading ? (
-                <NativeImage src={src} alt={finalAlt} title={title} height={height} width={width} cover={cover} />
+                <NativeImage
+                    src={src}
+                    srcSet={srcSet}
+                    alt={finalAlt}
+                    title={title}
+                    height={height}
+                    width={width}
+                    cover={cover}
+                />
             ) : (
-                <FallbackImage src={src} alt={finalAlt} title={title} height={height} width={width} cover={cover} />
+                <FallbackImage
+                    src={src}
+                    srcSet={srcSet}
+                    alt={finalAlt}
+                    title={title}
+                    height={height}
+                    width={width}
+                    cover={cover}
+                />
             )}
         </>
     );
