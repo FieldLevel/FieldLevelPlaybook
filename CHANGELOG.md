@@ -8,6 +8,22 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 4.2.0 - 2023-11-16
+
+### Enhancements
+
+- Add srcSet support on Logo
+- Add srcSet support on LazyImage
+- Add srcSet support on Avatar
+
+### Bug fixes
+
+- Fix invalid aria role on LazyImage
+
+### Development workflow
+
+- Ignore IntelliJ IDE project settings (.idea folder)
+
 ## 4.1.1 - 2023-10-31
 
 ### Enhancements
