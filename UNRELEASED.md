@@ -6,6 +6,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   Creates a new color definition for placeholder text ([#121](https://github.com/FieldLevel/FieldLevelPlaybook/pull/121))
+
 ### Bug fixes
 
 ### Documentation
