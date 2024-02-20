@@ -6,6 +6,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-- Add animation to `Feedback` component ([#122](https://github.com/FieldLevel/FieldLevelPlaybook/pull/122))
+
 ### Bug fixes
 
 ### Documentation
