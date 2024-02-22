@@ -4,7 +4,7 @@
 
 .Select select {
     @apply rounded-md shadow-sm border bg-secondary-base border-base py-2 px-3 w-full appearance-none;
-    @apply outline-none focus:ring placeholder-text-muted;
+    @apply outline-none focus:ring placeholder-base;
 }
 
 .disabled select {
