@@ -26,7 +26,7 @@ module.exports = {
         },
         fontWeight: {
             normal: 400,
-            bold: 500
+            bold: 600
         },
         letterSpacing: {
             tight: '-.025em',
