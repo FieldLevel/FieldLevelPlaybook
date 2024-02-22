@@ -2,7 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
-import { Heading } from '../Heading';
 import { Button } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { Icon } from '../Icon';
@@ -15,7 +14,7 @@ import styles from './Modal.module.css';
 const Header = ({ id, title }: { id: string; title: string }) => {
     return (
         <div id={id} className={styles.Header}>
-            <Heading>{title}</Heading>
+            {title}
         </div>
     );
 };
