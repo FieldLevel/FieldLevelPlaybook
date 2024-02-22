@@ -26,7 +26,7 @@ module.exports = {
         },
         fontWeight: {
             normal: 400,
-            bold: 500
+            bold: 600
         },
         letterSpacing: {
             tight: '-.025em',
@@ -116,8 +116,14 @@ module.exports = {
                 highlight: colors.blue[800],
                 success: colors.emerald[700],
                 'on-dark': colors.white
+            },
+            placeholder: {
+                base: colors.gray[400]
             }
         },
+        placeholderColor: (theme) => ({
+            ...theme('colors.placeholder')
+        }),
         textColor: (theme) => ({
             ...theme('colors.text'),
             interactive: {
