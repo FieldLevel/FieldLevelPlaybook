@@ -6,7 +6,10 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
--- Bump up the font size of `Modal` titles to 24px ([#123](https://github.com/FieldLevel/FieldLevelPlaybook/pull/123))
+-   Bump up the font size of `Modal` titles to 24px ([#123](https://github.com/FieldLevel/FieldLevelPlaybook/pull/123))
+-   Add animation to `Feedback` component ([#122](https://github.com/FieldLevel/FieldLevelPlaybook/pull/122))
+-   Creates a new color definition for placeholder text ([#121](https://github.com/FieldLevel/FieldLevelPlaybook/pull/121))
+-   Updates the font weight to 600 for `font-bold` ([#120](https://github.com/FieldLevel/FieldLevelPlaybook/pull/120))
 
 ### Bug fixes
 

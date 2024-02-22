@@ -26,7 +26,7 @@ module.exports = {
         },
         fontWeight: {
             normal: 400,
-            bold: 500
+            bold: 600
         },
         letterSpacing: {
             tight: '-.025em',
@@ -116,8 +116,14 @@ module.exports = {
                 highlight: colors.blue[800],
                 success: colors.emerald[700],
                 'on-dark': colors.white
+            },
+            placeholder: {
+                base: colors.gray[400]
             }
         },
+        placeholderColor: (theme) => ({
+            ...theme('colors.placeholder')
+        }),
         textColor: (theme) => ({
             ...theme('colors.text'),
             interactive: {
@@ -160,6 +166,18 @@ module.exports = {
         extend: {
             maxHeight: {
                 'screen-m': 'calc(100vh - theme(spacing.16))'
+            },
+            keyframes: {
+                slideInDown: { from: { transform: 'translate3d(0, -100%, 0)' } },
+                slideInLeft: { from: { transform: 'translate3d(-100%, 0, 0)' } },
+                slideInRight: { from: { transform: 'translate3d(100%, 0, 0)' } },
+                slideInUp: { from: { transform: 'translate3d(0, 100%, 0)' } }
+            },
+            animation: {
+                'slide-in-down': 'slideInDown 0.5s forwards',
+                'slide-in-left': 'slideInLeft 0.5s forwards',
+                'slide-in-right': 'slideInRight 0.5s forwards',
+                'slide-in-up': 'slideInUp 0.3s forwards ease-out'
             }
         }
     },
