@@ -3,7 +3,7 @@
 }
 
 .Select select {
-    @apply rounded-md shadow-sm border bg-secondary-base border-base py-2 px-3 w-full appearance-none;
+    @apply rounded-md shadow-sm border bg-secondary-base border-base py-2 px-3 w-full appearance-none text-body-lg md:text-body; 
     @apply outline-none focus:ring placeholder-base;
 }
 
