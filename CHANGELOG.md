@@ -8,28 +8,38 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 4.3.0 - 2024-03-05
+
+### Enhancements
+
+-   Update font size on mobile for `TextInput` and `Select` components ([#124](https://github.com/FieldLevel/FieldLevelPlaybook/pull/124))
+-   Update font size of `Modal` titles ([#123](https://github.com/FieldLevel/FieldLevelPlaybook/pull/123))
+-   Add animation to `Feedback` component ([#122](https://github.com/FieldLevel/FieldLevelPlaybook/pull/122))
+-   Update color definition for placeholder text ([#121](https://github.com/FieldLevel/FieldLevelPlaybook/pull/121))
+-   Update the font weight for `font-bold` ([#120](https://github.com/FieldLevel/FieldLevelPlaybook/pull/120))
+
 ## 4.2.0 - 2023-11-16
 
 ### Enhancements
 
-- Add srcSet support on Logo
-- Add srcSet support on LazyImage
-- Add srcSet support on Avatar
+-   Add srcSet support on Logo
+-   Add srcSet support on LazyImage
+-   Add srcSet support on Avatar
 
 ### Bug fixes
 
-- Fix invalid aria role on LazyImage
+-   Fix invalid aria role on LazyImage
 
 ### Development workflow
 
-- Ignore IntelliJ IDE project settings (.idea folder)
+-   Ignore IntelliJ IDE project settings (.idea folder)
 
 ## 4.1.1 - 2023-10-31
 
 ### Enhancements
 
-- Remove unnecessary/invalid "role='img'" on `Logo` container ([#116](https://github.com/FieldLevel/FieldLevelPlaybook/pull/116))
-- Remove unnecessary/invalid "role='img'" on `Avatar` container ([#116](https://github.com/FieldLevel/FieldLevelPlaybook/pull/116))
+-   Remove unnecessary/invalid "role='img'" on `Logo` container ([#116](https://github.com/FieldLevel/FieldLevelPlaybook/pull/116))
+-   Remove unnecessary/invalid "role='img'" on `Avatar` container ([#116](https://github.com/FieldLevel/FieldLevelPlaybook/pull/116))
 
 ## 4.1.0 - 2023-09-15
 
