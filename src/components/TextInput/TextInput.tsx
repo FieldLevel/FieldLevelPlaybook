@@ -156,7 +156,7 @@ export const TextInput = React.forwardRef(function TextInput(
     );
 
     const errorContent = error && (
-        <div className="mt-1">
+        <div className="mt-2">
             <InlineError error={error} />
         </div>
     );

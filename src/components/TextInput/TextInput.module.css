@@ -34,7 +34,7 @@
 }
 
 .Label {
-    @apply block font-bold text-base mb-1;
+    @apply block text-base mb-2;
 }
 
 .Action {
