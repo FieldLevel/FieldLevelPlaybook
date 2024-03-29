@@ -38,6 +38,9 @@ export interface TextInputProps {
     label?: string;
     action?: Action;
     value?: string;
+    min?: number;
+    max?: number;
+    step?: number | 'any';
     placeholder?: string;
     rows?: number;
     maxRows?: number;
@@ -56,6 +59,9 @@ export const TextInput = React.forwardRef(function TextInput(
         label,
         action,
         value,
+        min,
+        max,
+        step,
         placeholder,
         rows,
         maxRows,
@@ -168,6 +174,9 @@ export const TextInput = React.forwardRef(function TextInput(
         type: type || 'text',
         name,
         value,
+        min,
+        max,
+        step,
         placeholder,
         maxLength,
         rows: rows && (currentRows || 1),
