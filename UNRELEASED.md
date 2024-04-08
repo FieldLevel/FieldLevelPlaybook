@@ -6,6 +6,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   Add `tertiaryButton` prop to `Modal` compnent ([#127](https://github.com/FieldLevel/FieldLevelPlaybook/pull/127))
+
 ### Bug fixes
 
 ### Documentation
