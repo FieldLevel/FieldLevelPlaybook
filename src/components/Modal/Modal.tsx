@@ -81,7 +81,7 @@ export const Modal = ({
 
     const headerContent = title && <Header id={headerId} title={title} />;
     const primaryVariant = primaryAction?.destructive ? 'destructive' : 'primary';
-    const tertiaryVariant = tertiaryAction?.variant ?? undefined;
+    const tertiaryVariant = tertiaryAction?.variant;
 
     const footerContent = (primaryAction || secondaryAction) && (
         <div className={styles.Footer}>
