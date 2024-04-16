@@ -6,7 +6,7 @@ import { Modal, Button } from '../../src';
 export const Default = (args: any) => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
-        setOpen(!open);
+        setOpen((prev) => !prev);
     };
 
     return (
@@ -22,7 +22,7 @@ export const Default = (args: any) => {
 export const NoTitle = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
-        setOpen(!open);
+        setOpen((prev) => !prev);
     };
 
     return (
@@ -38,7 +38,7 @@ export const NoTitle = () => {
 export const WithActions = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
-        setOpen(!open);
+        setOpen((prev) => !prev);
     };
 
     return (
@@ -60,7 +60,7 @@ export const WithActions = () => {
 export const WithDisabledAction = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
-        setOpen(!open);
+        setOpen((prev) => !prev);
     };
 
     return (
@@ -82,7 +82,7 @@ export const WithDisabledAction = () => {
 export const WithDestructiveAction = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
-        setOpen(!open);
+        setOpen((prev) => !prev);
     };
 
     return (
@@ -101,6 +101,29 @@ export const WithDestructiveAction = () => {
     );
 };
 
+export const WithTertiaryAction = () => {
+    const [open, setOpen] = useState(false);
+    const toggleOpen = () => {
+        setOpen((prev) => !prev);
+    };
+
+    return (
+        <>
+            <Button onClick={toggleOpen}>Open</Button>
+            <Modal
+                title="With Tertiary Action"
+                open={open}
+                onDismiss={toggleOpen}
+                primaryAction={{ content: 'Save' }}
+                secondaryAction={{ content: 'Cancel', onAction: toggleOpen }}
+                tertiaryAction={{ content: 'Remove', variant: 'destructive' }}
+            >
+                This modal has three actions.
+            </Modal>
+        </>
+    );
+};
+
 const Lorem = () => (
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -114,7 +137,7 @@ const Lorem = () => (
 export const Scrollable = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
-        setOpen(!open);
+        setOpen((prev) => !prev);
     };
 
     return (
@@ -142,7 +165,7 @@ export const Scrollable = () => {
 export const Small = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
-        setOpen(!open);
+        setOpen((prev) => !prev);
     };
 
     return (
@@ -158,7 +181,7 @@ export const Small = () => {
 export const Large = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
-        setOpen(!open);
+        setOpen((prev) => !prev);
     };
 
     return (

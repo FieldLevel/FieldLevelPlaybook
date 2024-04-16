@@ -29,6 +29,12 @@ interface PrimaryAction extends Action {
     destructive?: boolean;
 }
 
+interface TertiaryAction extends Action {
+    variant?: tertiaryVariant;
+}
+
+type tertiaryVariant = 'destructive' | 'secondary';
+
 type variant = 'small' | 'large';
 
 export interface ModalProps {
@@ -38,6 +44,7 @@ export interface ModalProps {
     variant?: variant;
     primaryAction?: PrimaryAction;
     secondaryAction?: Action;
+    tertiaryAction?: TertiaryAction;
     children?: React.ReactNode;
 }
 
@@ -51,7 +58,16 @@ const variantContentStyles: { [key in variant]: string } = {
     large: styles.largeContent
 };
 
-export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondaryAction, children }: ModalProps) => {
+export const Modal = ({
+    open,
+    onDismiss,
+    title,
+    variant,
+    primaryAction,
+    secondaryAction,
+    tertiaryAction,
+    children
+}: ModalProps) => {
     const headerId = useUniqueId('ModalHeader');
     const bodyId = useUniqueId('ModalBody');
 
@@ -65,8 +81,22 @@ export const Modal = ({ open, onDismiss, title, variant, primaryAction, secondar
 
     const headerContent = title && <Header id={headerId} title={title} />;
     const primaryVariant = primaryAction?.destructive ? 'destructive' : 'primary';
+    const tertiaryVariant = tertiaryAction?.variant;
+
     const footerContent = (primaryAction || secondaryAction) && (
         <div className={styles.Footer}>
+            <div>
+                {tertiaryAction && (
+                    <Button
+                        variant={tertiaryVariant}
+                        onClick={tertiaryAction.onAction}
+                        disabled={tertiaryAction.disabled}
+                    >
+                        {tertiaryAction.content}
+                    </Button>
+                )}
+            </div>
+
             <ButtonGroup distribute="end">
                 {secondaryAction && (
                     <Button variant="secondary" onClick={secondaryAction.onAction} disabled={secondaryAction.disabled}>
