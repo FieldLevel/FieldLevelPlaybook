@@ -13,6 +13,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Documentation
 
+-   Update docs to mark `Feedback` as released ([129](https://github.com/FieldLevel/FieldLevelPlaybook/pull/129))
+
 ### Development workflow
 
 ### Dependency upgrades
