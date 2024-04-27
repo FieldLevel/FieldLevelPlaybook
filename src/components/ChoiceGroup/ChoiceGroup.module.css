@@ -1,5 +1,5 @@
 .Title {
-    @apply block font-bold text-base text-body border-none mb-2 w-auto;
+    @apply block text-base text-body border-none mb-2 w-auto;
 }
 
 .Item {
@@ -7,7 +7,7 @@
 }
 
 .Error {
-    @apply mt-1;
+    @apply mt-2;
 }
 
 .loose {

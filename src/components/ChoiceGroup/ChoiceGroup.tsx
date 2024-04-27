@@ -72,7 +72,7 @@ export const ChoiceGroup = ({
     };
 
     const errorContent = error && (
-        <div className={styles.error}>
+        <div className={styles.Error}>
             <InlineError error={error} />
         </div>
     );

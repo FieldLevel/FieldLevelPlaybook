@@ -57,7 +57,7 @@ export const Select = ({ options, name, value, label, placeholder, disabled, err
     );
 
     const errorContent = error && (
-        <div className="mt-1">
+        <div className="mt-2">
             <InlineError error={error} />
         </div>
     );
