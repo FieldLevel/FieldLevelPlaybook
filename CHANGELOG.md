@@ -8,6 +8,18 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 4.4.0 - 2024-04-26
+
+### Enhancements
+
+-   Add `min`, `max`, and `step` props to `TextInput` component ([128](https://github.com/FieldLevel/FieldLevelPlaybook/pull/128))
+-   Add `tertiaryButton` prop to `Modal` component ([#127](https://github.com/FieldLevel/FieldLevelPlaybook/pull/127))
+-   Update spacing and label for `ChoiceGroup`, `Select`, and `TextInput` components ([#130](https://github.com/FieldLevel/FieldLevelPlaybook/pull/130))
+
+### Documentation
+
+-   Update docs to mark `Feedback` as released ([129](https://github.com/FieldLevel/FieldLevelPlaybook/pull/129))
+
 ## 4.3.0 - 2024-03-05
 
 ### Enhancements
