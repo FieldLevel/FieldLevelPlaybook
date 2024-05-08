@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
-import { DialogOverlay, DialogContent } from '@reach/dialog';
+import * as Dialog from '@radix-ui/react-dialog';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 
 import { Button } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
@@ -41,6 +42,10 @@ export interface ModalProps {
     open: boolean;
     onDismiss(): void;
     title?: string;
+    /** Optionally configure the aria-label of the dialog. Use this if your modal doesn't have a title, to give users with screen readers a better experience.*/
+    ariaLabel?: string;
+    /** Optionally configure the aria-description of the dialog.*/
+    ariaDescription?: string;
     variant?: variant;
     primaryAction?: PrimaryAction;
     secondaryAction?: Action;
@@ -62,6 +67,8 @@ export const Modal = ({
     open,
     onDismiss,
     title,
+    ariaLabel,
+    ariaDescription,
     variant,
     primaryAction,
     secondaryAction,
@@ -118,21 +125,36 @@ export const Modal = ({
         </div>
     );
 
-    const labelBy = title ? headerId : bodyId;
     const containerStyles = cx(styles.Container, variant && variantContainerStyles[variant]);
     const contentStyles = cx(styles.Content, variant && variantContentStyles[variant]);
 
+    const contentAriaProps: { 'aria-describedby'?: undefined } = {};
+    if (!ariaDescription) {
+        contentAriaProps['aria-describedby'] = undefined;
+    }
+
     return (
-        <DialogOverlay className={styles.Overlay} isOpen={open} onDismiss={onDismiss}>
-            <div className={containerStyles}>
-                <DialogContent tabIndex={0} className={contentStyles} aria-labelledby={labelBy}>
-                    {headerContent}
-                    {bodyContent}
-                    {footerContent}
-                    {closeContent}
-                </DialogContent>
-            </div>
-        </DialogOverlay>
+        <Dialog.Root open={open} onOpenChange={(isOpen) => !isOpen && onDismiss()}>
+            <Dialog.Portal>
+                <Dialog.Overlay className={styles.Overlay} />
+                <div className={containerStyles}>
+                    <Dialog.Content className={contentStyles} {...contentAriaProps}>
+                        <VisuallyHidden.Root asChild>
+                            <Dialog.Title>{ariaLabel || title || 'Modal'}</Dialog.Title>
+                        </VisuallyHidden.Root>
+                        {ariaDescription && (
+                            <VisuallyHidden.Root asChild>
+                                <Dialog.Description>{ariaDescription}</Dialog.Description>
+                            </VisuallyHidden.Root>
+                        )}
+                        {headerContent}
+                        {bodyContent}
+                        {footerContent}
+                        {closeContent}
+                    </Dialog.Content>
+                </div>
+            </Dialog.Portal>
+        </Dialog.Root>
     );
 };
 

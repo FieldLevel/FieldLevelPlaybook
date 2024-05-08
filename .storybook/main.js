@@ -69,7 +69,14 @@ module.exports = {
                 }
             ]
         };
-        const extraRules = [cssModulesRule, globalCssRule];
+
+        const supportMJSRule = {
+            test: /\.mjs$/,
+            include: /node_modules/,
+            type: "javascript/auto",
+        }
+
+        const extraRules = [cssModulesRule, globalCssRule, supportMJSRule];
 
         // remove the existing css loader rule
         config.module.rules = config.module.rules.filter((rule) => rule.test && !rule.test.test('.css'));
