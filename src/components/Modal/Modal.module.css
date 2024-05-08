@@ -1,9 +1,9 @@
 .Overlay {
-    z-index: 9998; /* consider removing this once we clean up the z-index wars in the app */
+    @apply fixed z-[9998] h-full inset-0 bg-[color:hsla(0,0%,0%,.33)]; /* consider removing z-index declarations once we clean up the z-index wars in the app */
 }
 
 .Container {
-    @apply fixed top-auto right-0 bottom-0 left-0 flex flex-col justify-center pointer-events-none;
+    @apply fixed z-[9998] top-auto right-0 bottom-0 left-0 flex flex-col justify-center pointer-events-none;
     @apply lg:top-0 lg:right-0 lg:bottom-0 lg:left-0;
 }
 

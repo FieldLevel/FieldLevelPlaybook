@@ -28,7 +28,7 @@ export const NoTitle = () => {
     return (
         <>
             <Button onClick={toggleOpen}>Open</Button>
-            <Modal open={open} onDismiss={toggleOpen}>
+            <Modal open={open} onDismiss={toggleOpen} ariaLabel="This is a Modal with no title">
                 This modal has no title.
             </Modal>
         </>
