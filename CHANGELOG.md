@@ -7,6 +7,10 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 <!-- Unreleased changes should go to UNRELEASED.md -->
 
 ---
+## 4.5.0 - 2024-05-08
+
+### Enhancements
+- Remove @reach-ui from `Modal` and replace with @radix-ui alternative ([132](https://github.com/FieldLevel/FieldLevelPlaybook/pull/132))
 
 ## 4.4.0 - 2024-04-26
 
