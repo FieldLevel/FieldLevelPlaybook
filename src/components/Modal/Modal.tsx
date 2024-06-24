@@ -46,6 +46,8 @@ export interface ModalProps {
     ariaLabel?: string;
     /** Optionally configure the aria-description of the dialog.*/
     ariaDescription?: string;
+    /** Optionally configure the "auto-focus on dialog open" behavior by passing an event handler (eg e.preventDefault()). By default, the first focusable item in the Dialog Content is focused */
+    onOpenAutoFocus?(): void;
     variant?: variant;
     primaryAction?: PrimaryAction;
     secondaryAction?: Action;
@@ -73,7 +75,8 @@ export const Modal = ({
     primaryAction,
     secondaryAction,
     tertiaryAction,
-    children
+    children,
+    onOpenAutoFocus
 }: ModalProps) => {
     const headerId = useUniqueId('ModalHeader');
     const bodyId = useUniqueId('ModalBody');
@@ -138,7 +141,7 @@ export const Modal = ({
             <Dialog.Portal>
                 <Dialog.Overlay className={styles.Overlay} />
                 <div className={containerStyles}>
-                    <Dialog.Content className={contentStyles} {...contentAriaProps}>
+                    <Dialog.Content className={contentStyles} {...contentAriaProps} onOpenAutoFocus={onOpenAutoFocus}>
                         <VisuallyHidden.Root asChild>
                             <Dialog.Title>{ariaLabel || title || 'Modal'}</Dialog.Title>
                         </VisuallyHidden.Root>
