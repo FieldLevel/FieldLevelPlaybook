@@ -7,6 +7,11 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 <!-- Unreleased changes should go to UNRELEASED.md -->
 
 ---
+## 4.6.0 - 2024-06-24
+
+### Enhancements
+- Add onOpenAutoFocus prop to Modal to support equivalent prop in Radix/Dialog.Content ([134](https://github.com/FieldLevel/FieldLevelPlaybook/pull/134))
+
 ## 4.5.0 - 2024-05-08
 
 ### Enhancements
