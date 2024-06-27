@@ -7,6 +7,11 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 <!-- Unreleased changes should go to UNRELEASED.md -->
 
 ---
+## 4.7.0 - 2024-06-27
+
+### Enhancements
+- Wrap Link with React.forwardRef ([136](https://github.com/FieldLevel/FieldLevelPlaybook/pull/136))
+
 ## 4.6.0 - 2024-06-24
 
 ### Enhancements
