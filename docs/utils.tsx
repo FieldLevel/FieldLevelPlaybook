@@ -12,7 +12,7 @@ const colorStyles = {
 const Badge = ({ type, children }) => {
     const colorStyle = colorStyles[type];
     const style = cx('inline-block mt-2 px-2 py-0.5 rounded shadow', colorStyle);
-    return <div className={style}>{children}</div>;
+    return <span className={style}>{children}</span>;
 };
 
 export const TitleWithVersion = `Playbook v${pkg.version}`;
