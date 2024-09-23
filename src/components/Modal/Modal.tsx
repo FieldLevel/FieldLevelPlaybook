@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import cx from 'classnames';
 import * as Dialog from '@radix-ui/react-dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
+import { useInView } from 'react-intersection-observer';
 
 import { Button } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { Icon } from '../Icon';
 import { CloseMajor } from '../../icons/Major';
+import { DownMinor } from '../../icons/Minor';
 
 import { useUniqueId } from '../../utilities/use-unique-id';
 
@@ -93,6 +95,9 @@ export const Modal = ({
     const primaryVariant = primaryAction?.destructive ? 'destructive' : 'primary';
     const tertiaryVariant = tertiaryAction?.variant;
 
+    const [scrollRef, scrolledInView] = useInView({ threshold: 1, triggerOnce: false });
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
     const footerContent = (primaryAction || secondaryAction) && (
         <div className={styles.Footer}>
             <div>
@@ -123,8 +128,9 @@ export const Modal = ({
     );
 
     const bodyContent = (
-        <div id={bodyId} className={styles.Body}>
+        <div id={bodyId} className={styles.Body} ref={scrollContainerRef}>
             {children}
+            <div ref={scrollRef}></div>
         </div>
     );
 
@@ -137,6 +143,21 @@ export const Modal = ({
     }
 
     const defaultOnOpenAutoFocus = (e: Event) => e.preventDefault();
+
+    const handleScroll = ({ scrollOffset }: { scrollOffset: number }) => {
+        if (scrollContainerRef.current) {
+            if (
+                !scrolledInView &&
+                scrollContainerRef.current.scrollTop + scrollOffset <= scrollContainerRef.current.scrollHeight
+            ) {
+                scrollContainerRef.current.scrollBy(0, scrollOffset);
+            }
+        }
+    };
+
+    const showScrollIndicator =
+        scrollContainerRef.current && scrollContainerRef.current.scrollHeight > scrollContainerRef.current.clientHeight;
+    const scrollOffset = (scrollContainerRef.current && scrollContainerRef.current.scrollHeight / 3) ?? 0;
 
     return (
         <Dialog.Root open={open} onOpenChange={(isOpen) => !isOpen && onDismiss()}>
@@ -158,6 +179,26 @@ export const Modal = ({
                         )}
                         {headerContent}
                         {bodyContent}
+
+                        {showScrollIndicator && (
+                            <div className="sticky bottom-0 left-0 w-full bg-transparent">
+                                <div
+                                    className={cx(
+                                        'absolute -top-8 w-full transition-all',
+                                        scrolledInView ? 'opacity-0 h-0' : 'opacity-1 h-[20px]'
+                                    )}
+                                >
+                                    <div className="block m-auto w-[30px]">
+                                        <div
+                                            className="flex items-center justify-center rounded shadow h-[30px] w-[30px] bg-[#fff] cursor-pointer text-body"
+                                            onClick={() => handleScroll({ scrollOffset })}
+                                        >
+                                            <Icon source={DownMinor} color="current" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                         {footerContent}
                         {closeContent}
                     </Dialog.Content>
