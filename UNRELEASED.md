@@ -7,6 +7,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Enhancements
 
 -   Disable autofocus in `Modal` component by default ([#139](https://github.com/FieldLevel/FieldLevelPlaybook/pull/139))
+-   Add scroll indicator to `Modal` - ([#140](https://github.com/FieldLevel/FieldLevelPlaybook/pull/140))
 
 ### Bug fixes
 
