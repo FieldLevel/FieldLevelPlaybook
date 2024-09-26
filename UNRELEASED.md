@@ -6,6 +6,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   Add scroll indicator to `Modal` - ([#140](https://github.com/FieldLevel/FieldLevelPlaybook/pull/140))
+
 ### Bug fixes
 
 ### Documentation
