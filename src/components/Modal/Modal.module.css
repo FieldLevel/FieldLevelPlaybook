@@ -22,7 +22,7 @@
 }
 
 .smallContent {
-    @apply max-h-screen-m rounded-lg lg:max-w-screen-xs;
+    @apply max-h-screen-m rounded-lg md:max-w-screen-xs my-0 mx-auto;
 }
 
 .largeContent {
