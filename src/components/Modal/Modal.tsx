@@ -136,7 +136,7 @@ export const Modal = ({
         contentAriaProps['aria-describedby'] = undefined;
     }
 
-    const defaultOnOpenAutoFocus = (e) => e.preventDefault();
+    const defaultOnOpenAutoFocus = (e: Event) => e.preventDefault();
 
     return (
         <Dialog.Root open={open} onOpenChange={(isOpen) => !isOpen && onDismiss()}>
