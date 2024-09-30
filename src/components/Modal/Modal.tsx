@@ -136,12 +136,18 @@ export const Modal = ({
         contentAriaProps['aria-describedby'] = undefined;
     }
 
+    const defaultOnOpenAutoFocus = (e: Event) => e.preventDefault();
+
     return (
         <Dialog.Root open={open} onOpenChange={(isOpen) => !isOpen && onDismiss()}>
             <Dialog.Portal>
                 <Dialog.Overlay className={styles.Overlay} />
                 <div className={containerStyles}>
-                    <Dialog.Content className={contentStyles} {...contentAriaProps} onOpenAutoFocus={onOpenAutoFocus}>
+                    <Dialog.Content
+                        className={contentStyles}
+                        {...contentAriaProps}
+                        onOpenAutoFocus={onOpenAutoFocus ?? defaultOnOpenAutoFocus}
+                    >
                         <VisuallyHidden.Root asChild>
                             <Dialog.Title>{ariaLabel || title || 'Modal'}</Dialog.Title>
                         </VisuallyHidden.Root>
