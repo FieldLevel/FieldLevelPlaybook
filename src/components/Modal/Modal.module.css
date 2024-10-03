@@ -18,11 +18,11 @@
 .Content {
     @apply relative flex flex-col bg-foreground-base text-left rounded-t-lg overflow-hidden shadow-xl pointer-events-auto;
     @apply w-full h-auto p-0 m-0 max-h-screen-m;
-    @apply lg:my-0 lg:rounded-lg lg:mx-auto lg:max-w-screen-sm lg:max-h-screen-m lg:h-auto;
+    @apply lg:my-0 lg:rounded-lg lg:mx-auto lg:max-w-screen-sm lg:max-h-[600px] lg:h-auto;
 }
 
 .smallContent {
-    @apply max-h-screen-m rounded-lg md:max-w-screen-xs my-0 mx-auto;
+    @apply max-h-[400px] rounded-lg md:max-w-screen-xs my-0 mx-auto;
 }
 
 .largeContent {
