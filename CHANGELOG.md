@@ -7,20 +7,34 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 <!-- Unreleased changes should go to UNRELEASED.md -->
 
 ---
+
+## 4.8.0 - 2024-10-08
+
+### Enhancements
+
+-   Disable autofocus in `Modal` component by default ([#139](https://github.com/FieldLevel/FieldLevelPlaybook/pull/139))
+
+### Bug fixes
+
+-   Fix width for small variant of `Modal` at medium breakpoint ([#138](https://github.com/FieldLevel/FieldLevelPlaybook/pull/138))
+
 ## 4.7.0 - 2024-06-27
 
 ### Enhancements
-- Wrap Link with React.forwardRef ([136](https://github.com/FieldLevel/FieldLevelPlaybook/pull/136))
+
+-   Wrap Link with React.forwardRef ([136](https://github.com/FieldLevel/FieldLevelPlaybook/pull/136))
 
 ## 4.6.0 - 2024-06-24
 
 ### Enhancements
-- Add onOpenAutoFocus prop to Modal to support equivalent prop in Radix/Dialog.Content ([134](https://github.com/FieldLevel/FieldLevelPlaybook/pull/134))
+
+-   Add onOpenAutoFocus prop to Modal to support equivalent prop in Radix/Dialog.Content ([134](https://github.com/FieldLevel/FieldLevelPlaybook/pull/134))
 
 ## 4.5.0 - 2024-05-08
 
 ### Enhancements
-- Remove @reach-ui from `Modal` and replace with @radix-ui alternative ([132](https://github.com/FieldLevel/FieldLevelPlaybook/pull/132))
+
+-   Remove @reach-ui from `Modal` and replace with @radix-ui alternative ([132](https://github.com/FieldLevel/FieldLevelPlaybook/pull/132))
 
 ## 4.4.0 - 2024-04-26
 
