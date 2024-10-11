@@ -146,10 +146,7 @@ export const Modal = ({
 
     const handleScroll = ({ scrollOffset }: { scrollOffset: number }) => {
         if (scrollContainerRef.current) {
-            if (
-                !scrolledInView &&
-                scrollContainerRef.current.scrollTop + scrollOffset <= scrollContainerRef.current.scrollHeight
-            ) {
+            if (!scrolledInView) {
                 scrollContainerRef.current.scrollBy(0, scrollOffset);
             }
         }
