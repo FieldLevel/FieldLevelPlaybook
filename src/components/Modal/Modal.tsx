@@ -184,7 +184,7 @@ export const Modal = ({
                             <div className="sticky bottom-0 left-0 w-full bg-transparent">
                                 <div
                                     className={cx(
-                                        'absolute -top-8 w-full transition-all',
+                                        'absolute -top-10 w-full transition-all',
                                         scrolledInView ? 'opacity-0 h-0' : 'opacity-1 h-[20px]'
                                     )}
                                 >
