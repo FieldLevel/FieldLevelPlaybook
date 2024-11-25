@@ -1,3 +1,6 @@
+export { Alert } from './Alert';
+export type { AlertProps } from './Alert';
+
 export { Avatar } from './Avatar';
 export type { AvatarProps } from './Avatar';
 

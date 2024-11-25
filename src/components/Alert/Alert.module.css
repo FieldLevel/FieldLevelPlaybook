@@ -1,0 +1,39 @@
+.Alert {
+    @apply rounded p-4 bg-background-base text-base;
+}
+
+.Alert a {
+    @apply underline text-[inherit];
+}
+
+.warning {
+    @apply bg-background-warning text-warning;
+}
+
+.critical {
+    @apply bg-background-critical text-critical;
+}
+
+.highlight {
+    @apply bg-background-highlight text-highlight;
+}
+
+.Card {
+    @apply flex items-start;
+}
+
+.Icon {
+    @apply shrink-0 mr-3;
+}
+
+.Title {
+    @apply font-bold;
+}
+
+.Title + div {
+    @apply mt-1;
+}
+
+.Content {
+    @apply w-0 flex-1;
+}
