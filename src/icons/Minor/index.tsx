@@ -29,3 +29,4 @@ export { default as UpMiniMinor } from './UpMiniMinor';
 export { default as UpMinor } from './UpMinor';
 export { default as VideoMinor } from './VideoMinor';
 export { default as VisibilityMinor } from './VisibilityMinor';
+export { default as WarningMinor } from './WarningMinor';
