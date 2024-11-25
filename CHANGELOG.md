@@ -8,6 +8,13 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 4.9.0 - 2024-11-25
+
+### Enhancements
+
+-   Change the max height of default and small variants in `Modal` - ([#143](https://github.com/FieldLevel/FieldLevelPlaybook/pull/143))
+-   Add `Alert` component ([#142](https://github.com/FieldLevel/FieldLevelPlaybook/pull/142))
+
 ## 4.8.0 - 2024-10-08
 
 ### Enhancements
