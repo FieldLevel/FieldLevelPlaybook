@@ -8,7 +8,13 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
-## 5.0 - 2025-01-09
+## 5.0.1 - 2025-01-09
+
+### Bug fixes
+
+- Re-introduce the 'prepare' script in package.json which is required for compilation of CSS assets
+
+## 5.0.0 - 2025-01-09
 
 ### Breaking changes
 
