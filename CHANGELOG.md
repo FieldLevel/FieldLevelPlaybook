@@ -8,6 +8,18 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 5.0.1 - 2025-01-09
+
+### Bug fixes
+
+- Re-introduce the 'prepare' script in package.json which is required for compilation of CSS assets
+
+## 5.0.0 - 2025-01-09
+
+### Breaking changes
+
+- Migrate from yarn v1+ -> npm 10.8.2 ([#145](https://github.com/FieldLevel/FieldLevelPlaybook/pull/145))
+
 ## 4.9.0 - 2024-11-25
 
 ### Enhancements

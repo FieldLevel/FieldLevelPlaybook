@@ -1,6 +1,6 @@
 {
   "name": "@fieldlevel/playbook",
-  "version": "4.9.0",
+  "version": "5.0.1",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
     "dist"
   ],
   "scripts": {
+    "prepare": "npm run build",
     "build": "node ./scripts/build.js",
     "lint": "eslint --ext .ts,.tsx src docs --max-warnings=0",
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-manager-cache --ci",
