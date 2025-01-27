@@ -7,6 +7,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Enhancements
 - Remove extraneous references to `yarn` [#148](https://github.com/FieldLevel/FieldLevelPlaybook/pull/148)
 
+-   Update critical and highlight colors - ([#149] (https://github.com/FieldLevel/FieldLevelPlaybook/pull/149))
+
 ### Bug fixes
 
 ### Documentation
