@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import { InlineField } from '../shared/InlineField';
 
-import styles from './RadioButton.module.css';
+import * as styles from './RadioButton.module.css';
 
 import { useUniqueId } from '../../utilities/use-unique-id';
 

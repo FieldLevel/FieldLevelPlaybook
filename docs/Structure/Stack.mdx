@@ -1,0 +1,41 @@
+import { Meta, Canvas, ArgTypes, Controls } from '@storybook/blocks';
+
+import * as stories from './Stack.stories.tsx';
+
+<Meta of={stories} />
+
+# Stack
+
+For use in Cards and custom components when you need a horizontal or vertical layout. Stacks are flexible containers that provide spacing options, alignment, and wrapping.
+
+<Canvas of={stories.Default} />
+
+<Controls of={stories.Default} />
+
+### Stack.Item
+
+<ArgTypes of={stories.default.component.Item} />
+
+## Spacing
+
+<Canvas of={stories.Spacing} />
+
+## Alignment
+
+<Canvas of={stories.Alignment} />
+
+## Distribute
+
+<Canvas of={stories.Distribution} />
+
+## Vertical
+
+<Canvas of={stories.Vertical} />
+
+## No Wrap
+
+<Canvas of={stories.NoWrap} />
+
+## Fill
+
+<Canvas of={stories.Fill} />

@@ -3,7 +3,7 @@ import React from 'react';
 import { Icon } from '../../Icon';
 import { ErrorMinor } from '../../../icons/Minor';
 
-import styles from './InlineError.module.css';
+import * as styles from './InlineError.module.css';
 
 export interface InlineErrorProps {
     error?: string;

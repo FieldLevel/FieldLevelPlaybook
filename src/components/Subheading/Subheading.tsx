@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Subheading.module.css';
+import * as styles from './Subheading.module.css';
 
 export interface SubheadingProps {
     as?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

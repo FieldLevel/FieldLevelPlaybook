@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { Heading } from '../Heading';
 import { Subheading } from '../Subheading';
 
-import styles from './Card.module.css';
+import * as styles from './Card.module.css';
 
 const SectionTitle = ({ title }: { title: string }) => {
     return (

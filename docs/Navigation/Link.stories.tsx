@@ -1,28 +1,46 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Link } from '../../src';
 
-export const Default = (args: any) => (
-    <Link url="#" {...args}>
-        Default link
-    </Link>
-);
+const meta: Meta<typeof Link> = {
+    component: Link
+};
 
-export const Unstyled = () => (
-    <Link unstyled url="https://www.fieldlevel.com">
-        <div className="p-6 border rounded">This whole card is a link.</div>
-    </Link>
-);
+export default meta;
 
-export const Target = () => (
-    <Link url="https://recruiting.fieldlevel.com" target="_blank">
-        Recruiting Guidance
-    </Link>
-);
+type Story = StoryObj<typeof Link>;
 
-export const ClickEvent = () => (
-    <Link url="#" onClick={() => alert('Clicked!')}>
-        Click me!
-    </Link>
-);
+export const Default: Story = {
+    args: {
+        url: '#'
+    }
+};
+
+export const Unstyled: Story = {
+    args: {
+        url: 'https://www.fieldlevel.com',
+        unstyled: true,
+        children: <div className="p-6 border rounded">This whole card is a link.</div>
+    }
+};
+
+export const Target: Story = {
+    args: {
+        url: 'https://recruiting.fieldlevel.com',
+        target: '_blank',
+        children: 'Recruiting Guidance'
+    }
+};
+
+export const ClickEvent: Story = {
+    args: {
+        url: '#',
+        onClick: (e) => {
+            e.preventDefault();
+            alert('Clicked!');
+        },
+        children: 'Click me!'
+    }
+};

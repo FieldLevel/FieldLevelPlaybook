@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import styles from './Title.module.css';
+import * as styles from './Title.module.css';
 
 type size = 'small' | 'large' | 'extraLarge';
 

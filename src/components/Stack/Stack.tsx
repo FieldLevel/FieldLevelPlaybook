@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import cx from 'classnames';
 
-import styles from './Stack.module.css';
+import * as styles from './Stack.module.css';
 
 interface ItemProps {
     fill?: boolean;

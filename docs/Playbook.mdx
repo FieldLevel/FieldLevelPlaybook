@@ -1,0 +1,65 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Playbook" />
+
+# FieldLevel Playbook
+
+Playbook is FieldLevel's product language. **A shared vocabulary and system for design that enables developers and designers
+to build better faster.**
+
+Playbook balances constraints and flexibility making it efficient to deliver a consistent product experience by providing standard components. Playbook enables product teams to move quickly while building consistently exceptional experiences.
+
+## Components
+
+Common presentional patterns are encapsulated into a collection of React components with distinct opinionated variations and
+clear usage guidance. The majority of product experiences should be built using these components and any changes to components
+should be made in a thoughtful and collaborative manner. Overriding or extending the style of Playbook components should be done
+only when absolutely necessary since it makes it difficult to anticipate the impact of changes in the future and makes the system
+harder to reason about.
+
+See the [Component status](/docs/status--docs) page for a list of existing and planned components.
+
+```
+import { Card, Button } from @fieldlevel/playbook;
+
+const HelloCard = () => (
+    <Card title="Hello world!">
+        <Button>Hi Playbook!</Button>
+    </Card>
+);
+```
+
+## Tailwind Utility Classes
+
+When you need more flexibility to build one-off experiences or have a desired product experience that can't be solved with existing
+components, you can style components using the same Tailwind utility classes that were used to build Playbook. There are two ways to
+use the Tailwind utility classes:
+
+**Via @apply directive in a CSS file.** Use this method to give an element a semantic class name and to make component behavior that
+impacts visual style easier to read and reason about. All Playbook components are built with this method.
+
+```
+.StrongText {
+    @apply text-base font-bold;
+}
+```
+
+**By class names on an element.** Use this method while initially prototyping component styles or when semantically naming
+an element would be overkill. Use sparingly since a long concatenation of classes in markup can be more difficult to read
+and the semantic intention of the element can be lost when revisiting in the future.
+
+```
+<div className="text-base font-bold">Example</div>
+```
+
+Most of the default Tailwind CSS utility classes are available to be used as the [official documentation](https://tailwindcss.com/docs)
+describes. Our custom Tailwind configuration has the following exceptions:
+
+-   **[Breakpoints](/docs/css-utilities-breakpoints--docs)**: Breakpoint widths have been modified to match what is already being
+    used in the FieldLevel app.
+
+-   **[Colors](/docs/css-utilities-colors--docs)**: **Text color**, **background color** and **border color** utilities draw from
+    a limited color palette and are named for semantic usage rather than color shade.
+
+-   **[Text](/docs/css-utilities-text--docs)**: Only a limited set of text **size** and **weight** is available and
+    utilities to modify **line-height**, **text opacity** and **font family** have been disabled.

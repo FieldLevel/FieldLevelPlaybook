@@ -1,0 +1,91 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+
+import * as stories from './Button.stories.tsx';
+
+<Meta title="Actions/Button" of={stories} />
+
+# Button
+
+Buttons are identifiable, findable, and clear. They initiate actions or events using language that lets users know what will happen next.
+
+<Canvas of={stories.Default} />
+
+<Controls of={stories.Default} />
+
+## Basic
+
+Basic should be the most commonly used button in the interface. It is our medium-emphasis button. If the action requires more or less emphasis or is a destructive action, use another style.
+
+<Canvas of={stories.Basic} />
+
+## Primary
+
+Use to highlight the most critical action on the page. Don't use more than one primary button in a section or screen to avoid overloading customers with high emphasis calls-to-action.
+
+<Canvas of={stories.Primary} />
+
+## Secondary
+
+Use as the secondary action when paired with a primary or destructive action. Cancel is the most common example here.
+
+<Canvas of={stories.Secondary} />
+
+## Plain
+
+Use for less important actions or low-emphasis situations. Plain is commonly paired with basic as a secondary CTA.
+
+<Canvas of={stories.Plain} />
+
+## Destructive
+
+Use for actions that could have a destructive effect on customer data, such as delete or remove.
+
+<Canvas of={stories.Destructive} />
+
+## Icon
+
+Use to call attention to a button. Provide a label in most cases. There are few instances where an icon can operate on its own.
+
+<Canvas of={stories.Icon} />
+
+## Size
+
+Buttons come in three sizes: base, large, and slim. Use base for most usages.
+
+<Canvas of={stories.Size} />
+
+## Disabled
+
+Use when an action is unavailable, or another process must be completed before the button is usable.
+
+<Canvas of={stories.Disabled} />
+
+## Full Width
+
+Use when you need a button to expand to the full width of it's parent container.
+
+<Canvas of={stories.FullWidth} />
+
+## Url
+
+You can pass `url` and/or `target` props to any Button to make sure it's semantically wrapped in a link if the action is a navigation change.
+
+<Canvas of={stories.Url} />
+
+## Accessibility
+
+Use the `ariaLabel` or `ariaLabelledBy` props to provide accessible button labels for any Button without a label.
+
+<Canvas of={stories.Accessibility} />
+
+## Submit
+
+Use the submit option for the Button inside a Form that should trigger the form submit action when clicked.
+
+<Canvas of={stories.Submit} />
+
+## Ref
+
+You can get access to the ref of the inner button element by utilizing the `ref` prop.
+
+<Canvas of={stories.Ref} />

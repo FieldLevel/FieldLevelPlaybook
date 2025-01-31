@@ -10,7 +10,7 @@ import { CloseMajor } from '../../icons/Major';
 
 import { useUniqueId } from '../../utilities/use-unique-id';
 
-import styles from './Modal.module.css';
+import * as styles from './Modal.module.css';
 
 const Header = ({ id, title }: { id: string; title: string }) => {
     return (

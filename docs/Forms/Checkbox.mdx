@@ -1,0 +1,25 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+
+import * as stories from './Checkbox.stories.tsx';
+
+<Meta of={stories} />
+
+# Checkbox
+
+Use Checkbox to give users a way to make multiple selections (none, one, or many). They may also be used as an indication that a member has opted-in.
+
+<Canvas of={stories.Default} />
+
+<Controls of={stories.Default} />
+
+## Controlled
+
+<Canvas of={stories.Controlled} />
+
+## Checked
+
+<Canvas of={stories.Checked} />
+
+## Disabled
+
+<Canvas of={stories.Disabled} />

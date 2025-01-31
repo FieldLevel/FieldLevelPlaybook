@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import cx from 'classnames';
 
-import styles from './FormLayout.module.css';
+import * as styles from './FormLayout.module.css';
 
 type Size = 'oneSixth' | 'oneThird' | 'oneHalf' | 'twoThirds' | 'full';
 interface ItemProps {

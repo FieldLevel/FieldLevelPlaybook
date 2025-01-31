@@ -1,7 +1,7 @@
 import React, { ForwardedRef } from 'react';
 import cx from 'classnames';
 
-import styles from './Link.module.css';
+import * as styles from './Link.module.css';
 
 export interface LinkProps {
     url?: string;

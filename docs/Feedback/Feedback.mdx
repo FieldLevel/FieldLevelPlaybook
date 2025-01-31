@@ -1,0 +1,33 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+
+import * as stories from './Feedback.stories.tsx';
+
+<Meta of={stories} />
+
+# Feedback
+
+Feedback enhances user interaction by delivering confirmations, warnings, and error messaging, ensuring clear and effective communication.
+
+<Canvas of={stories.Default} withToolbar />
+
+<Controls of={stories.Default} />
+
+## With Action
+
+<Canvas of={stories.WithAction} />
+
+## With Message
+
+<Canvas of={stories.WithMessage} />
+
+## With Message and Action
+
+<Canvas of={stories.WithMessageAction} />
+
+## Success
+
+<Canvas of={stories.Success} />
+
+## Critical
+
+<Canvas of={stories.Critical} />

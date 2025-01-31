@@ -1,0 +1,17 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/blocks';
+
+import * as stories from './Icon.stories.tsx';
+
+<Meta of={stories} />
+
+# Icon
+
+Refer to the [Icon set](/docs/icon-set--docs) for available icons to pass to the `source` prop.
+
+<Canvas of={stories.Default} />
+
+<ArgTypes of={stories.default.component} />
+
+## Color
+
+<Canvas of={stories.Color} />

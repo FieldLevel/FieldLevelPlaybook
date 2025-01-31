@@ -1,8 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Spinner } from '../../src';
 
-export const Default = (args: any) => <Spinner {...args} />;
+const meta: Meta<typeof Spinner> = {
+    component: Spinner
+};
 
-export const Small = () => <Spinner size="small" />;
+export default meta;
+
+type Story = StoryObj<typeof Spinner>;
+
+export const Default: Story = {};
+
+export const Small: Story = {
+    args: {
+        size: 'small'
+    }
+};

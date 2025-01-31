@@ -1,0 +1,35 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+
+import * as stories from './ButtonGroup.stories.tsx';
+
+<Meta title="Actions/ButtonGroup" of={stories} />
+
+# ButtonGroup
+
+Button Group displays multiple related actions in a row or column to help with arrangement and spacing.
+
+<Canvas of={stories.Default} />
+
+<Controls of={stories.Default} />
+
+## Spacing
+
+Use tight spacing with slim buttons.
+
+Use base spacing with base buttons.
+
+Use loose spacing with large buttons.
+
+<Canvas of={stories.Spacing} />
+
+## Distribute
+
+Use to easily set up common button distributions.
+
+<Canvas of={stories.Distribute} />
+
+## Vertical
+
+Use to vertically align your buttons with common spacing.
+
+<Canvas of={stories.Vertical} />

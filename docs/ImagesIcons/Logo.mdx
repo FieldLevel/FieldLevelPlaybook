@@ -1,0 +1,23 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/blocks';
+
+import * as stories from './Logo.stories.tsx';
+
+<Meta of={stories} />
+
+# Logo
+
+A logo is a visual representation of a program or team.
+
+<Canvas of={stories.Default} />
+
+<ArgTypes of={stories.default.component} />
+
+## Size
+
+<Canvas of={stories.Size} />
+
+## Lazy
+
+Use when the browser should wait to load the image contents until the image will be visible in the viewport. Good practice when there are many images on a page like in a long list that extends out of the initial viewport.
+
+<Canvas of={stories.Lazy} />

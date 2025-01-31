@@ -1,6 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Subheading } from '../../src';
 
-export const Default = (args: any) => <Subheading {...args}>Subheading</Subheading>;
+const meta: Meta<typeof Subheading> = {
+    component: Subheading
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Subheading>;
+
+export const Default: Story = {
+    args: {
+        children: 'Subheading'
+    }
+};
