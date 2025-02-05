@@ -49,6 +49,12 @@ const config: StorybookConfig = {
 
         config.resolve.alias = {
             '@fieldlevel/playbook': path.resolve(__dirname, '..', 'src'),
+            // The react-dom + react resolutions here seem to be necessary for proper function. At the time of implementation,
+            // there were a few mentions of this issue in Storybook's GitHub repo, and it seemed to be unresolved, but none of the issues matched
+            // exactly what we're seeing so there's no appropriate link to provide. It ultimately seems to be related to the fact that
+            // Storybook renders its "preview" (iframe) using react, and the version being used there can be out of alignment with either the MDX library
+            // or your local project (or both). When this happens, multiple versions of React are loaded into the DOM and various side effects ensue.
+            // Anyway, let's just keep an eye on this!
             'react-dom': path.resolve(__dirname, '../node_modules/react-dom'),
             react: path.resolve(__dirname, '../node_modules/react')
         };
