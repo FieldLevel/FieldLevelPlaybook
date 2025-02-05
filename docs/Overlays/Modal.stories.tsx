@@ -1,9 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Modal, Button } from '../../src';
+import { Modal, ModalProps, Button } from '../../src';
 
-export const Default = (args: any) => {
+const meta: Meta<typeof Modal> = {
+    component: Modal
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Modal>;
+
+const DefaultExample = (args: Partial<ModalProps>) => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((prev) => !prev);
@@ -19,7 +28,11 @@ export const Default = (args: any) => {
     );
 };
 
-export const NoTitle = () => {
+export const Default: Story = {
+    render: (args) => <DefaultExample {...args} />
+};
+
+const NoTitleExample = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((prev) => !prev);
@@ -35,7 +48,11 @@ export const NoTitle = () => {
     );
 };
 
-export const WithActions = () => {
+export const NoTitle: Story = {
+    render: () => <NoTitleExample />
+};
+
+const WithActionsExample = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((prev) => !prev);
@@ -57,7 +74,11 @@ export const WithActions = () => {
     );
 };
 
-export const WithDisabledAction = () => {
+export const WithActions: Story = {
+    render: () => <WithActionsExample />
+};
+
+const WithDisabledActionExample = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((prev) => !prev);
@@ -79,7 +100,11 @@ export const WithDisabledAction = () => {
     );
 };
 
-export const WithDestructiveAction = () => {
+export const WithDisabledAction: Story = {
+    render: () => <WithDisabledActionExample />
+};
+
+const WithDestructiveActionExample = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((prev) => !prev);
@@ -101,7 +126,11 @@ export const WithDestructiveAction = () => {
     );
 };
 
-export const WithTertiaryAction = () => {
+export const WithDestructiveAction: Story = {
+    render: () => <WithDestructiveActionExample />
+};
+
+const WithTertiaryActionExample = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((prev) => !prev);
@@ -124,6 +153,10 @@ export const WithTertiaryAction = () => {
     );
 };
 
+export const WithTertiaryAction: Story = {
+    render: () => <WithTertiaryActionExample />
+};
+
 const Lorem = () => (
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -134,7 +167,7 @@ const Lorem = () => (
     </p>
 );
 
-export const Scrollable = () => {
+const ScrollableExample = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((prev) => !prev);
@@ -162,7 +195,11 @@ export const Scrollable = () => {
     );
 };
 
-export const Small = () => {
+export const Scrollable: Story = {
+    render: () => <ScrollableExample />
+};
+
+const SmallExample = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((prev) => !prev);
@@ -178,7 +215,11 @@ export const Small = () => {
     );
 };
 
-export const Large = () => {
+export const Small: Story = {
+    render: () => <SmallExample />
+};
+
+const LargeExample = () => {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((prev) => !prev);
@@ -215,4 +256,7 @@ export const Large = () => {
             </Modal>
         </>
     );
+};
+export const Large: Story = {
+    render: () => <LargeExample />
 };

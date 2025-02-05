@@ -12,7 +12,7 @@ run(`npx rimraf dist`);
 run(`npx tsc --emitDeclarationOnly --outDir dist/types`);
 
 // Generate final JS and CSS
-run(`npx rollup -c --environment NODE_ENV:production`);
+run(`npx webpack --mode production`);
 
 // Copy tailwind preset
 run(`npx cpy tailwind.preset.js dist`);

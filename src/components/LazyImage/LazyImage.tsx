@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import styles from './LazyImage.module.css';
+import * as styles from './LazyImage.module.css';
 import cx from 'classnames';
 
 export interface LazyImageProps {

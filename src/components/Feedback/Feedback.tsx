@@ -7,7 +7,7 @@ import { CloseMajor } from '../../icons/Major';
 import { ErrorMinor, CheckCircleMinor } from '../../icons/Minor';
 import { useTimeout } from '../../utilities/use-timeout';
 
-import styles from './Feedback.module.css';
+import * as styles from './Feedback.module.css';
 
 interface Action {
     label: string;

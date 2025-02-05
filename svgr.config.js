@@ -3,6 +3,11 @@ module.exports = {
     ext: 'tsx',
     svgo: true,
     svgoConfig: {
-        plugins: [{ removeViewBox: false }, { removeAttrs: { attrs: 'fill' } }]
+        plugins: [
+            {
+                name: 'removeAttrs',
+                params: { attrs: 'fill' }
+            }
+        ]
     }
 };

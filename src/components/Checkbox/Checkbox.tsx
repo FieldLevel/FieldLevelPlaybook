@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import { InlineField } from '../shared/InlineField';
 
-import styles from './Checkbox.module.css';
+import * as styles from './Checkbox.module.css';
 
 import { useUniqueId } from '../../utilities/use-unique-id';
 

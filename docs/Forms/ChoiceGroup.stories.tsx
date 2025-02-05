@@ -1,9 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { ChoiceGroup } from '../../src';
+import { ChoiceGroup, ChoiceGroupProps } from '../../src';
 
-export const Default = (args: any) => {
+const meta: Meta<typeof ChoiceGroup> = {
+    component: ChoiceGroup
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ChoiceGroup>;
+
+const DefaultExample = (args: Partial<ChoiceGroupProps>) => {
     const [selected, setSelected] = useState([]);
     const handleChange = (value) => setSelected(value);
 
@@ -23,7 +32,11 @@ export const Default = (args: any) => {
     );
 };
 
-export const SingleChoice = () => {
+export const Default: Story = {
+    render: (args) => <DefaultExample {...args} />
+};
+
+const SingleChoiceExample = () => {
     const [selected, setSelected] = useState([]);
     const handleChange = (value) => setSelected(value);
 
@@ -42,7 +55,11 @@ export const SingleChoice = () => {
     );
 };
 
-export const MultiChoice = () => {
+export const SingleChoice: Story = {
+    render: () => <SingleChoiceExample />
+};
+
+const MultipleChoiceExample = () => {
     const [selected, setSelected] = useState([]);
     const handleChange = (value) => setSelected(value);
 
@@ -62,7 +79,11 @@ export const MultiChoice = () => {
     );
 };
 
-export const Disabled = () => {
+export const MultiChoice: Story = {
+    render: () => <MultipleChoiceExample />
+};
+
+const DisabledExample = () => {
     const [selected, setSelected] = useState(['baseball']);
     const handleChange = (value) => setSelected(value);
     return (
@@ -81,7 +102,11 @@ export const Disabled = () => {
     );
 };
 
-export const Spacing = () => {
+export const Disabled: Story = {
+    render: () => <DisabledExample />
+};
+
+const SpacingExample = () => {
     const [selected, setSelected] = useState([]);
     const handleChange = (value) => setSelected(value);
 
@@ -102,7 +127,11 @@ export const Spacing = () => {
     );
 };
 
-export const DisabledChoice = () => {
+export const Spacing: Story = {
+    render: () => <SpacingExample />
+};
+
+const DisabledChoiceExample = () => {
     const [selected, setSelected] = useState(['baseball']);
     const handleChange = (value) => setSelected(value);
     return (
@@ -120,7 +149,11 @@ export const DisabledChoice = () => {
     );
 };
 
-export const WithError = () => {
+export const DisabledChoice: Story = {
+    render: () => <DisabledChoiceExample />
+};
+
+const WithErrorExample = () => {
     const [selected, setSelected] = useState(['football']);
     const handleChange = (value) => setSelected(value);
 
@@ -138,4 +171,8 @@ export const WithError = () => {
             ]}
         />
     );
+};
+
+export const WithError: Story = {
+    render: () => <WithErrorExample />
 };

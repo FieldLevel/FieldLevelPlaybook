@@ -1,0 +1,27 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+
+import * as stories from './Select.stories.tsx';
+
+<Meta of={stories} />
+
+# Select
+
+Select gives users the ability to make a single selection from multiple options. Use Select when you have four or more options to avoid noisy lists in the app, when the default option is the recommended option, when a large number of familiar options are available (CA, AZ, NV, OR, etc).
+
+<Canvas of={stories.Default} />
+
+<Controls of={stories.Default} />
+
+## Placeholder
+
+Include a placeholder if there is no default selection or initial value.
+
+<Canvas of={stories.Placeholder} />
+
+## Disabled
+
+<Canvas of={stories.Disabled} />
+
+## With Error
+
+<Canvas of={stories.WithError} />

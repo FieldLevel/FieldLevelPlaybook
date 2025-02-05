@@ -1,11 +1,12 @@
-import { TitleWithVersion } from '../docs/utils';
 import theme from './theme';
+
+import '../src/styles.css';
 
 export const parameters = {
     options: {
         storySort: {
             method: 'alphabetical',
-            order: [TitleWithVersion, 'Status', 'Icon Set', 'CSS Utilities']
+            order: ['Playbook', 'Status', 'Icon Set', 'CSS Utilities']
         }
     },
     docs: {

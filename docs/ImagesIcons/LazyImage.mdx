@@ -1,0 +1,19 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/blocks';
+
+import * as stories from './LazyImage.stories.tsx';
+
+<Meta of={stories} />
+
+# LazyImage
+
+A LazyImage is an image that supports lazy loading, with a fallback mechanism for browsers that don't support native lazy loading.
+
+<Canvas of={stories.Default} />
+
+<ArgTypes of={stories.default.component} />
+
+## Cover
+
+Use to control whether the image content is letterboxed to fit inside the content box or sized and cropped fill the entire content box with no whitespace.
+
+<Canvas of={stories.Cover} />

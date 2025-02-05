@@ -1,6 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Title } from '../../src';
 
-export const Default = (args: any) => <Title {...args}>Title</Title>;
+const meta: Meta<typeof Title> = {
+    component: Title
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Title>;
+
+export const Default: Story = {
+    args: {
+        children: 'Title'
+    }
+};

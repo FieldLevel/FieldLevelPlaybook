@@ -1,10 +1,35 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { RadioButton } from '../../src';
 
-export const Default = (args: any) => <RadioButton name="baseball" label="Baseball" {...args} />;
+const meta: Meta<typeof RadioButton> = {
+    component: RadioButton
+};
 
-export const Checked = () => <RadioButton name="football" label="Football" checked />;
+export default meta;
 
-export const Disabled = () => <RadioButton name="basketball" label="Basketball" disabled />;
+type Story = StoryObj<typeof RadioButton>;
+
+export const Default: Story = {
+    args: {
+        name: 'baseball',
+        label: 'Baseball'
+    }
+};
+
+export const Checked: Story = {
+    args: {
+        name: 'football',
+        label: 'Football',
+        checked: true
+    }
+};
+
+export const Disabled: Story = {
+    args: {
+        name: 'basketball',
+        label: 'Basketball',
+        disabled: true
+    }
+};

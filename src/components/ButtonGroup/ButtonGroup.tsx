@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import styles from './ButtonGroup.module.css';
+import * as styles from './ButtonGroup.module.css';
 
 type spacing = 'tight' | 'loose';
 

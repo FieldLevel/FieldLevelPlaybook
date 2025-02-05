@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Caption.module.css';
+import * as styles from './Caption.module.css';
 
 export interface CaptionProps {
     children?: React.ReactNode;

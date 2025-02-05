@@ -1,9 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Select } from '../../src';
+import { Select, SelectProps } from '../../src';
 
-export const Default = (args: any) => {
+const meta: Meta<typeof Select> = {
+    component: Select
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Select>;
+
+const DefaultExample = (args: Partial<SelectProps>) => {
     const [selected, setSelected] = useState();
     const handleChange = (value) => {
         setSelected(value);
@@ -21,7 +30,11 @@ export const Default = (args: any) => {
     );
 };
 
-export const Placeholder = () => {
+export const Default: Story = {
+    render: (args) => <DefaultExample {...args} />
+};
+
+const PlaceholderExample = () => {
     const [selected, setSelected] = useState();
     const handleChange = (value) => {
         setSelected(value);
@@ -39,17 +52,26 @@ export const Placeholder = () => {
     );
 };
 
-export const Disabled = () => (
-    <Select label="Sport" name="sport" options={['Baseball', 'Football', 'Basketball']} disabled />
-);
+export const Placeholder: Story = {
+    render: () => <PlaceholderExample />
+};
 
-export const WithError = () => (
-    <Select
-        label="Sport"
-        name="sport"
-        value="Football"
-        options={['Baseball', 'Football', 'Basketball']}
-        placeholder="Pick a sport"
-        error="Your mom won't let you play football"
-    />
-);
+export const Disabled: Story = {
+    args: {
+        label: 'Sport',
+        name: 'sport',
+        options: ['Baseball', 'Football', 'Basketball'],
+        disabled: true
+    }
+};
+
+export const WithError: Story = {
+    args: {
+        label: 'Sport',
+        name: 'sport',
+        value: 'Football',
+        options: ['Baseball', 'Football', 'Basketball'],
+        placeholder: 'Pick a sport',
+        error: "Your mom won't let you play football"
+    }
+};

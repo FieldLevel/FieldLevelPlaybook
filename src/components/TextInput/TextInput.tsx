@@ -7,7 +7,7 @@ import { Link } from '../Link';
 import { InlineError } from '../shared/InlineError';
 import { useUniqueId } from '../../utilities/use-unique-id';
 
-import styles from './TextInput.module.css';
+import * as styles from './TextInput.module.css';
 
 const LineHeight = 20;
 

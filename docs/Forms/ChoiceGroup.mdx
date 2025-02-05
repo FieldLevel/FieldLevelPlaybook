@@ -1,0 +1,39 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+
+import * as stories from './ChoiceGroup.stories.tsx';
+
+<Meta of={stories} />
+
+# ChoiceGroup
+
+Use to create a list of radio buttons or checkboxes. Use a Choice Group when you want to emphasize options, when you have less than five options, when the comparison of options needs to be clear, and when a quick response is a priority. Choice Groups are generally easier to use in a mobile-first experience, choose the list when usage is unclear.
+
+<Canvas of={stories.Default} />
+
+<Controls of={stories.Default} />
+
+## Single Choice
+
+<Canvas of={stories.SingleChoice} />
+
+## Multiple Choice
+
+<Canvas of={stories.MultiChoice} />
+
+## Disabled
+
+<Canvas of={stories.Disabled} />
+
+## Disabled Choice
+
+<Canvas of={stories.DisabledChoice} />
+
+## Spacing
+
+Loose spacing is available when the ChoiceGroup is being used on its own instead of as a form element.
+
+<Canvas of={stories.Spacing} />
+
+## With Error
+
+<Canvas of={stories.WithError} />

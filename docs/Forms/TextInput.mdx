@@ -1,0 +1,65 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+
+import * as stories from './TextInput.stories.tsx';
+
+<Meta of={stories} />
+
+# TextInput
+
+A Text Input is an input field that users can type into. It has a range of options and supports single and multi-line requirements.
+
+<Canvas of={stories.Default} />
+
+<Controls of={stories.Default} />
+
+## Controlled
+
+<Canvas of={stories.Controlled} />
+
+## Placeholder
+
+<Canvas of={stories.Placeholder} />
+
+## Disabled
+
+<Canvas of={stories.Disabled} />
+
+## Readonly
+
+<Canvas of={stories.Readonly} />
+
+## With Icon
+
+<Canvas of={stories.WithIcon} />
+
+## With Link Action
+
+<Canvas of={stories.WithLinkAction} />
+
+## With Button Action
+
+<Canvas of={stories.WithButtonAction} />
+
+## With Error
+
+<Canvas of={stories.WithError} />
+
+## Input Type
+
+<Canvas of={stories.Type} />
+
+## Max Length
+
+<Canvas of={stories.MaxLength} />
+
+## Rows
+
+Use when anticipating longer values. Controlled by the minimum number of `rows` to display and will automatically expand to `maxRows`.
+
+<Canvas of={stories.Row} />
+
+## Ref
+
+You can get access to the ref of the inner input or textarea element by utilizing the `ref` prop.
+
+<Canvas of={stories.Ref} />

@@ -7,7 +7,7 @@ import { InlineError } from '../shared/InlineError';
 
 import { useUniqueId } from '../../utilities/use-unique-id';
 
-import styles from './ChoiceGroup.module.css';
+import * as styles from './ChoiceGroup.module.css';
 
 interface Choice {
     label: string;

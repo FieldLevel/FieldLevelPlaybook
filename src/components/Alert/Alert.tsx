@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { Icon } from '../Icon';
 import { ErrorMinor, InformationMinor, WarningMinor } from '../../icons/Minor';
 
-import styles from './Alert.module.css';
+import * as styles from './Alert.module.css';
 
 type variant = 'highlight' | 'critical' | 'warning';
 export interface AlertProps {
@@ -39,7 +39,7 @@ export const Alert = ({ title, children, variant }: AlertProps) => {
                 {iconContent && <div className={styles.Icon}>{iconContent}</div>}
                 <div className={styles.Content}>
                     {title && <p className={styles.Title}>{title}</p>}
-                    {children && <div className={styles.Message}>{children}</div>}
+                    {children && <div>{children}</div>}
                 </div>
             </div>
         </div>

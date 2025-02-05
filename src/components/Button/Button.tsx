@@ -5,7 +5,7 @@ import cx from 'classnames';
 import { Icon } from '../Icon';
 import { Link } from '../Link';
 
-import styles from './Button.module.css';
+import * as styles from './Button.module.css';
 
 type size = 'slim' | 'large';
 

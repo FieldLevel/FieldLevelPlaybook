@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { LazyImage } from '../LazyImage';
 
-import styles from './Avatar.module.css';
+import * as styles from './Avatar.module.css';
 
 type size = 'small' | 'large';
 type pixelSize = size | 'base';

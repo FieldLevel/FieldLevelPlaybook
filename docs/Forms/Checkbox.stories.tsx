@@ -1,19 +1,49 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
+import { StoryObj, Meta } from '@storybook/react';
 
 import { Checkbox } from '../../src';
 
-export const Default = (args: any) => <Checkbox name="text" label="Text me important information" {...args} />;
+const meta: Meta<typeof Checkbox> = {
+    component: Checkbox
+};
 
-export const Controlled = () => {
+export default meta;
+
+type Story = StoryObj<typeof Checkbox>;
+
+export const Default: Story = {
+    args: {
+        name: 'text',
+        label: 'Text me important information'
+    }
+};
+
+const ControlledExample = () => {
     const [checked, setChecked] = useState(true);
-    const handleChange = (value) => {
+    const handleChange = (value: boolean) => {
         setChecked(value);
     };
 
     return <Checkbox name="text" label="Text me important information" checked={checked} onChange={handleChange} />;
 };
 
-export const Checked = () => <Checkbox name="text" label="Text me important information" checked />;
+export const Controlled: Story = {
+    render: () => <ControlledExample />
+};
 
-export const Disabled = () => <Checkbox name="text" label="Text me important information" disabled />;
+export const Checked: Story = {
+    args: {
+        name: 'text',
+        label: 'Text me important information',
+        checked: true
+    }
+};
+
+export const Disabled: Story = {
+    args: {
+        name: 'text',
+        label: 'Text me important information',
+        disabled: true
+    }
+};

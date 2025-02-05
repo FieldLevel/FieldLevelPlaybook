@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import styles from './Select.module.css';
+import * as styles from './Select.module.css';
 
 import { Icon } from '../Icon';
 import { InlineError } from '../shared/InlineError';

@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import styles from './Spinner.module.css';
+import * as styles from './Spinner.module.css';
 
 type size = 'small';
 
