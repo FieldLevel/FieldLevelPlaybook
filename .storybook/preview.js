@@ -1,6 +1,6 @@
 import theme from './theme';
 
-import '../src/styles.css';
+import '../src/css/styles.css';
 
 export const parameters = {
     options: {

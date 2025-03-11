@@ -1,0 +1,10 @@
+@import 'tailwindcss/base.css';
+@import 'tailwindcss/components.css';
+@import 'tailwindcss/utilities.css';
+
+/* Manually add tailwinds preflight reset so we can opt out of some resets that cause integration issues for now */
+/* Consider removing this and just re-enabling the tailwind preflight once integration is further along */
+@import './custom-preflight.css';
+
+@import './layers.css';
+
