@@ -1,11 +1,3 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-/* Manually add tailwinds preflight reset so we can opt out of some resets that cause integration issues for now */
-/* Consider removing this and just re-enabling the tailwind preflight once integration is further along */
-@import './reset.css';
-
 @layer base {
     html {
         font-size: 16px; /* Make sure we're always working with 16px as base for rem units */
