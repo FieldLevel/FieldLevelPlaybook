@@ -49,6 +49,7 @@ export interface ModalProps {
     /** Optionally configure the "auto-focus on dialog open" behavior by passing an event handler (eg e.preventDefault()). By default, the first focusable item in the Dialog Content is focused */
     onOpenAutoFocus?(): void;
     variant?: variant;
+    persistent?: boolean;
     primaryAction?: PrimaryAction;
     secondaryAction?: Action;
     tertiaryAction?: TertiaryAction;
@@ -72,6 +73,7 @@ export const Modal = ({
     ariaLabel,
     ariaDescription,
     variant,
+    persistent = false,
     primaryAction,
     secondaryAction,
     tertiaryAction,
@@ -147,6 +149,14 @@ export const Modal = ({
                         className={contentStyles}
                         {...contentAriaProps}
                         onOpenAutoFocus={onOpenAutoFocus ?? defaultOnOpenAutoFocus}
+                        onEscapeKeyDown={(e: Event) => {
+                            if (!persistent) return;
+                            e.preventDefault();
+                        }}
+                        onInteractOutside={(e: Event) => {
+                            if (!persistent) return;
+                            e.preventDefault();
+                        }}
                     >
                         <VisuallyHidden.Root asChild>
                             <Dialog.Title>{ariaLabel || title || 'Modal'}</Dialog.Title>
@@ -159,7 +169,7 @@ export const Modal = ({
                         {headerContent}
                         {bodyContent}
                         {footerContent}
-                        {closeContent}
+                        {!persistent && closeContent}
                     </Dialog.Content>
                 </div>
             </Dialog.Portal>
