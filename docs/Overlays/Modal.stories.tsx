@@ -257,6 +257,38 @@ const LargeExample = () => {
         </>
     );
 };
+
 export const Large: Story = {
     render: () => <LargeExample />
+};
+
+export const Persistent: Story = {
+    render: () => {
+        const [open, setOpen] = useState(false);
+        const toggleOpen = () => {
+            setOpen((prev) => !prev);
+        };
+
+        return (
+            <>
+                <Button onClick={toggleOpen}>Open</Button>
+                <Modal
+                    title="Persistent Modal"
+                    persistent
+                    open={open}
+                    onDismiss={toggleOpen}
+                    primaryAction={{ content: 'Ok', onAction: toggleOpen }}
+                >
+                    This is a persistent modal that can only be closed programmatically.
+                </Modal>
+            </>
+        );
+    },
+    parameters: {
+        docs: {
+            source: {
+                type: 'dynamic'
+            }
+        }
+    }
 };
