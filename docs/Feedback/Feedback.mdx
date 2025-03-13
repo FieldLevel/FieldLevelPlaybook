@@ -14,20 +14,36 @@ Feedback enhances user interaction by delivering confirmations, warnings, and er
 
 ## With Action
 
+Use the `action` prop to include a button
+
 <Canvas of={stories.WithAction} />
 
-## With Message
-
-<Canvas of={stories.WithMessage} />
-
-## With Message and Action
-
-<Canvas of={stories.WithMessageAction} />
-
 ## Success
+
+Use the "success" `variant` to confirm some successful action.
 
 <Canvas of={stories.Success} />
 
 ## Critical
 
+Use the "critical" `variant` to display an error message after an unsucessful action.
+
 <Canvas of={stories.Critical} />
+
+## Custom
+
+Use the `customRendering` prop to provide completely custom content.
+
+<Canvas of={stories.Custom} />
+
+## Position
+
+Use the `position` prop and `offsetX`/`offsetY` props to change the animation direction and final position of the Feedback in the viewport.
+
+<Canvas of={stories.Position} />
+
+## Duration
+
+Use the `duration` prop when you want the Feedback to be visible longer or shorter than the default 5 seconds.
+
+<Canvas of={stories.Duration} />
