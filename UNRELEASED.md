@@ -8,6 +8,7 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 -   Adds support for advanced CSS configurations [(#153)](https://github.com/FieldLevel/FieldLevelPlaybook/pull/153)
 -   Adds optional `persistent` mode to `Modal` [(#154)](https://github.com/FieldLevel/FieldLevelPlaybook/pull/154)
+-   Updates the `CloseMajor` and `CloseMinor` icons [(#155)](https://github.com/FieldLevel/FieldLevelPlaybook/pull/155)
 
 ### Bug fixes
 
