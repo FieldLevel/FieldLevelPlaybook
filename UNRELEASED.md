@@ -4,6 +4,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Breaking changes
 
+-   More customization options for `Feedback` [(#156)](https://github.com/FieldLevel/FieldLevelPlaybook/pull/156)
+
 ### Enhancements
 
 -   Adds support for advanced CSS configurations [(#153)](https://github.com/FieldLevel/FieldLevelPlaybook/pull/153)
