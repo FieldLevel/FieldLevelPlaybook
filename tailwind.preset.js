@@ -171,13 +171,23 @@ module.exports = {
                 slideInDown: { from: { transform: 'translate3d(0, -100%, 0)' } },
                 slideInLeft: { from: { transform: 'translate3d(-100%, 0, 0)' } },
                 slideInRight: { from: { transform: 'translate3d(100%, 0, 0)' } },
-                slideInUp: { from: { transform: 'translate3d(0, 100%, 0)' } }
+                slideInUp: { from: { transform: 'translate3d(0, 100%, 0)' } },
+                slideInDownCentered: {
+                    from: { transform: 'translate3d(-50%, -100%, 0)' },
+                    to: { transform: 'translateX(-50%)' }
+                },
+                slideInUpCentered: {
+                    from: { transform: 'translate3d(-50%, 100%, 0)' },
+                    to: { transform: 'translateX(-50%)' }
+                }
             },
             animation: {
                 'slide-in-down': 'slideInDown 0.5s forwards',
                 'slide-in-left': 'slideInLeft 0.5s forwards',
                 'slide-in-right': 'slideInRight 0.5s forwards',
-                'slide-in-up': 'slideInUp 0.3s forwards ease-out'
+                'slide-in-up': 'slideInUp 0.3s forwards ease-out',
+                'slide-in-down-centered': 'slideInDownCentered 0.5s forwards',
+                'slide-in-up-centered': 'slideInUpCentered 0.5s forwards'
             }
         }
     },

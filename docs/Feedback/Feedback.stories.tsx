@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
-import { Feedback, FeedbackProps, Button } from '../../src';
+import { Feedback, FeedbackProps, Button, Avatar } from '../../src';
 
 const meta: Meta<typeof Feedback> = {
     component: Feedback,
@@ -22,7 +22,7 @@ const DefaultExample = (args: Partial<FeedbackProps>) => {
     return (
         <>
             <Button onClick={toggleShow}>Show</Button>
-            <Feedback show={show} title="Something happened!" onDismiss={toggleShow} {...args} />
+            <Feedback show={show} message="Something happened!" onDismiss={toggleShow} {...args} />
         </>
     );
 };
@@ -31,130 +31,130 @@ export const Default: Story = {
     render: (args) => <DefaultExample {...args} />
 };
 
-const WithActionExample = () => {
-    const [show, setShow] = useState(false);
-    const toggleShow = () => {
-        setShow(!show);
-    };
-
-    return (
-        <>
-            <Button onClick={toggleShow}>Show</Button>
-            <Feedback
-                show={show}
-                title="Something happened!"
-                onDismiss={toggleShow}
-                action={{
-                    label: 'Undo',
-                    onClick: () => {
-                        alert('Undid!');
-                    }
-                }}
-            />
-        </>
-    );
-};
-
 export const WithAction: Story = {
-    render: () => <WithActionExample />
-};
+    render: () => {
+        const [show, setShow] = useState(false);
+        const toggleShow = () => {
+            setShow(!show);
+        };
 
-const WithMessageExample = () => {
-    const [show, setShow] = useState(false);
-    const toggleShow = () => {
-        setShow(!show);
-    };
-
-    return (
-        <>
-            <Button onClick={toggleShow}>Show</Button>
-            <Feedback
-                show={show}
-                title="Something!"
-                message="With some more detailed message."
-                onDismiss={toggleShow}
-            />
-        </>
-    );
-};
-
-export const WithMessage: Story = {
-    render: () => <WithMessageExample />
-};
-
-const WithMessageActionExample = () => {
-    const [show, setShow] = useState(false);
-    const toggleShow = () => {
-        setShow(!show);
-    };
-
-    return (
-        <>
-            <Button onClick={toggleShow}>Show</Button>
-            <Feedback
-                show={show}
-                title="Something!"
-                message="With some more detailed message."
-                onDismiss={toggleShow}
-                action={{
-                    label: 'Undo',
-                    onClick: () => {
-                        alert('Undid!');
-                    }
-                }}
-            />
-        </>
-    );
-};
-
-export const WithMessageAction: Story = {
-    render: () => <WithMessageActionExample />
-};
-
-const SuccessExample = () => {
-    const [show, setShow] = useState(false);
-    const toggleShow = () => {
-        setShow(!show);
-    };
-
-    return (
-        <>
-            <Button onClick={toggleShow}>Show</Button>
-            <Feedback
-                show={show}
-                variant="success"
-                title="Something good!"
-                message="With some more detailed message."
-                onDismiss={toggleShow}
-            />
-        </>
-    );
+        return (
+            <>
+                <Button onClick={toggleShow}>Show</Button>
+                <Feedback
+                    show={show}
+                    message="Something happened!"
+                    onDismiss={toggleShow}
+                    action={{
+                        label: 'Undo',
+                        onClick: () => {
+                            alert('Undid it!');
+                        }
+                    }}
+                />
+            </>
+        );
+    }
 };
 
 export const Success: Story = {
-    render: () => <SuccessExample />
-};
+    render: () => {
+        const [show, setShow] = useState(false);
+        const toggleShow = () => {
+            setShow(!show);
+        };
 
-const CriticalExample = () => {
-    const [show, setShow] = useState(false);
-    const toggleShow = () => {
-        setShow(!show);
-    };
-
-    return (
-        <>
-            <Button onClick={toggleShow}>Show</Button>
-            <Feedback
-                show={show}
-                variant="critical"
-                title="Something bad!"
-                message="With some more detailed message."
-                onDismiss={toggleShow}
-            />
-        </>
-    );
+        return (
+            <>
+                <Button onClick={toggleShow}>Show</Button>
+                <Feedback show={show} variant="success" message="Something good!" onDismiss={toggleShow} />
+            </>
+        );
+    }
 };
 
 export const Critical: Story = {
-    render: () => <CriticalExample />
+    render: () => {
+        const [show, setShow] = useState(false);
+        const toggleShow = () => {
+            setShow(!show);
+        };
+
+        return (
+            <>
+                <Button onClick={toggleShow}>Show</Button>
+                <Feedback show={show} variant="critical" message="Something bad!" onDismiss={toggleShow} />
+            </>
+        );
+    }
+};
+
+export const Custom: Story = {
+    render: () => {
+        const [show, setShow] = useState(false);
+        const toggleShow = () => {
+            setShow(!show);
+        };
+
+        return (
+            <>
+                <Button onClick={toggleShow}>Show</Button>
+                <Feedback
+                    show={show}
+                    onDismiss={toggleShow}
+                    customRendering={
+                        <div className="flex items-center gap-2">
+                            <Avatar source="http://placecats.com/80/80" />
+                            <span>
+                                Some completely <span className="font-bold">custom</span> content
+                            </span>
+                        </div>
+                    }
+                />
+            </>
+        );
+    }
+};
+
+export const Position: Story = {
+    render: () => {
+        const [show, setShow] = useState(false);
+        const toggleShow = () => {
+            setShow(!show);
+        };
+
+        return (
+            <>
+                <Button onClick={toggleShow}>Show</Button>
+                <Feedback
+                    show={show}
+                    position="right"
+                    offsetX={100}
+                    onDismiss={toggleShow}
+                    message="Coming in from the right"
+                />
+            </>
+        );
+    }
+};
+
+export const Duration: Story = {
+    render: () => {
+        const [show, setShow] = useState(false);
+        const toggleShow = () => {
+            setShow(!show);
+        };
+
+        return (
+            <>
+                <Button onClick={toggleShow}>Show</Button>
+                <Feedback
+                    show={show}
+                    onDismiss={toggleShow}
+                    duration={10000}
+                    message="Should stay visible for longer"
+                />
+            </>
+        );
+    }
 };

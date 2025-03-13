@@ -1,57 +1,29 @@
 .Feedback {
-    @apply fixed inset-0 flex items-end justify-center px-4 py-6 pb-20 pointer-events-none animate-slide-in-up;
-    @apply lg:pr-6 lg:pt-20 lg:items-start lg:justify-end;    
-}
-
-@screen lg {
-    .Feedback {
-        @apply animate-slide-in-right;
-    }
+    @apply fixed top-0 left-0 right-0 bottom-0 w-full h-full pointer-events-none z-[9999];
 }
 
 .Card {
-    @apply max-w-sm w-full bg-foreground-base shadow-lg rounded-lg pointer-events-auto overflow-hidden p-4 flex items-start;
-    @apply border border-base;
+    @apply absolute max-w-sm w-full bg-foreground-base shadow-lg rounded-lg pointer-events-auto overflow-hidden p-4 border border-base;
 }
 
-.condensed {
-    @apply items-center py-2;
+.Content {
+    @apply flex items-start;
 }
 
 .Icon {
     @apply shrink-0 mr-3;
 }
 
-.Content {
-    @apply w-0 flex-1;
-}
-
-.Content button {
+.Action {
     @apply mt-2;
 }
 
-.condensed > .Content {
-    @apply flex justify-between items-center;
-}
-
-.condensed > .Content button {
-    @apply mt-0;
-}
-
-.Title {
-    @apply flex-1 font-bold;
-}
-
-.condensed .Title {
-    @apply py-2;
-}
-
 .Message {
-    @apply mt-1;
+    @apply flex-1 flex flex-col gap-2 text-body;
 }
 
 .Close {
-    @apply ml-4 shrink-0 flex;
+    @apply h-full ml-4 shrink-0 flex;
 }
 
 .Close button {
