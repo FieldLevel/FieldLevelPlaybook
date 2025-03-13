@@ -3,8 +3,7 @@ import cx from 'classnames';
 
 import { Icon } from '../Icon';
 import { Button } from '../Button';
-import { CloseMajor } from '../../icons/Major';
-import { ErrorMinor, CheckCircleMinor } from '../../icons/Minor';
+import { ErrorMinor, CheckCircleMinor, CloseMinor } from '../../icons/Minor';
 import { useTimeout } from '../../utilities/use-timeout';
 
 import * as styles from './Feedback.module.css';
@@ -125,7 +124,7 @@ export const Feedback = ({
                         <span className={styles.Close}>
                             <button onClick={onDismiss}>
                                 <span className="sr-only">Close</span>
-                                <Icon source={CloseMajor} />
+                                <Icon source={CloseMinor} />
                             </button>
                         </span>
                     </div>
