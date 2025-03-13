@@ -3,48 +3,27 @@
 }
 
 .Card {
-    @apply absolute max-w-sm w-full bg-foreground-base shadow-lg rounded-lg pointer-events-auto overflow-hidden p-4 flex items-start;
-    @apply border border-base;
+    @apply absolute max-w-sm w-full bg-foreground-base shadow-lg rounded-lg pointer-events-auto overflow-hidden p-4 border border-base;
 }
 
-.condensed {
-    @apply items-center py-2;
+.Content {
+    @apply flex items-start;
 }
 
 .Icon {
     @apply shrink-0 mr-3;
 }
 
-.Content {
-    @apply w-0 flex-1;
-}
-
-.Content button {
+.Action {
     @apply mt-2;
 }
 
-.condensed > .Content {
-    @apply flex justify-between items-center;
-}
-
-.condensed > .Content button {
-    @apply mt-0;
-}
-
-.Title {
-    @apply flex-1 font-bold;
-}
-
-.condensed .Title {
-    @apply py-2;
-}
-
 .Message {
-    @apply mt-1;
+    @apply flex-1 flex flex-col gap-2 text-body;
 }
 
 .Close {
-    @apply ml-4 shrink-0 flex;
+    @apply h-full ml-4 shrink-0 flex;
 }
 
 .Close button {

@@ -19,7 +19,10 @@ type variant = 'success' | 'critical';
 
 export interface FeedbackProps {
     show: boolean;
-    title: string;
+    /**
+     * @deprecated Use message instead
+     */
+    title?: string;
     message?: string;
     variant?: variant;
     position?: position;
@@ -81,7 +84,7 @@ export const Feedback = ({
     onDismiss
 }: FeedbackProps) => {
     const iconContent = variant && variantIcon[variant];
-    const cardStyle = cx(styles.Card, !message && styles.condensed, animationStyle[position]);
+    const cardStyle = cx(styles.Card, animationStyle[position]);
     const positionStyles = getPositionStyles(position, offsetX, offsetY);
 
     const dismiss = () => {
@@ -91,9 +94,16 @@ export const Feedback = ({
     // Dismiss automatically after duration once shown
     useTimeout(dismiss, duration, show);
 
-    // Warning for title length
-    if (title.length > 40) {
-        console.error('Feedback title should be shorter than 40 characters. Add longer content in message.');
+    // Phasing out the use of title
+    // If both a title and a message are passed we are just using the message
+    // If only title is passed we are using it as the message
+    if (title && message) {
+        console.warn(
+            'Feedback :: The title prop has been deprecated. Since both title and message were passed we are only displaying the message.'
+        );
+    } else if (title) {
+        console.warn('Feedback :: The title prop has been deprecated. Use message instead.');
+        message = title;
     }
 
     const feedback = (
@@ -102,20 +112,23 @@ export const Feedback = ({
                 {customRendering ? (
                     customRendering
                 ) : (
-                    <>
+                    <div className={styles.Content}>
                         {iconContent && <div className={styles.Icon}>{iconContent}</div>}
-                        <div className={styles.Content}>
-                            <p className={styles.Title}>{title}</p>
-                            {message && <p className={styles.Message}>{message}</p>}
-                            {action && <Button>{action.label}</Button>}
-                        </div>
-                        <div className={styles.Close}>
+                        <span className={styles.Message}>
+                            {message && <p>{message}</p>}
+                            {action && (
+                                <span>
+                                    <Button size="slim">{action.label}</Button>
+                                </span>
+                            )}
+                        </span>
+                        <span className={styles.Close}>
                             <button onClick={onDismiss}>
                                 <span className="sr-only">Close</span>
                                 <Icon source={CloseMajor} />
                             </button>
-                        </div>
-                    </>
+                        </span>
+                    </div>
                 )}
             </div>
         </div>
