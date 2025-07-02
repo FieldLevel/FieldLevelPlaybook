@@ -8,6 +8,13 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 7.1.0 - 2025-07-02
+
+### Bug fixes
+
+-   allow `Modal` tertiary button to appear without primary/secondary actions ([#160](https://github.com/FieldLevel/FieldLevelPlaybook/pull/160))
+-   fix spacing on `Modal` footer to match body ([#159](https://github.com/FieldLevel/FieldLevelPlaybook/pull/159))
+
 ## 7.0.0 - 2025-03-14
 
 ### Breaking changes
