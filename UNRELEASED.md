@@ -8,6 +8,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Bug fixes
 
+-   fix spacing on `Modal` footer to match body ([#159](https://github.com/FieldLevel/FieldLevelPlaybook/pull/159))
+
 ### Documentation
 
 ### Development workflow
