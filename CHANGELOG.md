@@ -8,6 +8,12 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 7.1.1 - 2025-07-29
+
+### Bug fixes
+
+-   set onClick on button when specified for action prop in `Feedback` component - ([#63](https://github.com/FieldLevel/FieldLevelPlaybook/pull/163))
+
 ## 7.1.0 - 2025-07-02
 
 ### Bug fixes
