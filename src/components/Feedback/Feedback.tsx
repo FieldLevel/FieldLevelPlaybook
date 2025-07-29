@@ -117,7 +117,9 @@ export const Feedback = ({
                             {message && <p>{message}</p>}
                             {action && (
                                 <span>
-                                    <Button size="slim">{action.label}</Button>
+                                    <Button size="slim" onClick={action.onClick}>
+                                        {action.label}
+                                    </Button>
                                 </span>
                             )}
                         </span>
