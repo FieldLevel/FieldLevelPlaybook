@@ -90,6 +90,11 @@ export const Feedback = ({
         onDismiss && onDismiss();
     };
 
+    const onActionClick = () => {
+        dismiss();
+        action?.onClick?.();
+    };
+
     // Dismiss automatically after duration once shown
     useTimeout(dismiss, duration, show);
 
@@ -117,7 +122,7 @@ export const Feedback = ({
                             {message && <p>{message}</p>}
                             {action && (
                                 <span>
-                                    <Button size="slim" onClick={action.onClick}>
+                                    <Button size="slim" onClick={onActionClick}>
                                         {action.label}
                                     </Button>
                                 </span>
