@@ -12,7 +12,7 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ### Bug fixes
 
--   set onClick on button when specified for action prop in `Feedback` component - ([#63](https://github.com/FieldLevel/FieldLevelPlaybook/pull/163))
+-   set onClick on button when specified for action prop in `Feedback` component - ([#163](https://github.com/FieldLevel/FieldLevelPlaybook/pull/163))
 
 ## 7.1.0 - 2025-07-02
 
