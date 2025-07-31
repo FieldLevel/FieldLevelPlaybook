@@ -8,6 +8,14 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 7.2.0 - 2025-07-31
+
+### Enhancements
+
+-   close `Feedback` component once `action` is clicked and require `onClick` in `action` prop ([#165](https://github.com/FieldLevel/FieldLevelPlaybook/pull/165))
+
+-   Add large size and autoComplete to TextInput ([#166](https://github.com/FieldLevel/FieldLevelPlaybook/pull/166))
+
 ## 7.1.1 - 2025-07-29
 
 ### Bug fixes
