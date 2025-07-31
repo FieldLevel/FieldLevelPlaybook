@@ -10,7 +10,7 @@ import * as styles from './Feedback.module.css';
 
 interface Action {
     label: string;
-    onClick?(): void;
+    onClick(): void;
 }
 
 type position = 'top' | 'right' | 'bottom' | 'left';
@@ -92,7 +92,7 @@ export const Feedback = ({
 
     const onActionClick = () => {
         dismiss();
-        action?.onClick?.();
+        action?.onClick();
     };
 
     // Dismiss automatically after duration once shown
