@@ -58,6 +58,24 @@ export const Readonly: Story = {
     }
 };
 
+export const AutoComplete: Story = {
+    args: {
+        label: 'Email',
+        name: 'email',
+        type: 'email',
+        autoComplete: 'off'
+    }
+};
+
+export const Size: Story = {
+    args: {
+        label: 'Email',
+        name: 'email',
+        value: 'test@fieldlevel.com',
+        size: 'large'
+    }
+};
+
 export const WithIcon: Story = {
     args: {
         label: 'Search',
@@ -126,32 +144,30 @@ export const Row: Story = {
     }
 };
 
-const RefExample = () => {
-    const inputRef = useRef<HTMLInputElement>(null);
-    const textAreaRef = useRef<HTMLTextAreaElement>(null);
-
-    const focusInput = () => {
-        inputRef.current?.focus();
-    };
-
-    const focusTextArea = () => {
-        textAreaRef.current?.focus();
-    };
-
-    return (
-        <>
-            <Stack align="end">
-                <TextInput label="Input" name="input" ref={inputRef} />
-                <Button onClick={focusInput}>Focus!</Button>
-            </Stack>
-            <Stack align="end">
-                <TextInput rows={3} label="TextArea" name="textarea" ref={textAreaRef} />
-                <Button onClick={focusTextArea}>Focus!</Button>
-            </Stack>
-        </>
-    );
-};
-
 export const Ref: Story = {
-    render: () => <RefExample />
+    render: () => {
+        const inputRef = useRef<HTMLInputElement>(null);
+        const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
+        const focusInput = () => {
+            inputRef.current?.focus();
+        };
+
+        const focusTextArea = () => {
+            textAreaRef.current?.focus();
+        };
+
+        return (
+            <>
+                <Stack align="end">
+                    <TextInput label="Input" name="input" ref={inputRef} />
+                    <Button onClick={focusInput}>Focus!</Button>
+                </Stack>
+                <Stack align="end">
+                    <TextInput rows={3} label="TextArea" name="textarea" ref={textAreaRef} />
+                    <Button onClick={focusTextArea}>Focus!</Button>
+                </Stack>
+            </>
+        );
+    }
 };

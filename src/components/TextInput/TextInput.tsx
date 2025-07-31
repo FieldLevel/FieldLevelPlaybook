@@ -11,7 +11,9 @@ import * as styles from './TextInput.module.css';
 
 const LineHeight = 20;
 
-type Type =
+type SizeValue = 'large';
+
+type TypeValue =
     | 'text'
     | 'email'
     | 'number'
@@ -26,6 +28,8 @@ type Type =
     | 'week'
     | 'currency';
 
+type AutoCompleteValue = 'off' | 'on' | 'new-password' | 'current-password' | 'email' | 'username' | 'name' | string;
+
 type Action = {
     label?: string;
     url?: string;
@@ -34,7 +38,8 @@ type Action = {
 
 export interface TextInputProps {
     name: string;
-    type?: Type;
+    type?: TypeValue;
+    autoComplete?: AutoCompleteValue;
     label?: string;
     action?: Action;
     value?: string;
@@ -42,6 +47,7 @@ export interface TextInputProps {
     max?: number;
     step?: number | 'any';
     placeholder?: string;
+    size?: SizeValue;
     rows?: number;
     maxRows?: number;
     maxLength?: number;
@@ -56,6 +62,7 @@ export const TextInput = React.forwardRef(function TextInput(
     {
         name,
         type,
+        autoComplete,
         label,
         action,
         value,
@@ -63,6 +70,7 @@ export const TextInput = React.forwardRef(function TextInput(
         max,
         step,
         placeholder,
+        size,
         rows,
         maxRows,
         maxLength,
@@ -164,6 +172,7 @@ export const TextInput = React.forwardRef(function TextInput(
     const inputClass = cx(
         styles.TextInput,
         icon && styles.withIcon,
+        size === 'large' && styles.large,
         disabled && styles.disabled,
         readonly && styles.readonly,
         error && styles.error
@@ -172,6 +181,7 @@ export const TextInput = React.forwardRef(function TextInput(
     const inputEl = createElement(rows ? 'textarea' : 'input', {
         id,
         type: type || 'text',
+        autoComplete,
         name,
         value,
         min,
