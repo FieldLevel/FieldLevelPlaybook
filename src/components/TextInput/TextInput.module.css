@@ -7,7 +7,7 @@
     @apply rounded-md shadow-sm border border-base py-2 px-3 w-full align-bottom resize-none text-body-lg md:text-body;
     @apply outline-none focus:ring placeholder-base;
     line-height: 20px;
-    min-height: 40px;
+    min-height: 38px;
 }
 
 .disabled input,
