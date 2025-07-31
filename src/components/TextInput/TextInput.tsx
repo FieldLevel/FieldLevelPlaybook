@@ -28,6 +28,8 @@ type TypeValue =
     | 'week'
     | 'currency';
 
+type AutoCompleteValue = 'off' | 'on' | 'new-password' | 'current-password' | 'email' | 'username' | 'name' | string;
+
 type Action = {
     label?: string;
     url?: string;
@@ -37,6 +39,7 @@ type Action = {
 export interface TextInputProps {
     name: string;
     type?: TypeValue;
+    autoComplete?: AutoCompleteValue;
     label?: string;
     action?: Action;
     value?: string;
@@ -59,6 +62,7 @@ export const TextInput = React.forwardRef(function TextInput(
     {
         name,
         type,
+        autoComplete,
         label,
         action,
         value,
@@ -177,6 +181,7 @@ export const TextInput = React.forwardRef(function TextInput(
     const inputEl = createElement(rows ? 'textarea' : 'input', {
         id,
         type: type || 'text',
+        autoComplete,
         name,
         value,
         min,

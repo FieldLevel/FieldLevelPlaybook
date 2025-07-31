@@ -58,6 +58,15 @@ export const Readonly: Story = {
     }
 };
 
+export const AutoComplete: Story = {
+    args: {
+        label: 'Email',
+        name: 'email',
+        type: 'email',
+        autoComplete: 'off'
+    }
+};
+
 export const Size: Story = {
     args: {
         label: 'Email',
