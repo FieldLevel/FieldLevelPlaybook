@@ -58,6 +58,15 @@ export const Readonly: Story = {
     }
 };
 
+export const Size: Story = {
+    args: {
+        label: 'Email',
+        name: 'email',
+        value: 'test@fieldlevel.com',
+        size: 'large'
+    }
+};
+
 export const WithIcon: Story = {
     args: {
         label: 'Search',

@@ -29,6 +29,19 @@
     @apply pl-9;
 }
 
+.withIcon.large input {
+    @apply pl-9;
+}
+
+.large input,
+.large textarea {
+    @apply px-3 py-3 text-body-lg;
+}
+
+.large label {
+    @apply text-body-lg;
+}
+
 .Wrapper {
     @apply relative;
 }
