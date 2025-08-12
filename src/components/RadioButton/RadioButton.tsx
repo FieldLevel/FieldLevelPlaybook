@@ -12,12 +12,13 @@ export interface RadioButtonProps {
     label: string;
     checked?: boolean;
     disabled?: boolean;
+    classNames?: string;
     onChange?(value: boolean, name: string): void;
 }
 
-export const RadioButton = ({ name, label, checked, disabled, onChange }: RadioButtonProps) => {
+export const RadioButton = ({ name, label, checked, disabled, classNames, onChange }: RadioButtonProps) => {
     const id = useUniqueId(name);
-    const inputStyle = cx(styles.input, disabled && styles.disabled);
+    const inputStyle = cx(styles.input, disabled && styles.disabled, classNames);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         onChange && onChange(Boolean(event.currentTarget.checked), event.currentTarget.name);

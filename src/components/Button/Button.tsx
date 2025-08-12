@@ -22,6 +22,7 @@ export interface ButtonProps {
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
     ariaLabel?: string;
     ariaLabelledBy?: string;
+    classNames?: string;
     children?: React.ReactNode;
     onClick?(): void;
 }
@@ -55,6 +56,7 @@ export const Button = React.forwardRef(function Button(
         icon,
         ariaLabel,
         ariaLabelledBy,
+        classNames,
         onClick,
         children
     }: ButtonProps,
@@ -74,7 +76,8 @@ export const Button = React.forwardRef(function Button(
         size && sizeStyles[size],
         variant && variantStyles[variant],
         disabled && styles.disabled,
-        fullWidth && styles.fullWidth
+        fullWidth && styles.fullWidth,
+        classNames
     );
 
     const buttonContent = (

@@ -46,6 +46,7 @@ export interface ModalProps {
     ariaLabel?: string;
     /** Optionally configure the aria-description of the dialog.*/
     ariaDescription?: string;
+    classNames?: string;
     /** Optionally configure the "auto-focus on dialog open" behavior by passing an event handler (eg e.preventDefault()). By default, the first focusable item in the Dialog Content is focused */
     onOpenAutoFocus?(): void;
     variant?: variant;
@@ -72,6 +73,7 @@ export const Modal = ({
     title,
     ariaLabel,
     ariaDescription,
+    classNames,
     variant,
     persistent = false,
     primaryAction,
@@ -131,7 +133,7 @@ export const Modal = ({
     );
 
     const containerStyles = cx(styles.Container, variant && variantContainerStyles[variant]);
-    const contentStyles = cx(styles.Content, variant && variantContentStyles[variant]);
+    const contentStyles = cx(styles.Content, variant && variantContentStyles[variant], classNames);
 
     const contentAriaProps: { 'aria-describedby'?: undefined } = {};
     if (!ariaDescription) {

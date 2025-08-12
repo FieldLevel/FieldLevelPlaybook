@@ -11,6 +11,7 @@ export interface LazyImageProps {
     width: number;
     height: number;
     cover?: boolean;
+    classNames?: string;
 }
 
 const getImageAttributes = (width: number, height: number, cover?: boolean) => {
@@ -22,8 +23,8 @@ const getImageAttributes = (width: number, height: number, cover?: boolean) => {
     return { classNames, wrapperStyle };
 };
 
-const NativeImage = ({ src, srcSet, alt, title, width, height, cover }: LazyImageProps) => {
-    const { classNames, wrapperStyle } = getImageAttributes(width, height, cover);
+const NativeImage = ({ src, srcSet, alt, title, width, height, cover, classNames }: LazyImageProps) => {
+    const { classNames: baseClassNames, wrapperStyle } = getImageAttributes(width, height, cover);
 
     return (
         <div style={wrapperStyle}>
@@ -35,15 +36,15 @@ const NativeImage = ({ src, srcSet, alt, title, width, height, cover }: LazyImag
                 height={height}
                 alt={alt}
                 title={title}
-                className={classNames}
+                className={cx(baseClassNames, classNames)}
                 role={alt === '' ? 'presentation' : undefined}
             />
         </div>
     );
 };
 
-const FallbackImage = ({ src, srcSet, alt, title, width, height, cover }: LazyImageProps) => {
-    const { classNames, wrapperStyle } = getImageAttributes(width, height, cover);
+const FallbackImage = ({ src, srcSet, alt, title, width, height, cover, classNames }: LazyImageProps) => {
+    const { classNames: baseClassNames, wrapperStyle } = getImageAttributes(width, height, cover);
 
     const { ref, inView } = useInView({
         rootMargin: '200px 0px',
@@ -61,7 +62,7 @@ const FallbackImage = ({ src, srcSet, alt, title, width, height, cover }: LazyIm
                     height={height}
                     alt={alt}
                     title={title}
-                    className={classNames}
+                    className={cx(baseClassNames, classNames)}
                     role={alt === '' ? 'presentation' : undefined}
                 />
             ) : null}
@@ -69,7 +70,7 @@ const FallbackImage = ({ src, srcSet, alt, title, width, height, cover }: LazyIm
     );
 };
 
-export const LazyImage = ({ src, srcSet, alt, title, width, height, cover = false }: LazyImageProps) => {
+export const LazyImage = ({ src, srcSet, alt, title, width, height, cover = false, classNames }: LazyImageProps) => {
     const supportsLazyLoading = HTMLImageElement.prototype.hasOwnProperty('loading');
     const finalAlt = alt ?? title;
 
@@ -86,6 +87,7 @@ export const LazyImage = ({ src, srcSet, alt, title, width, height, cover = fals
                     height={height}
                     width={width}
                     cover={cover}
+                    classNames={classNames}
                 />
             ) : (
                 <FallbackImage
@@ -96,6 +98,7 @@ export const LazyImage = ({ src, srcSet, alt, title, width, height, cover = fals
                     height={height}
                     width={width}
                     cover={cover}
+                    classNames={classNames}
                 />
             )}
         </>

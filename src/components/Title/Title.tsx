@@ -14,10 +14,11 @@ const sizeStyles: { [key in size]: string } = {
 export interface TitleProps {
     as?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
     size?: size;
+    classNames?: string;
     children?: React.ReactNode;
 }
 
-export const Title = ({ as: Element = 'p', size, children }: TitleProps) => {
-    const className = cx(styles.Title, size && sizeStyles[size]);
+export const Title = ({ as: Element = 'p', size, classNames, children }: TitleProps) => {
+    const className = cx(styles.Title, size && sizeStyles[size], classNames);
     return <Element className={className}>{children}</Element>;
 };

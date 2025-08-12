@@ -11,6 +11,7 @@ export interface AlertProps {
     title?: string;
     children?: React.ReactNode;
     variant: variant;
+    classNames?: string;
 }
 
 const variantIcon: { [key in variant]: JSX.Element } = {
@@ -25,9 +26,9 @@ const variantColor: { [key in variant]: string } = {
     highlight: styles.highlight
 };
 
-export const Alert = ({ title, children, variant }: AlertProps) => {
+export const Alert = ({ title, children, variant, classNames }: AlertProps) => {
     const iconContent = variantIcon[variant];
-    const alertStyle = cx(styles.Alert, variantColor[variant]);
+    const alertStyle = cx(styles.Alert, variantColor[variant], classNames);
 
     if (variant === undefined) {
         console.error('Alerts must have a variant specified.');

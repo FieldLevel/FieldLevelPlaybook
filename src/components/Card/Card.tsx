@@ -46,6 +46,7 @@ export interface CardProps {
     title?: string;
     subtitle?: string;
     spacing?: spacing;
+    classNames?: string;
     children?: React.ReactNode;
 }
 
@@ -59,9 +60,9 @@ const spacingStyles: { [s in spacing]: string } = {
     loose: styles.spaceLoose
 };
 
-export const Card = ({ title, subtitle, spacing, children }: CardProps & CardChildren) => {
+export const Card = ({ title, subtitle, spacing, classNames, children }: CardProps & CardChildren) => {
     const headerContent = title && <Header title={title} subtitle={subtitle} />;
-    const cardStyle = cx(styles.Card, spacing && spacingStyles[spacing]);
+    const cardStyle = cx(styles.Card, spacing && spacingStyles[spacing], classNames);
 
     const content = Children.map(children, (child) => {
         if (child === null || child === undefined) {

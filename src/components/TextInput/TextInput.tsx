@@ -55,6 +55,7 @@ export interface TextInputProps {
     readonly?: boolean;
     icon?: React.FC<React.SVGProps<SVGSVGElement>>;
     error?: string;
+    classNames?: string;
     onChange?(value: string, name: string): void;
 }
 
@@ -78,6 +79,7 @@ export const TextInput = React.forwardRef(function TextInput(
         readonly,
         icon,
         error,
+        classNames,
         onChange
     }: TextInputProps,
     forwardedRef: Ref<HTMLInputElement | HTMLTextAreaElement | null>
@@ -192,6 +194,7 @@ export const TextInput = React.forwardRef(function TextInput(
         rows: rows && (currentRows || 1),
         readOnly: readonly,
         disabled,
+        className: classNames,
         onChange: handleChange,
         ref: rows ? textAreaRef : inputRef
     });

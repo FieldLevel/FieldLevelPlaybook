@@ -14,6 +14,7 @@ export interface AvatarProps {
     alt?: string;
     title?: string;
     lazy?: boolean;
+    classNames?: string;
 }
 
 const sizeStyles: { [key in size]: string } = {
@@ -27,7 +28,7 @@ const sizeInPixels: { [key in pixelSize]: number } = {
     large: 60
 };
 
-export const Avatar = ({ source, sourceSet, size, alt, title, lazy = false }: AvatarProps) => {
+export const Avatar = ({ source, sourceSet, size, alt, title, lazy = false, classNames }: AvatarProps) => {
     const avatarStyle = cx(styles.Avatar, size && sizeStyles[size]);
     const pixelSize = size ?? 'base';
     const dimension = sizeInPixels[pixelSize];
@@ -44,6 +45,7 @@ export const Avatar = ({ source, sourceSet, size, alt, title, lazy = false }: Av
                     alt={finalAlt}
                     title={title}
                     cover={true}
+                    classNames={classNames}
                 />
             ) : (
                 <img
@@ -53,7 +55,7 @@ export const Avatar = ({ source, sourceSet, size, alt, title, lazy = false }: Av
                     width={dimension}
                     alt={finalAlt}
                     title={title}
-                    className={styles.Image}
+                    className={cx(styles.Image, classNames)}
                 />
             )}
         </span>

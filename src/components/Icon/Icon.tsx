@@ -8,6 +8,7 @@ type color = 'current' | 'muted' | 'critical' | 'warning' | 'highlight' | 'succe
 export interface IconProps {
     source: React.FC<React.SVGProps<SVGSVGElement>>;
     color?: color;
+    classNames?: string;
 }
 
 const colorStyles: { [key in color]: string } = {
@@ -20,8 +21,8 @@ const colorStyles: { [key in color]: string } = {
     onDark: styles.onDark
 };
 
-export const Icon = ({ source, color }: IconProps) => {
-    const className = cx(styles.Icon, color && colorStyles[color]);
+export const Icon = ({ source, color, classNames }: IconProps) => {
+    const className = cx(styles.Icon, color && colorStyles[color], classNames);
     const SourceComponent = source;
 
     return (

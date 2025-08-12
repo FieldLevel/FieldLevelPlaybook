@@ -12,12 +12,13 @@ export interface CheckboxProps {
     label: string;
     checked?: boolean;
     disabled?: boolean;
+    classNames?: string;
     onChange?(value: boolean, name: string): void;
 }
 
-export const Checkbox = ({ name, label, checked, disabled, onChange }: CheckboxProps) => {
+export const Checkbox = ({ name, label, checked, disabled, classNames, onChange }: CheckboxProps) => {
     const id = useUniqueId(name);
-    const inputStyle = cx(styles.input, disabled && styles.disabled);
+    const inputStyle = cx(styles.input, disabled && styles.disabled, classNames);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         onChange && onChange(Boolean(event.currentTarget.checked), event.currentTarget.name);

@@ -29,6 +29,7 @@ export interface FeedbackProps {
     offsetY?: number;
     duration?: number;
     customRendering?: React.ReactNode;
+    classNames?: string;
     action?: Action;
     onDismiss?(): void;
 }
@@ -79,6 +80,7 @@ export const Feedback = ({
     offsetY = 0,
     duration = 5000,
     customRendering,
+    classNames,
     action,
     onDismiss
 }: FeedbackProps) => {
@@ -111,7 +113,7 @@ export const Feedback = ({
     }
 
     const feedback = (
-        <div className={styles.Feedback}>
+        <div className={cx(styles.Feedback, classNames)}>
             <div className={cardStyle} style={positionStyles}>
                 {customRendering ? (
                     customRendering

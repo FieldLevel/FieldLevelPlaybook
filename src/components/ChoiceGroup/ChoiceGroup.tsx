@@ -27,6 +27,7 @@ export interface ChoiceGroupProps {
     spacing?: spacing;
     onChange?(selected: (string | boolean | number)[] | (string | boolean | number), name: string): void;
     error?: string;
+    classNames?: string;
 }
 
 export const ChoiceGroup = ({
@@ -38,7 +39,8 @@ export const ChoiceGroup = ({
     disabled,
     spacing,
     onChange,
-    error
+    error,
+    classNames
 }: ChoiceGroupProps) => {
     const uniqueName = useUniqueId(name);
     const Control = multiple ? Checkbox : RadioButton;
@@ -97,6 +99,7 @@ export const ChoiceGroup = ({
                     checked={isSelected(choice)}
                     disabled={disabled || choice.disabled}
                     onChange={handleChange}
+                    classNames={classNames}
                 />
             </li>
         );

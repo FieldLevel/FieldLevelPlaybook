@@ -22,6 +22,7 @@ export interface SelectProps {
     placeholder?: string | Option;
     disabled?: boolean;
     error?: string;
+    classNames?: string;
     onChange?(value: string, name: string): void;
 }
 
@@ -43,7 +44,17 @@ const standardizePlaceholder = (placeholder: string | Option): Option => {
     }
 };
 
-export const Select = ({ options, name, value, label, placeholder, disabled, error, onChange }: SelectProps) => {
+export const Select = ({
+    options,
+    name,
+    value,
+    label,
+    placeholder,
+    disabled,
+    error,
+    classNames,
+    onChange
+}: SelectProps) => {
     const id = useUniqueId(name);
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -72,7 +83,14 @@ export const Select = ({ options, name, value, label, placeholder, disabled, err
         <div>
             {labelContent}
             <div className={selectClass}>
-                <select id={id} name={name} value={currentValue} disabled={disabled} onChange={handleChange}>
+                <select
+                    id={id}
+                    name={name}
+                    value={currentValue}
+                    disabled={disabled}
+                    onChange={handleChange}
+                    className={classNames}
+                >
                     {stdPlaceholder && <option value={stdPlaceholder.value}>{stdPlaceholder.label}</option>}
                     {stdOptions.map((option) => (
                         <option key={option.value} value={option.value}>
