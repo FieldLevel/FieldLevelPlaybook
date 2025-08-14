@@ -1,5 +1,5 @@
 .Overlay {
-    @apply fixed z-[9998] h-full inset-0 bg-[color:hsla(0,0%,0%,.33)]; /* consider removing z-index declarations once we clean up the z-index wars in the app */
+    @apply fixed z-[9998] h-full inset-0 backdrop-blur-sm bg-[color:hsla(0,0%,0%,.66)]; /* consider removing z-index declarations once we clean up the z-index wars in the app */
 }
 
 .Container {
