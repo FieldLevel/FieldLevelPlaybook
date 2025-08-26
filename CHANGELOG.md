@@ -8,6 +8,12 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 7.2.1 - 2025-08-26
+
+### Enhancements
+
+-- update overlay of `Modal` component ([#170](https://github.com/FieldLevel/FieldLevelPlaybook/pull/170))
+
 ## 7.2.0 - 2025-07-31
 
 ### Enhancements
