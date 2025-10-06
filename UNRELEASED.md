@@ -6,6 +6,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   add padding to `Modal` header ([#173](https://github.com/FieldLevel/FieldLevelPlaybook/pull/173))
+
 ### Bug fixes
 
 ### Documentation
