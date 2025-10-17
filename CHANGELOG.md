@@ -8,6 +8,14 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 7.3.0 - 2025-10-17
+
+### Enhancements
+
+-   remove uppercase style from `Subheading` component ([#174](https://github.com/FieldLevel/FieldLevelPlaybook/pull/174))
+-   add padding to `Modal` header ([#173](https://github.com/FieldLevel/FieldLevelPlaybook/pull/173))
+-   set white background on `RadioButton` and `Checkbox` components ([#172](https://github.com/FieldLevel/FieldLevelPlaybook/pull/172))
+
 ## 7.2.1 - 2025-08-26
 
 ### Enhancements
