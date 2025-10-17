@@ -1,5 +1,5 @@
 .input {
-    @apply appearance-none outline-none shadow-sm h-5 w-5 border border-base rounded-full;
+    @apply appearance-none outline-none shadow-sm h-5 w-5 border border-base rounded-full bg-foreground-base;
     @apply focus:ring;
     background-image: none;
 }
