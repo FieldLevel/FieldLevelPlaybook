@@ -8,6 +8,12 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 7.3.1 - 2025-11-07
+
+### Enhancements
+
+-   show close button on `Modal` if `persistent` is true ([#177](https://github.com/FieldLevel/FieldLevelPlaybook/pull/177))
+
 ## 7.3.0 - 2025-10-17
 
 ### Enhancements
