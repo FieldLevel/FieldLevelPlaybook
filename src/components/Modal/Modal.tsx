@@ -169,7 +169,7 @@ export const Modal = ({
                         {headerContent}
                         {bodyContent}
                         {footerContent}
-                        {!persistent && closeContent}
+                        {closeContent}
                     </Dialog.Content>
                 </div>
             </Dialog.Portal>
