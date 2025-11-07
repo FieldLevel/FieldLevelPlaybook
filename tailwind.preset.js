@@ -165,7 +165,8 @@ module.exports = {
         }),
         extend: {
             maxHeight: {
-                'screen-m': 'calc(100vh - theme(spacing.16))'
+                'screen-m': 'calc(100vh - theme(spacing.16))',
+                'dvh-m': 'calc(100dvh - theme(spacing.16))'
             },
             keyframes: {
                 slideInDown: { from: { transform: 'translate3d(0, -100%, 0)' } },
