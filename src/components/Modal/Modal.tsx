@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import * as Dialog from '@radix-ui/react-dialog';
-import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
+import { Dialog, VisuallyHidden } from 'radix-ui';
 
 import { Button } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
