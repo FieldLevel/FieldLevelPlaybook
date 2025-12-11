@@ -8,6 +8,16 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 7.4.0 - 2025-12-11
+
+### Enhancements
+
+-   add `displayLimit` and `displayLimitLabel` props to `ChoiceGroup` component ([#180](https://github.com/FieldLevel/FieldLevelPlaybook/pull/180))
+
+### Dependency upgrades
+
+-   Update peerDeps to use the radix-ui package ([#181](https://github.com/FieldLevel/FieldLevelPlaybook/pull/181))
+
 ## 7.3.1 - 2025-11-07
 
 ### Enhancements

@@ -6,8 +6,6 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
--   add `displayLimit` and `displayLimitLabel` props to `ChoiceGroup` component ([#180](https://github.com/FieldLevel/FieldLevelPlaybook/pull/180))
-
 ### Bug fixes
 
 ### Documentation
@@ -15,8 +13,6 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Development workflow
 
 ### Dependency upgrades
-
--   Update peerDeps to use the radix-ui package ([#181](https://github.com/FieldLevel/FieldLevelPlaybook/pull/181))
 
 ### Code quality
 
