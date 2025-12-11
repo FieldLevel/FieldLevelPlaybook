@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ChoiceGroup, ChoiceGroupProps } from '../../src';
+import { ChoiceGroup } from '../../src';
 
 const meta: Meta<typeof ChoiceGroup> = {
     component: ChoiceGroup
@@ -12,167 +12,228 @@ export default meta;
 
 type Story = StoryObj<typeof ChoiceGroup>;
 
-const DefaultExample = (args: Partial<ChoiceGroupProps>) => {
-    const [selected, setSelected] = useState([]);
-    const handleChange = (value) => setSelected(value);
-
-    return (
-        <ChoiceGroup
-            {...args}
-            title="Sport"
-            selected={selected}
-            onChange={handleChange}
-            name="sport"
-            choices={[
-                { label: 'Baseball', value: 'baseball' },
-                { label: 'Football', value: 'football' },
-                { label: 'Basketball', value: 'basketball' }
-            ]}
-        />
-    );
-};
-
 export const Default: Story = {
-    render: (args) => <DefaultExample {...args} />
-};
-
-const SingleChoiceExample = () => {
-    const [selected, setSelected] = useState([]);
-    const handleChange = (value) => setSelected(value);
-
-    return (
-        <ChoiceGroup
-            title="Single Sport"
-            selected={selected}
-            onChange={handleChange}
-            name="sport"
-            choices={[
-                { label: 'Baseball', value: 'baseball' },
-                { label: 'Football', value: 'football' },
-                { label: 'Basketball', value: 'basketball' }
-            ]}
-        />
-    );
+    args: {
+        title: 'Sports',
+        name: 'sports',
+        multiple: true,
+        choices: [
+            { label: 'Baseball', value: 'baseball' },
+            { label: 'Football', value: 'football' },
+            { label: 'Basketball', value: 'basketball' }
+        ]
+    },
+    render: (args) => {
+        const [selected, setSelected] = useState([]);
+        const handleChange = (value) => setSelected(value);
+        return <ChoiceGroup {...args} selected={selected} onChange={handleChange} key={args.displayLimit} />;
+    }
 };
 
 export const SingleChoice: Story = {
-    render: () => <SingleChoiceExample />
-};
+    render: () => {
+        const [selected, setSelected] = useState();
+        const handleChange = (value) => setSelected(value);
 
-const MultipleChoiceExample = () => {
-    const [selected, setSelected] = useState([]);
-    const handleChange = (value) => setSelected(value);
-
-    return (
-        <ChoiceGroup
-            multiple
-            title="Multiple Sports"
-            selected={selected}
-            onChange={handleChange}
-            name="sport"
-            choices={[
-                { label: 'Baseball', value: 'baseball' },
-                { label: 'Football', value: 'football' },
-                { label: 'Basketball', value: 'basketball' }
-            ]}
-        />
-    );
+        return (
+            <ChoiceGroup
+                title="Single Sport"
+                selected={selected}
+                onChange={handleChange}
+                name="sport"
+                choices={[
+                    { label: 'Baseball', value: 'baseball' },
+                    { label: 'Football', value: 'football' },
+                    { label: 'Basketball', value: 'basketball' }
+                ]}
+            />
+        );
+    },
+    parameters: {
+        docs: {
+            source: {
+                type: 'dynamic'
+            }
+        }
+    }
 };
 
 export const MultiChoice: Story = {
-    render: () => <MultipleChoiceExample />
-};
+    render: () => {
+        const [selected, setSelected] = useState([]);
+        const handleChange = (value) => setSelected(value);
 
-const DisabledExample = () => {
-    const [selected, setSelected] = useState(['baseball']);
-    const handleChange = (value) => setSelected(value);
-    return (
-        <ChoiceGroup
-            title="Disabled Sports"
-            disabled
-            selected={selected}
-            onChange={handleChange}
-            name="sport"
-            choices={[
-                { label: 'Baseball', value: 'baseball' },
-                { label: 'Football', value: 'football' },
-                { label: 'Basketball', value: 'basketball' }
-            ]}
-        />
-    );
+        return (
+            <ChoiceGroup
+                multiple
+                title="Multiple Sports"
+                selected={selected}
+                onChange={handleChange}
+                name="sport"
+                choices={[
+                    { label: 'Baseball', value: 'baseball' },
+                    { label: 'Football', value: 'football' },
+                    { label: 'Basketball', value: 'basketball' }
+                ]}
+            />
+        );
+    },
+    parameters: {
+        docs: {
+            source: {
+                type: 'dynamic'
+            }
+        }
+    }
 };
 
 export const Disabled: Story = {
-    render: () => <DisabledExample />
-};
-
-const SpacingExample = () => {
-    const [selected, setSelected] = useState([]);
-    const handleChange = (value) => setSelected(value);
-
-    return (
-        <ChoiceGroup
-            multiple
-            title="Multiple Sports"
-            selected={selected}
-            onChange={handleChange}
-            spacing="loose"
-            name="sport"
-            choices={[
-                { label: 'Baseball', value: 'baseball' },
-                { label: 'Football', value: 'football' },
-                { label: 'Basketball', value: 'basketball' }
-            ]}
-        />
-    );
+    render: () => {
+        const [selected, setSelected] = useState(['baseball']);
+        const handleChange = (value) => setSelected(value);
+        return (
+            <ChoiceGroup
+                title="Disabled Sports"
+                multiple
+                disabled
+                selected={selected}
+                onChange={handleChange}
+                name="sport"
+                choices={[
+                    { label: 'Baseball', value: 'baseball' },
+                    { label: 'Football', value: 'football' },
+                    { label: 'Basketball', value: 'basketball' }
+                ]}
+            />
+        );
+    },
+    parameters: {
+        docs: {
+            source: {
+                type: 'dynamic'
+            }
+        }
+    }
 };
 
 export const Spacing: Story = {
-    render: () => <SpacingExample />
-};
+    render: () => {
+        const [selected, setSelected] = useState([]);
+        const handleChange = (value) => setSelected(value);
 
-const DisabledChoiceExample = () => {
-    const [selected, setSelected] = useState(['baseball']);
-    const handleChange = (value) => setSelected(value);
-    return (
-        <ChoiceGroup
-            title="Sports"
-            selected={selected}
-            onChange={handleChange}
-            name="sport"
-            choices={[
-                { label: 'Baseball', value: 'baseball' },
-                { label: 'Football', value: 'football' },
-                { label: 'Basketball', value: 'basketball', disabled: true }
-            ]}
-        />
-    );
+        return (
+            <ChoiceGroup
+                multiple
+                title="Multiple Sports"
+                selected={selected}
+                onChange={handleChange}
+                spacing="loose"
+                name="sport"
+                choices={[
+                    { label: 'Baseball', value: 'baseball' },
+                    { label: 'Football', value: 'football' },
+                    { label: 'Basketball', value: 'basketball' }
+                ]}
+            />
+        );
+    },
+    parameters: {
+        docs: {
+            source: {
+                type: 'dynamic'
+            }
+        }
+    }
 };
 
 export const DisabledChoice: Story = {
-    render: () => <DisabledChoiceExample />
-};
+    render: () => {
+        const [selected, setSelected] = useState(['baseball']);
+        const handleChange = (value) => setSelected(value);
 
-const WithErrorExample = () => {
-    const [selected, setSelected] = useState(['football']);
-    const handleChange = (value) => setSelected(value);
-
-    return (
-        <ChoiceGroup
-            title="Sport"
-            selected={selected}
-            onChange={handleChange}
-            name="sport"
-            error="Sorry, your mom won't let you play football"
-            choices={[
-                { label: 'Baseball', value: 'baseball' },
-                { label: 'Football', value: 'football' },
-                { label: 'Basketball', value: 'basketball' }
-            ]}
-        />
-    );
+        return (
+            <ChoiceGroup
+                title="Sports"
+                multiple
+                selected={selected}
+                onChange={handleChange}
+                name="sport"
+                choices={[
+                    { label: 'Baseball', value: 'baseball' },
+                    { label: 'Football', value: 'football' },
+                    { label: 'Basketball', value: 'basketball', disabled: true }
+                ]}
+            />
+        );
+    },
+    parameters: {
+        docs: {
+            source: {
+                type: 'dynamic'
+            }
+        }
+    }
 };
 
 export const WithError: Story = {
-    render: () => <WithErrorExample />
+    render: () => {
+        const [selected, setSelected] = useState(['football']);
+        const handleChange = (value) => setSelected(value);
+
+        return (
+            <ChoiceGroup
+                title="Sport"
+                multiple
+                selected={selected}
+                onChange={handleChange}
+                name="sport"
+                error="Sorry, your mom won't let you play football"
+                choices={[
+                    { label: 'Baseball', value: 'baseball' },
+                    { label: 'Football', value: 'football' },
+                    { label: 'Basketball', value: 'basketball' }
+                ]}
+            />
+        );
+    },
+    parameters: {
+        docs: {
+            source: {
+                type: 'dynamic'
+            }
+        }
+    }
+};
+
+export const WithDisplayLimit: Story = {
+    render: () => {
+        const [selected, setSelected] = useState(['football']);
+        const handleChange = (value) => setSelected(value);
+
+        return (
+            <ChoiceGroup
+                title="Sports"
+                selected={selected}
+                onChange={handleChange}
+                name="sports"
+                multiple
+                displayLimit={3}
+                choices={[
+                    { label: 'Baseball', value: 'baseball' },
+                    { label: 'Football', value: 'football' },
+                    { label: 'Basketball', value: 'basketball' },
+                    { label: 'Soccer', value: 'soccer' },
+                    { label: 'Lacrosse', value: 'lacrosse' },
+                    { label: 'Tennis', value: 'tennis' }
+                ]}
+            />
+        );
+    },
+    parameters: {
+        docs: {
+            source: {
+                type: 'dynamic'
+            }
+        }
+    }
 };

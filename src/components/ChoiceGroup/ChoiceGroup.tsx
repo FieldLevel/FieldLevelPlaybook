@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 
 import { Checkbox } from '../Checkbox';
 import { RadioButton } from '../RadioButton';
 import { InlineError } from '../shared/InlineError';
+import { DownMinor } from '../../lib';
 
 import { useUniqueId } from '../../utilities/use-unique-id';
 
@@ -27,6 +28,8 @@ export interface ChoiceGroupProps {
     spacing?: spacing;
     onChange?(selected: (string | boolean | number)[] | (string | boolean | number), name: string): void;
     error?: string;
+    displayLimit?: number;
+    displayLimitLabel?: string;
 }
 
 export const ChoiceGroup = ({
@@ -38,8 +41,12 @@ export const ChoiceGroup = ({
     disabled,
     spacing,
     onChange,
-    error
+    error,
+    displayLimit,
+    displayLimitLabel
 }: ChoiceGroupProps) => {
+    const [choicesToShow, setChoicesToShow] = useState(displayLimit ?? choices.length);
+
     const uniqueName = useUniqueId(name);
     const Control = multiple ? Checkbox : RadioButton;
 
@@ -81,7 +88,7 @@ export const ChoiceGroup = ({
         loose: styles.loose
     };
 
-    const choicesContent = choices.map((choice) => {
+    const choicesContent = choices.slice(0, choicesToShow).map((choice) => {
         const handleChange = (checked: boolean) => {
             const newSelected = updateSelected(choice, checked);
             onChange && onChange(newSelected, name);
@@ -108,6 +115,11 @@ export const ChoiceGroup = ({
         <fieldset>
             {title && <legend className={titleStyle}>{title}</legend>}
             <ul>{choicesContent}</ul>
+            {choicesToShow < choices.length && (
+                <div className={styles.MoreChoices} onClick={() => setChoicesToShow(choices.length)}>
+                    {displayLimitLabel ?? `Show all ${title?.toLowerCase()}`} <DownMinor height={12} width={12} />
+                </div>
+            )}
             {errorContent}
         </fieldset>
     );
