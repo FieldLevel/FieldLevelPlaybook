@@ -16,6 +16,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Dependency upgrades
 
+-   Update peerDeps to use the radix-ui package ([#181](https://github.com/FieldLevel/FieldLevelPlaybook/pull/181))
+
 ### Code quality
 
 ### Deprecations
