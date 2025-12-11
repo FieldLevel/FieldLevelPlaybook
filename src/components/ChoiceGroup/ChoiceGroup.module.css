@@ -13,3 +13,7 @@
 .loose {
     @apply mb-4;
 }
+
+.MoreChoices {
+    @apply text-body-sm cursor-pointer mt-4 flex items-center gap-1 text-interactive-active fill-[#0369a1];
+}
