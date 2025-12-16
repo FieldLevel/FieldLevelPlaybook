@@ -24,7 +24,7 @@ export const RadioButton = ({ name, label, checked, disabled, onChange }: RadioB
     };
 
     return (
-        <InlineField id={id} label={label}>
+        <InlineField id={id} label={label} disabled={disabled}>
             <input
                 id={id}
                 type="radio"
