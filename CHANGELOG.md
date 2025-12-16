@@ -8,6 +8,12 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 7.4.1 - 2025-12-16
+
+### Enhancements
+
+-   set label to `text-disabled` when option is disabled in `Checkbox` or `RadioButton` ([#183](https://github.com/FieldLevel/FieldLevelPlaybook/pull/183))
+
 ## 7.4.0 - 2025-12-11
 
 ### Enhancements
