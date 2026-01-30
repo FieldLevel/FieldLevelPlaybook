@@ -30,6 +30,15 @@ type TypeValue =
 
 type AutoCompleteValue = 'off' | 'on' | 'new-password' | 'current-password' | 'email' | 'username' | 'name' | string;
 
+export interface InputAttributes {
+    autoComplete?: AutoCompleteValue;
+    autoCapitalize?: 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters';
+    autoCorrect?: 'off' | 'on';
+    spellCheck?: boolean;
+    inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+    enterKeyHint?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
+}
+
 type Action = {
     label?: string;
     url?: string;
@@ -39,7 +48,6 @@ type Action = {
 export interface TextInputProps {
     name: string;
     type?: TypeValue;
-    autoComplete?: AutoCompleteValue;
     label?: string;
     action?: Action;
     value?: string;
@@ -47,6 +55,11 @@ export interface TextInputProps {
     max?: number;
     step?: number | 'any';
     placeholder?: string;
+    attributes?: InputAttributes;
+    /**
+     * @deprecated Use `attributes.autoComplete` instead
+     */
+    autoComplete?: AutoCompleteValue;
     size?: SizeValue;
     rows?: number;
     maxRows?: number;
@@ -62,7 +75,6 @@ export const TextInput = React.forwardRef(function TextInput(
     {
         name,
         type,
-        autoComplete,
         label,
         action,
         value,
@@ -70,6 +82,8 @@ export const TextInput = React.forwardRef(function TextInput(
         max,
         step,
         placeholder,
+        attributes,
+        autoComplete,
         size,
         rows,
         maxRows,
@@ -88,6 +102,11 @@ export const TextInput = React.forwardRef(function TextInput(
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
     useImperativeHandle(forwardedRef, () => (rows ? textAreaRef?.current : inputRef?.current));
+
+    const mergedAttributes: InputAttributes = {
+        autoComplete, // deprecated prop as fallback
+        ...attributes // attributes.autoComplete takes precedence
+    };
 
     let multiMaxRows: number;
     if (rows) {
@@ -181,7 +200,6 @@ export const TextInput = React.forwardRef(function TextInput(
     const inputEl = createElement(rows ? 'textarea' : 'input', {
         id,
         type: type || 'text',
-        autoComplete,
         name,
         value,
         min,
@@ -193,7 +211,8 @@ export const TextInput = React.forwardRef(function TextInput(
         readOnly: readonly,
         disabled,
         onChange: handleChange,
-        ref: rows ? textAreaRef : inputRef
+        ref: rows ? textAreaRef : inputRef,
+        ...mergedAttributes
     });
 
     return (

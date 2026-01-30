@@ -67,6 +67,20 @@ export const AutoComplete: Story = {
     }
 };
 
+export const Attributes: Story = {
+    args: {
+        label: 'Email',
+        name: 'email',
+        type: 'email',
+        attributes: {
+            autoComplete: 'email',
+            inputMode: 'email',
+            autoCapitalize: 'off',
+            spellCheck: false
+        }
+    }
+};
+
 export const Size: Story = {
     args: {
         label: 'Email',
