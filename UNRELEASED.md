@@ -6,6 +6,8 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 
 ### Enhancements
 
+-   Add `attributes` prop to `TextInput` component for native input/textarea attributes ([#185](https://github.com/FieldLevel/FieldLevelPlaybook/pull/185))
+
 ### Bug fixes
 
 ### Documentation
@@ -17,3 +19,5 @@ See [the versioning guidelines](VERSIONING.md) for how to format entries.
 ### Code quality
 
 ### Deprecations
+
+-   Deprecate `autoComplete` prop in `TextInput` in favor of `attributes.autoComplete` ([#185](https://github.com/FieldLevel/FieldLevelPlaybook/pull/185))
