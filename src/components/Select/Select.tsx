@@ -9,6 +9,8 @@ import { useUniqueId } from '../../utilities/use-unique-id';
 
 import { SelectMinor } from '../../icons/Minor';
 
+type SizeValue = 'large';
+
 type Option = {
     label: string;
     value: string;
@@ -20,6 +22,7 @@ export interface SelectProps {
     value?: string;
     label?: string;
     placeholder?: string | Option;
+    size?: SizeValue;
     disabled?: boolean;
     error?: string;
     onChange?(value: string, name: string): void;
@@ -43,7 +46,7 @@ const standardizePlaceholder = (placeholder: string | Option): Option => {
     }
 };
 
-export const Select = ({ options, name, value, label, placeholder, disabled, error, onChange }: SelectProps) => {
+export const Select = ({ options, name, value, label, placeholder, size, disabled, error, onChange }: SelectProps) => {
     const id = useUniqueId(name);
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -63,13 +66,14 @@ export const Select = ({ options, name, value, label, placeholder, disabled, err
     );
 
     const selectClass = cx(styles.Select, disabled && styles.disabled, error && styles.error);
+    const wrapperClass = cx(size === 'large' && styles.large);
 
     const stdPlaceholder = placeholder && standardizePlaceholder(placeholder);
     const stdOptions = standardizeOptions(options);
     const currentValue = value || (stdPlaceholder && stdPlaceholder.value);
 
     return (
-        <div>
+        <div className={wrapperClass}>
             {labelContent}
             <div className={selectClass}>
                 <select id={id} name={name} value={currentValue} disabled={disabled} onChange={handleChange}>

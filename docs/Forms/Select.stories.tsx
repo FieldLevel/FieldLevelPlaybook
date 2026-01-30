@@ -75,3 +75,13 @@ export const WithError: Story = {
         error: "Your mom won't let you play football"
     }
 };
+
+export const Size: Story = {
+    args: {
+        label: 'Sport',
+        name: 'sport',
+        value: 'Football',
+        options: ['Baseball', 'Football', 'Basketball'],
+        size: 'large'
+    }
+};
