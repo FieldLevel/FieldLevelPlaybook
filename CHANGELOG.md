@@ -8,6 +8,17 @@ The format is based on [the versioning guidelines](VERSIONING.md).
 
 ---
 
+## 7.5.0 - 2026-01-30
+
+### Enhancements
+
+-   Add `attributes` prop to `TextInput` component for native input/textarea attributes ([#185](https://github.com/FieldLevel/FieldLevelPlaybook/pull/185))
+-   Add `size` prop to `Select` component ([#186](https://github.com/FieldLevel/FieldLevelPlaybook/pull/186))
+
+### Deprecations
+
+-   Deprecate `autoComplete` prop in `TextInput` in favor of `attributes.autoComplete` ([#185](https://github.com/FieldLevel/FieldLevelPlaybook/pull/185))
+
 ## 7.4.1 - 2025-12-16
 
 ### Enhancements
