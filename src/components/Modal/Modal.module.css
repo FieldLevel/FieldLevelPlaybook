@@ -17,7 +17,8 @@
 
 .Content {
     @apply relative flex flex-col bg-foreground-base text-left rounded-t-lg overflow-hidden shadow-xl pointer-events-auto;
-    @apply w-full h-auto p-0 m-0 max-h-screen-m;
+    @apply w-full h-auto p-0 m-0;
+    @apply max-h-screen-m max-h-dvh-m; /* NOTE: The order of the classes matter here so that the browser will fall back to vh if dvh is not supported */
     @apply lg:my-0 lg:rounded-lg lg:mx-auto lg:max-w-screen-sm lg:max-h-[600px] lg:h-auto;
 }
 
